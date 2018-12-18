@@ -1,4 +1,5 @@
 var express = require("express");
+var port = process.env.PORT || 8080;
 var bodyParser = require("body-parser");
 var routes = require("./routes/routes.js");
 
