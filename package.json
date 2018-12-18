@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Mini REST-ful API for the server",
-  "main": "app.js",
+  "main": "server",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
