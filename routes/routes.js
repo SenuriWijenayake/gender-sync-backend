@@ -28,6 +28,13 @@ var appRouter = function(app) {
     res.status(200).send(result);
   });
 
+  //Endpoint to index
+  app.get('/', function(req, res) {
+    
+    result = JSON.stringify({message: "hellow world"});
+    res.status(200).send(result);
+  });
+
   //Endpoint to get a question by id
   app.post('/question', function(req, res) {
     data = logic.getQuestionBySetAndId(req.body.set, req.body.id);
