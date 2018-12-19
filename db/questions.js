@@ -1,4 +1,81 @@
-module.exports = [
+module.exports = [{
+    "isMajority": false,
+    "sizeValues": [
+      40,
+      60,
+      0,
+      0
+    ],
+    "questionText": "What is the main currency of Indonesia?",
+    "answers": [{
+        "answer": "Rupee",
+        "id": 1
+      },
+      {
+        "answer": "Dollar",
+        "id": 2
+      },
+      {
+        "answer": "Rupiah",
+        "id": 3
+      },
+      {
+        "answer": "Krone",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      3,
+      1,
+      2,
+      4
+    ],
+    "questionNumber": -2,
+    "words": [{
+      "key": "currency",
+      "explaination": "A system of money in general use in a particular country"
+    }]
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      70,
+      20,
+      10,
+      0
+    ],
+    "questionText": "Politicians are profiteers. Do you agree or disagree with this statement?",
+    "answers": [{
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      3,
+      4,
+      2,
+      1
+    ],
+    "questionNumber": -1,
+    "words": [{
+      "key": "profiteer",
+      "explaination": "A "
+    }]
+  },
   {
     "isMajority": true,
     "sizeValues": [
@@ -8,8 +85,7 @@ module.exports = [
       0
     ],
     "questionText": "What is the capital of Spain?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Barcelona",
         "id": 1
       },
@@ -34,12 +110,10 @@ module.exports = [
       4
     ],
     "questionNumber": 0,
-    "words": [
-      {
-        "key": "capital",
-        "explaination": "The city or town that functions as the seat of government and administrative centre of a country or region"
-      }
-    ]
+    "words": [{
+      "key": "capital",
+      "explaination": "The city or town that functions as the seat of government and administrative centre of a country or region"
+    }]
   },
   {
     "questionNumber": 13,
@@ -52,14 +126,11 @@ module.exports = [
       0
     ],
     "questionText": "Single-sex schools are better for students. Do you agree or disagree with this statement?",
-    "words": [
-      {
-        "key": "single-sex",
-        "explaination": "Having either only males or only females"
-      }
-    ],
-    "answers": [
-      {
+    "words": [{
+      "key": "single-sex",
+      "explaination": "Having either only males or only females"
+    }],
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -92,8 +163,7 @@ module.exports = [
       0
     ],
     "questionText": "121, 143, 165, 187, ?",
-    "answers": [
-      {
+    "answers": [{
         "answer": 209,
         "id": 1
       },
@@ -130,8 +200,7 @@ module.exports = [
       0
     ],
     "questionText": "Democracy is the best form of government. Do you agree or disagree with this statement?",
-    "words": [
-      {
+    "words": [{
         "key": "democracy",
         "explaination": "Government by the people"
       },
@@ -140,8 +209,7 @@ module.exports = [
         "explaination": "The group of people with the authority to govern a country or state"
       }
     ],
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -174,8 +242,7 @@ module.exports = [
       0
     ],
     "questionText": "1, 8, 27, ? , 125, 216",
-    "answers": [
-      {
+    "answers": [{
         "answer": 36,
         "id": 1
       },
@@ -212,8 +279,7 @@ module.exports = [
       0
     ],
     "questionText": "School uniforms should be banned. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -236,12 +302,10 @@ module.exports = [
       1,
       4
     ],
-    "words": [
-      {
-        "key": "ban",
-        "explaination": "Officially or legally prohibit (something)"
-      }
-    ]
+    "words": [{
+      "key": "ban",
+      "explaination": "Officially or legally prohibit (something)"
+    }]
   },
   {
     "isMajority": true,
@@ -252,8 +316,7 @@ module.exports = [
       0
     ],
     "questionText": "Who is the founder of the quantum theory of radiation?",
-    "words": [
-      {
+    "words": [{
         "key": "quantum",
         "explaination": "A discrete quantity of energy"
       },
@@ -262,8 +325,7 @@ module.exports = [
         "explaination": "The emission of energy as electromagnetic waves or as moving subatomic particles"
       }
     ],
-    "answers": [
-      {
+    "answers": [{
         "answer": "S. N. Bose",
         "id": 1
       },
@@ -300,14 +362,11 @@ module.exports = [
       0
     ],
     "questionText": "No-one should be able to post online comments anonymously. Do you agree or disagree?",
-    "words": [
-      {
-        "key": "anonymously",
-        "explaination": "In a way that prevents a person from being identified by name"
-      }
-    ],
-    "answers": [
-      {
+    "words": [{
+      "key": "anonymously",
+      "explaination": "In a way that prevents a person from being identified by name"
+    }],
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -340,8 +399,7 @@ module.exports = [
       0
     ],
     "questionText": "Who wrote Jane Eyre?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Charlotte Bronte",
         "id": 1
       },
@@ -378,8 +436,7 @@ module.exports = [
       0
     ],
     "questionText": "Cameras in public places are an invasion of privacy. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -402,8 +459,7 @@ module.exports = [
       1,
       4
     ],
-    "words": [
-      {
+    "words": [{
         "key": "invasion",
         "explaination": "An unwelcome intrusion into another's domain"
       },
@@ -422,8 +478,7 @@ module.exports = [
       0
     ],
     "questionText": "2, 3, 3, 5, 10, 13, 39, ? , 172, 177",
-    "answers": [
-      {
+    "answers": [{
         "answer": 41,
         "id": 1
       },
@@ -460,8 +515,7 @@ module.exports = [
       0
     ],
     "questionText": "The driving age should be raised. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -484,12 +538,10 @@ module.exports = [
       1,
       4
     ],
-    "words": [
-      {
-        "key": "raised",
-        "explaination": "Elevated to a higher position or level"
-      }
-    ]
+    "words": [{
+      "key": "raised",
+      "explaination": "Elevated to a higher position or level"
+    }]
   },
   {
     "isMajority": true,
@@ -500,8 +552,7 @@ module.exports = [
       0
     ],
     "questionText": "4, 10, 28, ? , 244, 730",
-    "answers": [
-      {
+    "answers": [{
         "answer": 24,
         "id": 1
       },
@@ -538,8 +589,7 @@ module.exports = [
       0
     ],
     "questionText": "The right to bear arms is a necessary constitutional amendment. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -562,8 +612,7 @@ module.exports = [
       3,
       4
     ],
-    "words": [
-      {
+    "words": [{
         "key": "bear arms",
         "explaination": "Possess or carry a weapon"
       },
@@ -586,8 +635,7 @@ module.exports = [
       0
     ],
     "questionText": "What was Charles Dickens's last novel?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "A Tale of Two Cities",
         "id": 1
       },
@@ -625,8 +673,7 @@ module.exports = [
       0
     ],
     "questionText": "Schools should replace textbooks with tablets. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -659,8 +706,7 @@ module.exports = [
       0
     ],
     "questionText": "What is the standard unit of distance in the metric system?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Centimeter",
         "id": 1
       },
@@ -697,8 +743,7 @@ module.exports = [
       0
     ],
     "questionText": "Euthanasia or Physician-Assisted suicide should be legal. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -721,12 +766,10 @@ module.exports = [
       4,
       2
     ],
-    "words": [
-      {
-        "key": "euthanasia",
-        "explaination": "The painless killing of a patient suffering from an incurable and painful disease or in an irreversible coma"
-      }
-    ]
+    "words": [{
+      "key": "euthanasia",
+      "explaination": "The painless killing of a patient suffering from an incurable and painful disease or in an irreversible coma"
+    }]
   },
   {
     "isMajority": false,
@@ -737,8 +780,7 @@ module.exports = [
       0
     ],
     "questionText": "David put a timepiece on the table.\n\nHe put it in such a way that at 6 P.M. hour hand pointed to North.\n\nIn which direction, the hour hand will point at 9 P.M.?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "West",
         "id": 1
       },
@@ -763,12 +805,10 @@ module.exports = [
       4,
       3
     ],
-    "words": [
-      {
-        "key": "timepiece",
-        "explaination": "An instrument, such as a clock or watch, for measuring time"
-      }
-    ]
+    "words": [{
+      "key": "timepiece",
+      "explaination": "An instrument, such as a clock or watch, for measuring time"
+    }]
   },
   {
     "questionNumber": 14,
@@ -781,8 +821,7 @@ module.exports = [
       0
     ],
     "questionText": "The voting age should be lowered. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -815,8 +854,7 @@ module.exports = [
       0
     ],
     "questionText": "If it were two hours later, it would be half as long until midnight as it would be if it were an hour later. What time is it now?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "18:30",
         "id": 1
       },
@@ -853,8 +891,7 @@ module.exports = [
       0
     ],
     "questionText": "Homework should be banned for students. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -877,12 +914,10 @@ module.exports = [
       3,
       4
     ],
-    "words": [
-      {
-        "key": "ban",
-        "explaination": "Officially prevent (someone) from doing something"
-      }
-    ]
+    "words": [{
+      "key": "ban",
+      "explaination": "Officially prevent (someone) from doing something"
+    }]
   },
   {
     "isMajority": false,
@@ -893,8 +928,7 @@ module.exports = [
       0
     ],
     "questionText": "What is a synonym of 'maudlin'?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Tame",
         "id": 1
       },
@@ -919,12 +953,10 @@ module.exports = [
       3,
       4
     ],
-    "words": [
-      {
-        "key": "synonym",
-        "explaination": "A word or phrase that means exactly or nearly the same as another word or phrase in the same language"
-      }
-    ]
+    "words": [{
+      "key": "synonym",
+      "explaination": "A word or phrase that means exactly or nearly the same as another word or phrase in the same language"
+    }]
   },
   {
     "questionNumber": 17,
@@ -937,8 +969,7 @@ module.exports = [
       0
     ],
     "questionText": "Social media sites help students do better at school. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -971,8 +1002,7 @@ module.exports = [
       0
     ],
     "questionText": "What chemical element is diamonds made of?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Hydrogen",
         "id": 1
       },
@@ -1009,8 +1039,7 @@ module.exports = [
       0
     ],
     "questionText": "Individuals displaced by natural disasters should be required to rebuild elsewhere. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -1033,12 +1062,10 @@ module.exports = [
       4,
       1
     ],
-    "words": [
-      {
-        "key": "displaced",
-        "explaination": "Forced to leave their home, typically because of war, persecution, or natural disaster"
-      }
-    ]
+    "words": [{
+      "key": "displaced",
+      "explaination": "Forced to leave their home, typically because of war, persecution, or natural disaster"
+    }]
   },
   {
     "isMajority": false,
@@ -1049,8 +1076,7 @@ module.exports = [
       0
     ],
     "questionText": "How many four sided figures are there in this diagram?",
-    "answers": [
-      {
+    "answers": [{
         "answer": 18,
         "id": 1
       },
@@ -1088,8 +1114,7 @@ module.exports = [
       0
     ],
     "questionText": "Nuclear energy should be used for commercial use. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -1112,12 +1137,10 @@ module.exports = [
       1,
       4
     ],
-    "words": [
-      {
-        "key": "commercial",
-        "explaination": "Making or intended to make a profit"
-      }
-    ]
+    "words": [{
+      "key": "commercial",
+      "explaination": "Making or intended to make a profit"
+    }]
   },
   {
     "isMajority": false,
@@ -1128,8 +1151,7 @@ module.exports = [
       0
     ],
     "questionText": "Antman, Batman, Cyclops, Deadpool, Electro, Falcon and Gambit are standing near a wall and all of them are facing East.\n\nCyclops is on the immediate right of Deadpool.\n\nBatman is at an extreme end and has Electro as his neighbour.\n\nGambit is between Electro and Falcon.\n\nDeadpool is standing third from the south end.\n\nWho is standing to the left of Electro?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Antman",
         "id": 1
       },
@@ -1166,8 +1188,7 @@ module.exports = [
       0
     ],
     "questionText": "People should be fined for not recycling. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -1190,8 +1211,7 @@ module.exports = [
       4,
       1
     ],
-    "words": [
-      {
+    "words": [{
         "key": "fined",
         "explaination": "Punish (someone) for an illegal or illicit act by making them pay a sum of money"
       },
@@ -1210,8 +1230,7 @@ module.exports = [
       0
     ],
     "questionText": "Which country does this flag represent?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Moldova",
         "id": 1
       },
@@ -1249,8 +1268,7 @@ module.exports = [
       0
     ],
     "questionText": "Death penalty sometimes is a just punishment. In those cases, it should be executed. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -1273,8 +1291,7 @@ module.exports = [
       1,
       4
     ],
-    "words": [
-      {
+    "words": [{
         "key": "death penalty",
         "explaination": "Punishment by execution"
       },
@@ -1293,8 +1310,7 @@ module.exports = [
       0
     ],
     "questionText": "The term 'Butterfly Stroke' is referred to in which sport?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Wrestling",
         "id": 1
       },
@@ -1331,8 +1347,7 @@ module.exports = [
       0
     ],
     "questionText": "Migrants should either adjust or leave. Do you agree or disagree?",
-    "answers": [
-      {
+    "answers": [{
         "answer": "Strongly Disagree",
         "id": 1
       },
@@ -1355,11 +1370,9 @@ module.exports = [
       1,
       4
     ],
-    "words": [
-      {
-        "key": "migrants",
-        "explaination": "A person who moves from one place to another in order to find work or better living conditions"
-      }
-    ]
+    "words": [{
+      "key": "migrants",
+      "explaination": "A person who moves from one place to another in order to find work or better living conditions"
+    }]
   }
 ];
