@@ -73,7 +73,7 @@ module.exports = [{
     "questionNumber": -1,
     "words": [{
       "key": "profiteer",
-      "explaination": "A "
+      "explaination": "A person who make or seek to make an excessive or unfair profit, especially illegally"
     }]
   },
   {
