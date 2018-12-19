@@ -10,5 +10,4 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 routes(app);
 
-const port = normalizePort(process.env.PORT || "8080");
-server.listen(port);
+server.listen(process.env.PORT || 5000);
