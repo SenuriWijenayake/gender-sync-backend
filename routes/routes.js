@@ -70,6 +70,7 @@ var appRouter = function(app) {
     return new Promise(function(resolve, reject) {
       var userId = req.body.userId;
       var chats = req.body.chats;
+      console.log(chats);
       logic.saveUserChat(userId, chats).then(function() {
         resolve(res.status(200));
       });

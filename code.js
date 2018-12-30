@@ -127,6 +127,15 @@ exports.saveUserData = function(user) {
   });
 };
 
+//Function to save the user chat
+exports.saveUserChat = function(userId, chats) {
+  return new Promise(function(resolve, reject) {
+    db.saveUserChat(userId, chats).then(function() {
+      resolve(userId);
+    });
+  });
+};
+
 //Function to save an answer
 exports.saveAnswer = function(ans) {
   var answer = {};
