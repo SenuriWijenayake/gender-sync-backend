@@ -175,7 +175,7 @@ exports.getChartDescription = function(data) {
     //Two minorities scenario
     else if (data.isMajority & numOthers == 2) {
       text = "A majority of " + data.selected.value.toString() + "% of participants concur with your decision to \"" + data.selected.answer.toString() + "\" with this statement.";
-      text = text + " However, a minority of " + noZeroes[0].value.toString() + "% others have opted to \"" + noZeroes[0].answer.toString() + "\" and another " + noZeroes[1].value.toString() + "% \"" + noZeroes[1].answer.toString() + "\" with this statement.";
+      text = text + " However, a minority of " + noZeroes[0].value.toString() + "% have opted to \"" + noZeroes[0].answer.toString() + "\" and another " + noZeroes[1].value.toString() + "% \"" + noZeroes[1].answer.toString() + "\" with this statement.";
     }
     //One majority - One minority
     else if (!data.isMajority & numOthers == 1) {
