@@ -71,7 +71,7 @@ var appRouter = function(app) {
     console.log("Request received at user chat");
     return new Promise(function(resolve, reject) {
       var userId = req.body.userId;
-      var chat = req.body.chat;
+      var chat = req.body.chats;
 
       logic.saveUserChat(userId, chat).then(function(status) {
         resolve(res.status(200).send(status));
