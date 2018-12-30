@@ -140,23 +140,23 @@ exports.getChartDescription = function(data) {
     }
     //One minority scenario
     else if (data.isMajority & numOthers == 1) {
-      text = "You are in the lead! " + data.selected.value.toString() + "% of the participants agree with your answer \"" + data.selected.answer.toString() + "\".";
-      text = text + " However, " + noZeroes[0].value.toString() + "% of others have voted for \"" + noZeroes[0].answer.toString() + "\" as the correct answer.";
+      text = "A majority of " + data.selected.value.toString() + "% of participants agree with your answer \"" + data.selected.answer.toString() + "\".";
+      text = text + " However, a minority of " + noZeroes[0].value.toString() + "% has voted for \"" + noZeroes[0].answer.toString() + "\" as the correct answer.";
     }
     //Two minorities scenario
     else if (data.isMajority & numOthers == 2) {
-      text = "You are in the lead! " + data.selected.value.toString() + "% of the participants agree with your answer \"" + data.selected.answer.toString() + "\".";
-      text = text + " However, " + noZeroes[0].value.toString() + "% of others have voted for \"" + noZeroes[0].answer.toString() + "\" and another " + noZeroes[1].value.toString() + "% has voted for \"" + noZeroes[1].answer.toString() + "\" as the correct answer.";
+      text = "A majority of " + data.selected.value.toString() + "% of participants agree with your answer \"" + data.selected.answer.toString() + "\".";
+      text = text + " However, a minority of " + noZeroes[0].value.toString() + "% has voted for \"" + noZeroes[0].answer.toString() + "\" and another " + noZeroes[1].value.toString() + "% has voted for \"" + noZeroes[1].answer.toString() + "\" as the correct answer.";
     }
     //One majority - One minority
     else if (!data.isMajority & numOthers == 1) {
-      text = "Hmmm.. Looks like only " + data.selected.value.toString() + "% of the participants agree with your selection \"" + data.selected.answer.toString() + "\".";
-      text = text + " A majority of " + noZeroes[0].value.toString() + "% have voted \"" + noZeroes[0].answer.toString() + "\" as the correct answer!";
+      text = "Hmmm.. Looks like only a minority of " + data.selected.value.toString() + "% of participants agree with your selection \"" + data.selected.answer.toString() + "\".";
+      text = text + " A majority of " + noZeroes[0].value.toString() + "% has voted \"" + noZeroes[0].answer.toString() + "\" as the correct answer!";
     }
     //One majority - Two minorities
     else if (!data.isMajority & numOthers == 2) {
       text = "Only a " + data.selected.value.toString() + "% minority agree with your selection \"" + data.selected.answer.toString() + "\".";
-      text = text + " A majority of " + noZeroes[0].value.toString() + "% have voted for \"" + noZeroes[0].answer.toString() + "\" while another " + noZeroes[1].value.toString() + "% has voted for \"" + noZeroes[1].answer.toString() + "\".";
+      text = text + " A majority of " + noZeroes[0].value.toString() + "% has voted for \"" + noZeroes[0].answer.toString() + "\" while another " + noZeroes[1].value.toString() + "% has voted for \"" + noZeroes[1].answer.toString() + "\".";
     } else {
       text = "Oops! I can't seem to interprete this chart."
     }
@@ -169,13 +169,13 @@ exports.getChartDescription = function(data) {
     }
     //One minority scenario
     else if (data.isMajority & numOthers == 1) {
-      text = "You are in the lead! While " + data.selected.value.toString() + "% of the participants concur with your decision to \"" + data.selected.answer.toString() + "\" with this statement,";
-      text = text + noZeroes[0].value.toString() + "% of others \"" + noZeroes[0].answer.toString() + "\" with the statement.";
+      text = "A majority of " + data.selected.value.toString() + "% of participants concur with your decision to \"" + data.selected.answer.toString() + "\" with this statement, while a minority of ";
+      text = text + noZeroes[0].value.toString() + "% \"" + noZeroes[0].answer.toString() + "\" with the statement.";
     }
     //Two minorities scenario
     else if (data.isMajority & numOthers == 2) {
-      text = "You are in the lead! " + data.selected.value.toString() + "% of the participants concur with your decision to \"" + data.selected.answer.toString() + "\" with this statement.";
-      text = text + " However, " + noZeroes[0].value.toString() + "% of others have opted to \"" + noZeroes[0].answer.toString() + "\" and another " + noZeroes[1].value.toString() + "% \"" + noZeroes[1].answer.toString() + "\" with this statement.";
+      text = "A majority of " + data.selected.value.toString() + "% of participants concur with your decision to \"" + data.selected.answer.toString() + "\" with this statement.";
+      text = text + " However, a minority of " + noZeroes[0].value.toString() + "% others have opted to \"" + noZeroes[0].answer.toString() + "\" and another " + noZeroes[1].value.toString() + "% \"" + noZeroes[1].answer.toString() + "\" with this statement.";
     }
     //One majority - One minority
     else if (!data.isMajority & numOthers == 1) {
