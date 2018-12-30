@@ -30,7 +30,9 @@ var appRouter = function(app) {
 
   //Endpoint to index
   app.get('/', function(req, res) {
-    result = JSON.stringify({message: "hellow world"});
+    result = JSON.stringify({
+      message: "hellow world"
+    });
     res.status(200).send(result);
   });
 
@@ -66,15 +68,17 @@ var appRouter = function(app) {
 
   //Endpoint to save user chats
   app.post('/saveChats', function(req, res) {
-    console.log("Request received at user chats");
+    console.log("Request received at user chat");
     return new Promise(function(resolve, reject) {
       var userId = req.body.userId;
-      var chats = req.body.chats;
-      logic.saveUserChat(userId, chats).then(function() {
-        resolve(res.status(200));
+      var chat = req.body.chat;
+
+      logic.saveUserChat(userId, chat).then(function(status) {
+        resolve(res.status(200).send(status));
       });
     });
   });
+
 
   //Endpoint to update answer
   app.post('/updateAnswer', function(req, res) {
@@ -93,7 +97,7 @@ var appRouter = function(app) {
     });
   });
 
-  app.post('/chat', function (req, res) {
+  app.post('/chat', function(req, res) {
     console.log(req.body);
     res.status(200).send("Response from Quiz Bot");
   });

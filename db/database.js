@@ -15,25 +15,28 @@ var bigFiveQuestions = require('./bigFiveQuestions');
 
 
 //Function to save the chat of the user
-exports.saveUserChat = function(userId, chat) {
-  console.log("Inside the database function");
-  console.log(chat);
-  var myChat = new Chat({
-    userId : userId,
-    chat : chat
+exports.saveRawChat = function(userId, chat) {
+  return new Promise(function(resolve, reject) {
+
+    console.log("Inside the database function");
+    var myChat = new Chat({
+      userId: userId,
+      chat: chat
+    });
+
+    myChat.save(function(err) {
+      if (err) throw err;
+      resolve('Chat messages for' + userId.toString() + 'were saved successfully');
+    });
   });
 
-  myChat.save(function(err) {
-    if (err) throw err;
-    console.log('Chat messages for' + userId.toString() + 'were saved successfully');
-  });
 };
 
 //Function to save the saw big five results to the database
 exports.saveBigFiveRaw = function(userId, results) {
   var result = new BigFiveRaw({
-    userId : userId,
-    allAnswers : results
+    userId: userId,
+    allAnswers: results
   });
 
   result.save(function(err) {
@@ -45,7 +48,7 @@ exports.saveBigFiveRaw = function(userId, results) {
 //Function to save the big five results to the database
 exports.saveBigFiveResults = function(userId, results) {
   var result = new Result({
-    userId : userId,
+    userId: userId,
     Extraversion: results.Extraversion,
     Agreeableness: results.Agreeableness,
     Conscientiousness: results.Conscientiousness,
@@ -64,13 +67,13 @@ exports.saveUser = function(user) {
   return new Promise(function(resolve, reject) {
     var newUser = new User({
       gender: user.gender,
-      genderSpecified : user.genderSpecified,
+      genderSpecified: user.genderSpecified,
       age: user.age,
       nationality: user.nationality,
       education: user.education,
-      field : user.field,
+      field: user.field,
       proficiency: user.proficiency,
-      questionSet : user.questionSet
+      questionSet: user.questionSet
     });
 
     newUser.save(function(err, newUser) {
@@ -90,7 +93,7 @@ exports.saveAnswer = function(answer) {
       oldConfidence: answer.oldConfidence,
       newAnswerId: answer.newAnswerId ? answer.newAnswerId : answer.oldAnswerId,
       newConfidence: answer.newConfidence ? answer.newConfidence : answer.oldConfidence,
-      questionSet : answer.questionSet
+      questionSet: answer.questionSet
     });
 
     newAnswer.save(function(err, newAnswer) {
@@ -112,7 +115,9 @@ exports.updateAnswer = function(answer) {
   };
 
   return new Promise(function(resolve, reject) {
-    Answer.findOneAndUpdate(query, newData, {upsert: true}, function(err, newAnswer) {
+    Answer.findOneAndUpdate(query, newData, {
+      upsert: true
+    }, function(err, newAnswer) {
       if (err) reject(err);
       resolve(newAnswer._id.toString());
     });

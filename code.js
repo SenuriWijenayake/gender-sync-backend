@@ -130,8 +130,8 @@ exports.saveUserData = function(user) {
 //Function to save the user chat
 exports.saveUserChat = function(userId, chats) {
   return new Promise(function(resolve, reject) {
-    db.saveUserChat(userId, chats).then(function() {
-      resolve();
+    db.saveRawChat(userId, chats).then(function(status) {
+      resolve(status);
     });
   });
 };
