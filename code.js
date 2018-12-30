@@ -131,7 +131,7 @@ exports.saveUserData = function(user) {
 exports.saveUserChat = function(userId, chats) {
   return new Promise(function(resolve, reject) {
     db.saveUserChat(userId, chats).then(function() {
-      resolve(userId);
+      resolve();
     });
   });
 };
