@@ -49,8 +49,10 @@ exports.saveUser = function(user) {
       gender: user.gender,
       genderSpecified : user.genderSpecified,
       age: user.age,
+      nationality: user.nationality,
       education: user.education,
       field : user.field,
+      proficiency: user.proficiency,
       questionSet : user.questionSet
     });
 

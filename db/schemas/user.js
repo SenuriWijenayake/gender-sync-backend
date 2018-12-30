@@ -6,8 +6,10 @@ var userSchema = new Schema({
   id: String,
   gender: String,
   age: String,
+  nationality: String,
   education: String,
   field : String,
+  proficiency: String,
   questionSet : String,
   genderSpecified : {type : String, required: false}
 });
