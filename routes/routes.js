@@ -30,7 +30,6 @@ var appRouter = function(app) {
 
   //Endpoint to index
   app.get('/', function(req, res) {
-    
     result = JSON.stringify({message: "hellow world"});
     res.status(200).send(result);
   });
@@ -61,6 +60,18 @@ var appRouter = function(app) {
     return new Promise(function(resolve, reject) {
       logic.saveUserData(req.body).then(function(id) {
         resolve(res.status(200).send(id));
+      });
+    });
+  });
+
+  //Endpoint to save user chats
+  app.post('/saveChats', function(req, res) {
+    console.log("Request received at user chats");
+    return new Promise(function(resolve, reject) {
+      var userId = req.body.userId;
+      var chats = req.body.chats;
+      logic.saveUserChat(userId, chats).then(function(id) {
+        resolve(res.status(200));
       });
     });
   });

@@ -10,7 +10,22 @@ var Result = require('./schemas/result');
 var User = require('./schemas/user');
 var Answer = require('./schemas/answer');
 var BigFiveRaw = require('./schemas/bigFiveRaw');
+var Chat = require('./schemas/chat');
 var bigFiveQuestions = require('./bigFiveQuestions');
+
+
+//Function to save the chat of the user
+exports.saveUserChat = function(userId, chat) {
+  var myChat = new Chat({
+    userId : userId,
+    chat : chat
+  });
+
+  myChat.save(function(err) {
+    if (err) throw err;
+    console.log('Chat messages for' + userId.toString() + 'were saved successfully');
+  });
+};
 
 //Function to save the saw big five results to the database
 exports.saveBigFiveRaw = function(userId, results) {
