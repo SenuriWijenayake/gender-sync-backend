@@ -16,7 +16,8 @@ var bigFiveQuestions = require('./bigFiveQuestions');
 
 //Function to save the chat of the user
 exports.saveUserChat = function(userId, chat) {
-
+  console.log("Inside the database function");
+  console.log(chat);
   var myChat = new Chat({
     userId : userId,
     chat : chat
