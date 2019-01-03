@@ -9,7 +9,6 @@ var userSchema = new Schema({
   nationality: String,
   education: String,
   field : String,
-  proficiency: String,
   questionSet : String,
   genderSpecified : {type : String, required: false}
 });

@@ -72,7 +72,6 @@ exports.saveUser = function(user) {
       nationality: user.nationality,
       education: user.education,
       field: user.field,
-      proficiency: user.proficiency,
       questionSet: user.questionSet
     });
 
