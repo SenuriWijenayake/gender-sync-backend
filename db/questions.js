@@ -659,8 +659,7 @@ module.exports = [{
       1,
       4,
       2
-    ],
-    "img": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP8AAACqCAMAAABVlWm8AAAADFBMVEX80RYAOJPOESZnJF1CllbgAAAAiElEQVR4nO3PQQEAIAwAoen6dzaFr4MGzAAAAAAAAAAAAAAAAAAAAAAAAAAAAHxy2vzb/Nv82/zb/Nv82/zb/Nv82/zb/Nv82/zb/Nv82/zb/Nv82/zb/Nvy/22b2+bf5t/m3+bf5t/m3+bf5t/m3+bf5t/m3+bf5t/m3+bf5t/m3+bf5t9W/z9R3YCA2Teb/QAAAABJRU5ErkJggg=="
+    ]
   },
   {
     "questionNumber": 23,
