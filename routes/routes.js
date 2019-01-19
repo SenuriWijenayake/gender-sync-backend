@@ -103,7 +103,7 @@ var appRouter = function(app) {
     res.status(200).send("Response from Quiz Bot");
   });
 
-  app.post('/randomValues', function(req, res) {
+  app.get('/randomValues', function(req, res) {
     var isMajority = req.body.isMajority;
     var values = req.body.values;
     var result = utils.randValues(isMajority, values)
