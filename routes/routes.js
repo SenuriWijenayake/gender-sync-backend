@@ -106,6 +106,7 @@ var appRouter = function(app) {
   app.post('/randomValues', function(req, res) {
     var isMajority = req.body.isMajority;
     var values = req.body.values;
+    console.log(values);
     var result = utils.randValues(isMajority, values)
     res.status(200).send(result);
   });
