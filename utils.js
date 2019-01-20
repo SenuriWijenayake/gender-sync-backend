@@ -14,12 +14,9 @@ exports.randValues = function(isMajority, sizeValues) {
   if (this.areArraysEqual(sizeValues, [50, 40, 10, 0]) ||
     this.areArraysEqual(sizeValues, [40, 30, 30, 0]) ||
     this.areArraysEqual(sizeValues, [40, 50, 10, 0]) ||
+    this.areArraysEqual(sizeValues, [5, 90, 5, 0]) ||
     this.areArraysEqual(sizeValues, [30, 40, 30, 0])) {
 
-    offset = 2;
-  }
-
-  if (this.areArraysEqual(sizeValues, [5, 90, 5, 0]) && !isMajority) {
     offset = 2;
   }
 
