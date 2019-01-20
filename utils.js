@@ -29,7 +29,7 @@ exports.randValues = function(isMajority, sizeValues) {
 
   var arrayLength = noZeros.length;
 
-  if (isMajority) {
+  if (isMajority == true) {
     console.log("Inside majority");
     if (arrayLength == 1) {
       noZeros.push(0);
