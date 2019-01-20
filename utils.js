@@ -30,6 +30,7 @@ exports.randValues = function(isMajority, sizeValues) {
   var arrayLength = noZeros.length;
 
   if (isMajority) {
+    console.log("Inside majority");
     if (arrayLength == 1) {
       noZeros.push(0);
       noZeros.push(0);
@@ -53,7 +54,7 @@ exports.randValues = function(isMajority, sizeValues) {
       return b - a
     });
   } else {
-
+    console.log("Inside minority");
     if (arrayLength == 2) {
       noZeros[0] = noZeros[0] + offset;
       noZeros[1] = noZeros[1] - offset;
