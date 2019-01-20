@@ -9,6 +9,7 @@ exports.randValues = function(isMajority, sizeValues) {
   //Remove zeros
   var noZeros = [];
   var offset = Math.floor(Math.random() * 4) + 1;
+  console.log(offset, sizeValues);
 
   //Determine the offset
   if (this.areArraysEqual(sizeValues, [50, 40, 10, 0]) ||
@@ -60,10 +61,12 @@ exports.randValues = function(isMajority, sizeValues) {
     }
 
     if (arrayLength == 3) {
+      console.log("Here in the right place");
       noZeros[0] = noZeros[0] + offset;
       noZeros[1] = noZeros[1] - offset * 2;
       noZeros[2] = noZeros[2] + offset;
       noZeros.push(0);
+      console.log(noZeros);
     }
   }
 
