@@ -17,7 +17,7 @@ exports.randValues = function(isMajority, sizeValues) {
     this.areArraysEqual(sizeValues, [5, 90, 5, 0]) ||
     this.areArraysEqual(sizeValues, [30, 40, 30, 0])) {
 
-    offset = 2;
+    offset = Math.floor(Math.random() * 2) + 1
   }
 
   for (var i = 0; i < sizeValues.length; i++) {
