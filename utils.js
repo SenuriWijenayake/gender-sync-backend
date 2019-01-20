@@ -6,7 +6,7 @@ exports.questionsTwo = require('./db/questionsTwo');
 
 //Function to randomize the distribution size values
 exports.randValues = function(isMajority, sizeValues) {
-  console.log(isMajority, sizeValues);
+  console.log(typeof(isMajority));
   //Remove zeros
   var noZeros = [];
   var offset = Math.floor(Math.random() * 4) + 1;
