@@ -394,8 +394,8 @@ module.exports = [{
     "isMajority": true,
     "sizeValues": [
       70,
-      20,
-      10,
+      15,
+      15,
       0
     ],
     "questionText": "Who wrote Jane Eyre?",
@@ -416,7 +416,7 @@ module.exports = [{
         "id": 4
       }
     ],
-    "questionNumber": 2,
+    "questionNumber": 19,
     "isObjective": true,
     "correctOrder": [
       3,
@@ -426,7 +426,7 @@ module.exports = [{
     ]
   },
   {
-    "questionNumber": 19,
+    "questionNumber": 2,
     "isMajority": true,
     "isObjective": false,
     "sizeValues": [
