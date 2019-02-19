@@ -1,10 +1,7 @@
 module.exports = [{
     "isMajority": false,
     "sizeValues": [
-      40,
-      60,
-      0,
-      0
+      3,0,4,0
     ],
     "questionText": "What is the main currency of Indonesia?",
     "answers": [{

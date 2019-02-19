@@ -2,12 +2,13 @@ var logic = require('../code');
 var utils = require('../utils');
 
 var appRouter = function(app) {
-  app.post('/chartData', function(req, res) {
-    console.log(req.body);
-    console.log("Request received at chart data");
+  app.post('/feedback', function(req, res) {
+
+    console.log("Request received at feedback endpoint");
     var userAnswer = {};
 
     userAnswer.userId = req.body.userId;
+    userAnswer.mode = req.body.mode;
     userAnswer.questionId = parseInt(req.body.questionId);
     userAnswer.answerId = parseInt(req.body.answerId);
     userAnswer.confidence = parseFloat(req.body.confidence);
@@ -15,7 +16,9 @@ var appRouter = function(app) {
 
     return new Promise(function(resolve, reject) {
       logic.saveAnswer(userAnswer).then(function(id) {
-        data = logic.getDataForChart(userAnswer);
+        if (userAnswer.mode == "control"){
+          data = logic.getDataForChart(userAnswer);
+        }
         result = JSON.stringify(data);
         resolve(res.status(200).send(result));
       });

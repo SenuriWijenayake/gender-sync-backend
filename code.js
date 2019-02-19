@@ -3,13 +3,20 @@ var utils = require('./utils');
 var bigVar = require('./db/bigFiveVariables');
 var db = require('./db/database');
 
-//Function to get data for the feedback
+//Function to get data for the charts
 exports.getDataForChart = function(userAnswer) {
 
   var question = utils.getQuestionByNumber(userAnswer.questionSet, userAnswer.questionId);
   var answers = question.answers;
-  var sizeValues = utils.randValues(question.isMajority, question.sizeValues);
+  var sizeValues = [];
 
+  for (var i = 0; i <= 2; i = i + 2) {
+    sizeValues.push(Math.round((question.sizeValues[i] + question.sizeValues[i+1]) / 7 * 100));
+  }
+  sizeValues.push(0);
+  sizeValues.push(0);
+
+  console.log(sizeValues);
   final = [];
 
   //Set the first answer
@@ -36,7 +43,6 @@ exports.getDataForChart = function(userAnswer) {
   chartDescriptionData.selected = selected;
   chartDescriptionData.others = others;
   chartDescriptionData.isObjective = question.isObjective;
-
 
   var res = {};
   res.answers = final;
