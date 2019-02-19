@@ -70,10 +70,10 @@ exports.saveUser = function(user) {
       gender: user.gender,
       genderSpecified: user.genderSpecified,
       age: user.age,
-      nationality: user.nationality,
       education: user.education,
       field: user.field,
-      questionSet: user.questionSet
+      questionSet: user.questionSet,
+      mode: user.mode
     });
 
     newUser.save(function(err, newUser) {

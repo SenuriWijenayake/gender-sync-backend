@@ -6,10 +6,10 @@ var userSchema = new Schema({
   id: String,
   gender: String,
   age: String,
-  nationality: String,
   education: String,
   field : String,
   questionSet : String,
+  mode: String,
   genderSpecified : {type : String, required: false}
 });
 
