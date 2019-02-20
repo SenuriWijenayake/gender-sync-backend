@@ -53,30 +53,59 @@ exports.getDataForChart = function(userAnswer) {
   return (res);
 };
 
+//Function to populate the value array with avatars
+exports.populateValueArray = function(fCount, mCount){
+  var value = [];
+  var id = 1;
+
+  for(var i = 0; i < fCount; i++){
+    var temp = {};
+    temp.id = id;
+    temp.src = 'female-1.png';
+    value.push(temp);
+    id++;
+  }
+
+  for(var i = 0; i < mCount; i++){
+    var temp = {};
+    temp.id = id;
+    temp.src = 'male-1.png';
+    value.push(temp);
+    id++;
+  }
+
+  return(value);
+};
+
 //Function to get data for avatar feedback
 exports.getAvatarFeedback = function(userAnswer) {
 
-  final = [{
-      "answer": "Rupee",
-      "id": 1,
-      "value": [{"id" : 1, "src": "female-1.png"}, {"id" : 2, "src": "female-1.png"}, {"id" : 3, "src": "female-1.png"}, {"id" : 4, "src": "female-1.png"}, {"id" : 5, "src": "female-1.png"}, {"id" : 6, "src": "female-1.png"}]
-    },
-    {
-      "answer": "Dollar",
-      "id": 2,
-      "value": [{"id" : 1, "src": "female-1.png"}, {"id" : 2, "src": "female-1.png"},]
-    },
-    {
-      "answer": "Rupiah",
-      "id": 3,
-      "value": [{"id" : 1, "src": "dash.png"}]
-    },
-    {
-      "answer": "Krone",
-      "id": 4,
-      "value": [{"id" : 1, "src": "dash.png"}]
+  var question = utils.getQuestionByNumber(userAnswer.questionSet, userAnswer.questionId);
+  var answers = question.answers;
+  var sizeValues = question.sizeValues;
+
+  var final = [];
+
+  //Set my answer
+  var selected = utils.getAnswerById(answers, userAnswer.answerId);
+  selected.value = this.populateValueArray(sizeValues[0], sizeValues[1]);
+  final.push(selected);
+
+  //For others
+  var others = utils.getUnselectedAnswersOrdered(answers, userAnswer.answerId, question.correctOrder);
+  for (var i = 0; i < others.length; i++){
+    if (i == 0){
+      others[i].value = this.populateValueArray(sizeValues[2], sizeValues[3]);
+    } else {
+      others[i].value = [{"id" : 1, "src": "dash.png"}];
     }
-  ];
+    final.push(others[i]);
+  }
+
+  //Order for display
+  final.sort(function(a, b) {
+    return a.id - b.id
+  });
   return (final);
 
 };

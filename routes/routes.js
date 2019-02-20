@@ -15,6 +15,7 @@ var appRouter = function(app) {
     userAnswer.questionSet = req.body.questionSet;
 
     return new Promise(function(resolve, reject) {
+
       logic.saveAnswer(userAnswer).then(function(id) {
         if (userAnswer.mode == "control"){
           data = logic.getDataForChart(userAnswer);
