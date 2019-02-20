@@ -18,6 +18,8 @@ var appRouter = function(app) {
       logic.saveAnswer(userAnswer).then(function(id) {
         if (userAnswer.mode == "control"){
           data = logic.getDataForChart(userAnswer);
+        } else if (userAnswer.mode == "avatar"){
+          data = logic.getAvatarFeedback(userAnswer);
         }
         result = JSON.stringify(data);
         resolve(res.status(200).send(result));

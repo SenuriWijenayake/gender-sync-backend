@@ -11,7 +11,7 @@ exports.getDataForChart = function(userAnswer) {
   var sizeValues = [];
 
   for (var i = 0; i <= 2; i = i + 2) {
-    sizeValues.push(Math.round((question.sizeValues[i] + question.sizeValues[i+1]) / 7 * 100));
+    sizeValues.push(Math.round((question.sizeValues[i] + question.sizeValues[i + 1]) / 7 * 100));
   }
   sizeValues.push(0);
   sizeValues.push(0);
@@ -51,6 +51,34 @@ exports.getDataForChart = function(userAnswer) {
 
   console.log(res);
   return (res);
+};
+
+//Function to get data for avatar feedback
+exports.getAvatarFeedback = function(userAnswer) {
+
+  final = [{
+      "answer": "Rupee",
+      "id": 1,
+      "value": [{"id" : 1, "src": "female-1.png"}, {"id" : 2, "src": "female-1.png"}, {"id" : 3, "src": "female-1.png"}, {"id" : 4, "src": "female-1.png"}, {"id" : 5, "src": "female-1.png"}, {"id" : 6, "src": "female-1.png"}]
+    },
+    {
+      "answer": "Dollar",
+      "id": 2,
+      "value": [{"id" : 1, "src": "female-1.png"}, {"id" : 2, "src": "female-1.png"},]
+    },
+    {
+      "answer": "Rupiah",
+      "id": 3,
+      "value": [{"id" : 1, "src": "dash.png"}]
+    },
+    {
+      "answer": "Krone",
+      "id": 4,
+      "value": [{"id" : 1, "src": "dash.png"}]
+    }
+  ];
+  return (final);
+
 };
 
 //Function to create the questions and answers
