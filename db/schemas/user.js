@@ -10,7 +10,9 @@ var userSchema = new Schema({
   field : String,
   questionSet : String,
   mode: String,
-  genderSpecified : {type : String, required: false}
+  genderSpecified : {type : String, required: false},
+  avatar : {type : String, required: false},
+  name : {type : String, required: false}
 });
 
 var Result = mongoose.model('User', userSchema);
