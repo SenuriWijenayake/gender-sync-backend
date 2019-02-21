@@ -585,7 +585,7 @@ module.exports = [
       2,
       3
     ],
-    "questionText": "Where did Manolo Blahnik get his start?",
+    "questionText": "Where did the fashion designer Manolo Blahnik get his start?",
     "answers": [
       {
         "answer": "Spain",
@@ -1053,7 +1053,7 @@ module.exports = [
       0,
       6
     ],
-    "questionText": "Who is the editor-in-chief of the Vogue magazine since 1988?",
+    "questionText": "Who is the editor-in-chief of the Vogue (the famous fashion magazine) since 1988?",
     "answers": [
       {
         "answer": "Anna Wintour",
@@ -1410,7 +1410,7 @@ module.exports = [
       3,
       1
     ],
-    "questionText": "What was Coco Chanel's real name?",
+    "questionText": "What was Coco Chanel's (the fashion designer) real name?",
     "answers": [
       {
         "answer": "Marie",
@@ -1527,7 +1527,7 @@ module.exports = [
       2,
       2
     ],
-    "questionText": "Who is considered to be the founder of the miniskirt?",
+    "questionText": "Who is considered to be the inventor of the miniskirt?",
     "answers": [
       {
         "answer": "Twiggy",

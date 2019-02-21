@@ -61,7 +61,7 @@ exports.populateValueArray = function(fCount, mCount){
   for(var i = 0; i < fCount; i++){
     var temp = {};
     temp.id = id;
-    temp.src = 'female-1.png';
+    temp.src = 'female.png';
     value.push(temp);
     id++;
   }
@@ -69,7 +69,7 @@ exports.populateValueArray = function(fCount, mCount){
   for(var i = 0; i < mCount; i++){
     var temp = {};
     temp.id = id;
-    temp.src = 'male-1.png';
+    temp.src = 'male.png';
     value.push(temp);
     id++;
   }
