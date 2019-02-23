@@ -35,16 +35,22 @@ exports.getDataForChart = function(userAnswer) {
 
   //Replace with ones for blocks
   for (var i = 0; i < final.length; i++) {
-    var id = 1;
+    var id = 0;
     var temp = [];
-    if (final[i].value != 0){
+    if (final[i].value != 0) {
       for (var j = 0; j < final[i].value; j++) {
-        temp.push({"id" : id, "src": "block.png"});
-        id++;
+        temp.push({
+          "id": ++id,
+          "src": "gold-block.png"
+        });
       }
     } else {
-      temp = [{"id" : 1, "src": "dash.png"}];
+      temp = [{
+        "id": 0,
+        "src": "dash.png"
+      }];
     }
+    final[i].count = id;
     final[i].value = temp;
   }
 
@@ -57,7 +63,7 @@ exports.getDataForChart = function(userAnswer) {
   chartDescriptionData.isMajority = question.isMajority;
   chartDescriptionData.selected = selected;
   chartDescriptionData.others = others;
-  chartDescriptionData.isObjective = question.isObjective;
+  chartDescriptionData.mode = userAnswer.mode;
 
   var res = {};
   res.answers = final;
@@ -69,50 +75,96 @@ exports.getDataForChart = function(userAnswer) {
 };
 
 //Function to populate the value array with avatars
-exports.populateValueArray = function(fCount, mCount){
-  var value = [];
-  var id = 1;
-
-  for(var i = 0; i < fCount; i++){
-    var temp = {};
-    temp.id = id;
-    temp.src = 'female-emp-pink.svg';
-    value.push(temp);
-    id++;
+exports.populateValueArray = function(fCount, mCount, seed) {
+  if (seed == 0){
+    seed = Math.floor(Math.random() * 2) + 1;
   }
+  console.log(seed, fCount, mCount);
 
-  for(var i = 0; i < mCount; i++){
-    var temp = {};
-    temp.id = id;
-    temp.src = 'male-emp-blue.svg';
-    value.push(temp);
-    id++;
+  if (seed == 1) {
+    //females first
+    var value = [];
+    var id = 1;
+
+    for (var i = 0; i < fCount; i++) {
+      var temp = {};
+      temp.id = id;
+      temp.src = 'female-emp-pink.svg';
+      value.push(temp);
+      id++;
+    }
+
+    for (var i = 0; i < mCount; i++) {
+      var temp = {};
+      temp.id = id;
+      temp.src = 'male-emp-blue.svg';
+      value.push(temp);
+      id++;
+    }
+  } else {
+    var value = [];
+    var id = 1;
+
+    for (var i = 0; i < mCount; i++) {
+      var temp = {};
+      temp.id = id;
+      temp.src = 'male-emp-blue.svg';
+      value.push(temp);
+      id++;
+    }
+
+    for (var i = 0; i < fCount; i++) {
+      var temp = {};
+      temp.id = id;
+      temp.src = 'female-emp-pink.svg';
+      value.push(temp);
+      id++;
+    }
   }
-
-  return(value);
+  console.log(value, seed);
+  return ({"value" : value, "seed" : seed});
 };
 
 //Function to get data for avatar feedback
 exports.getAvatarFeedback = function(userAnswer) {
-
   var question = utils.getQuestionByNumber(userAnswer.questionSet, userAnswer.questionId);
   var answers = question.answers;
   var sizeValues = question.sizeValues;
+  var seed = 0;
 
   var final = [];
 
   //Set my answer
   var selected = utils.getAnswerById(answers, userAnswer.answerId);
-  selected.value = this.populateValueArray(sizeValues[0], sizeValues[1]);
+  var obj = this.populateValueArray(sizeValues[0], sizeValues[1], 0);
+  selected.value = obj.value;
+  seed = obj.seed;
+
+  //set the female and male count
+  if (seed == 1){
+    selected.count = [sizeValues[0], sizeValues[1]];
+  } else {
+    selected.count = [sizeValues[1], sizeValues[0]];
+  }
   final.push(selected);
 
   //For others
   var others = utils.getUnselectedAnswersOrdered(answers, userAnswer.answerId, question.correctOrder);
-  for (var i = 0; i < others.length; i++){
-    if (i == 0){
-      others[i].value = this.populateValueArray(sizeValues[2], sizeValues[3]);
+  for (var i = 0; i < others.length; i++) {
+    if (i == 0) {
+      var obj = this.populateValueArray(sizeValues[2], sizeValues[3], seed);
+      others[i].value = obj.value;
+      if (seed == 1){
+        others[i].count = [sizeValues[2], sizeValues[3]];
+      } else {
+        others[i].count = [sizeValues[3], sizeValues[2]];
+      }
     } else {
-      others[i].value = [{"id" : 1, "src": "dash.png"}];
+      others[i].value = [{
+        "id": 1,
+        "src": "dash.png"
+      }];
+      others[i].count = [0, 0];
     }
     final.push(others[i]);
   }
@@ -121,7 +173,21 @@ exports.getAvatarFeedback = function(userAnswer) {
   final.sort(function(a, b) {
     return a.id - b.id
   });
-  return (final);
+
+  var chartDescriptionData = {};
+  chartDescriptionData.isMajority = question.isMajority;
+  chartDescriptionData.selected = selected;
+  chartDescriptionData.others = others;
+  chartDescriptionData.mode = userAnswer.mode;
+  chartDescriptionData.seed = seed;
+
+  var res = {};
+  res.answers = final;
+  res.question = question.questionText;
+  res.description = utils.getChartDescription(chartDescriptionData);
+
+  console.log(res);
+  return (res);
 
 };
 
