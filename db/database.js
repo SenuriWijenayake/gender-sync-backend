@@ -73,9 +73,7 @@ exports.saveUser = function(user) {
       education: user.education,
       field: user.field,
       questionSet: user.questionSet,
-      mode: user.mode,
-      avatar : user.avatar,
-      name : user.name
+      mode: user.mode
     });
 
     newUser.save(function(err, newUser) {
