@@ -11,7 +11,7 @@ exports.getDataForChart = function(userAnswer) {
   var sizeValues = [];
 
   for (var i = 0; i <= 2; i = i + 2) {
-    sizeValues.push(Math.round((question.sizeValues[i] + question.sizeValues[i + 1]) / 7 * 100));
+    sizeValues.push(question.sizeValues[i] + question.sizeValues[i + 1]);
   }
   sizeValues.push(0);
   sizeValues.push(0);
@@ -31,6 +31,21 @@ exports.getDataForChart = function(userAnswer) {
   for (var i = 0; i < others.length; i++) {
     others[i].value = sizeValues[i + 1];
     final.push(others[i]);
+  }
+
+  //Replace with ones for blocks
+  for (var i = 0; i < final.length; i++) {
+    var id = 1;
+    var temp = [];
+    if (final[i].value != 0){
+      for (var j = 0; j < final[i].value; j++) {
+        temp.push({"id" : id, "src": "block.png"});
+        id++;
+      }
+    } else {
+      temp = [{"id" : 1, "src": "dash.png"}];
+    }
+    final[i].value = temp;
   }
 
   //Order for display
