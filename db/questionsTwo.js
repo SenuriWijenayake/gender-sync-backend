@@ -88,43 +88,6 @@ module.exports = [
       1,
       3
     ],
-    "questionText": "Who created blue jeans?",
-    "answers": [
-      {
-        "answer": "Brooke Shields",
-        "id": 1
-      },
-      {
-        "answer": "Calvin Klein",
-        "id": 2
-      },
-      {
-        "answer": "Dolce & Gabbana",
-        "id": 3
-      },
-      {
-        "answer": "Levi Strauss",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      2,
-      1,
-      3
-    ],
-    "questionNumber": 1,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      1,
-      1,
-      4,
-      1
-    ],
     "questionText": "What is the largest country in the world (by area)?",
     "answers": [
       {
@@ -151,14 +114,51 @@ module.exports = [
       2,
       1
     ],
+    "questionNumber": 1,
+    "qtype": "neutral"
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      1,
+      1,
+      4,
+      1
+    ],
+    "questionText": "Which of these Australian tennis players had the nickname 'Rabbit'?",
+    "answers": [
+      {
+        "answer": "Samantha Stosur",
+        "id": 1
+      },
+      {
+        "answer": "Wendy Turnbull",
+        "id": 2
+      },
+      {
+        "answer": "John Alexander",
+        "id": 3
+      },
+      {
+        "answer": "Bernard Tomic",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      2,
+      3,
+      1,
+      4
+    ],
     "questionNumber": 2,
     "words": [
       {
-        "key": "discovered",
-        "explaination": "Be the first to find or observe (a place, substance, or scientific phenomenon)."
+        "key": "nickname",
+        "explaination": "A familiar or humorous name given to a person or thing instead of or as well as the real name."
       }
     ],
-    "qtype": "neutral"
+    "qtype": "masculine"
   },
   {
     "isMajority": false,
@@ -205,43 +205,6 @@ module.exports = [
       3,
       2
     ],
-    "questionText": "In the movie Sex and The City, which designer does character Carrie Bradshaw (Sarah Jessica Parker) receive a wedding dress from?",
-    "answers": [
-      {
-        "answer": "Vera Wang",
-        "id": 1
-      },
-      {
-        "answer": "Carolina Herrera",
-        "id": 2
-      },
-      {
-        "answer": "Vivienne Westwood",
-        "id": 3
-      },
-      {
-        "answer": "Lanvin",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      3,
-      1,
-      2,
-      4
-    ],
-    "questionNumber": 4,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      1,
-      1,
-      2,
-      3
-    ],
     "questionText": "What is the capital of Bulgaria?",
     "answers": [
       {
@@ -268,14 +231,57 @@ module.exports = [
       4,
       2
     ],
-    "questionNumber": 5,
+    "questionNumber": 4,
+    "qtype": "neutral",
     "words": [
       {
         "key": "capital",
         "explaination": "The city or town that functions as the seat of government and administrative centre of a country or region."
       }
+    ]
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      1,
+      1,
+      2,
+      3
     ],
-    "qtype": "neutral"
+    "questionText": "Who did Roger Federer defeat to win the 2018 Australian Open men's singles title?",
+    "answers": [
+      {
+        "answer": "Gael Monfils",
+        "id": 1
+      },
+      {
+        "answer": "Marin Cilic",
+        "id": 2
+      },
+      {
+        "answer": "Andy Murray",
+        "id": 3
+      },
+      {
+        "answer": "Rafael Nadal",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 5,
+    "words": [
+      {
+        "key": "defeat",
+        "explaination": "Win a victory over (someone) in a battle or other contest."
+      }
+    ],
+    "qtype": "masculine"
   },
   {
     "isMajority": false,
@@ -322,43 +328,6 @@ module.exports = [
       1,
       5
     ],
-    "questionText": "Which actress was quoted, 'What do I wear to bed? Chanel No. 5 of course.'?",
-    "answers": [
-      {
-        "answer": "Audrey Hepburn",
-        "id": 1
-      },
-      {
-        "answer": "Katharine Hepburn",
-        "id": 2
-      },
-      {
-        "answer": "Raquel Welch",
-        "id": 3
-      },
-      {
-        "answer": "Marilyn Monroe",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      1,
-      2,
-      3
-    ],
-    "questionNumber": 7,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      0,
-      1,
-      4,
-      2
-    ],
     "questionText": "Who was the prime minister of the United Kingdom at the time of Queen Elizabeth II’s coronation?",
     "answers": [
       {
@@ -385,14 +354,61 @@ module.exports = [
       1,
       3
     ],
-    "questionNumber": 8,
+    "questionNumber": 7,
+    "qtype": "neutral",
     "words": [
       {
         "key": "coronation",
         "explaination": "The ceremony of crowning a sovereign or a sovereign's consort."
       }
+    ]
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      0,
+      1,
+      4,
+      2
     ],
-    "qtype": "neutral"
+    "questionText": "Which of these players was disqualified from the Australian Open for misconduct?",
+    "answers": [
+      {
+        "answer": "Kim Warwick",
+        "id": 1
+      },
+      {
+        "answer": "Ilie Nastase",
+        "id": 2
+      },
+      {
+        "answer": "John McEnroe",
+        "id": 3
+      },
+      {
+        "answer": "Nick Kyrgios",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      3,
+      1,
+      2,
+      4
+    ],
+    "questionNumber": 8,
+    "words": [
+      {
+        "key": "disqualified",
+        "explaination": "Declare (someone) ineligible for an office, activity, or competition because of an offence or infringement."
+      },
+      {
+        "key": "misconduct",
+        "explaination": "Unacceptable or improper behaviour."
+      }
+    ],
+    "qtype": "masculine"
   },
   {
     "isMajority": false,
@@ -446,50 +462,6 @@ module.exports = [
       4,
       1
     ],
-    "questionText": "Where is this fashion brand from?",
-    "answers": [
-      {
-        "answer": "Switzerland",
-        "id": 1
-      },
-      {
-        "answer": "United States of America",
-        "id": 2
-      },
-      {
-        "answer": "Sweden",
-        "id": 3
-      },
-      {
-        "answer": "England",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      3,
-      4,
-      2,
-      1
-    ],
-    "questionNumber": 10,
-    "words": [
-      {
-        "key": "brand",
-        "explaination": "A type of product manufactured by a particular company under a particular name."
-      }
-    ],
-    "qtype": "feminine",
-    "img": ""
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      2,
-      0,
-      1,
-      4
-    ],
     "questionText": "Best synonym for 'ephemeral'?",
     "answers": [
       {
@@ -516,8 +488,57 @@ module.exports = [
       1,
       3
     ],
-    "questionNumber": 11,
+    "questionNumber": 10,
+    "words": [
+      {
+        "key": "synonym",
+        "explaination": "What is meant by a word, text, concept, or action."
+      }
+    ],
     "qtype": "neutral"
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      2,
+      0,
+      1,
+      4
+    ],
+    "questionText": "What is the length of a professional cricket pitch?",
+    "answers": [
+      {
+        "answer": "29 Yards",
+        "id": 1
+      },
+      {
+        "answer": "28 Yards",
+        "id": 2
+      },
+      {
+        "answer": "22 Yards",
+        "id": 3
+      },
+      {
+        "answer": "27 Yards",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      3,
+      1,
+      2,
+      4
+    ],
+    "questionNumber": 11,
+    "qtype": "masculine",
+    "words": [
+      {
+        "key": "pitch",
+        "explaination": "The strip of ground between the two sets of stumps."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -564,43 +585,6 @@ module.exports = [
       2,
       3
     ],
-    "questionText": "Where did the fashion designer Manolo Blahnik get his start?",
-    "answers": [
-      {
-        "answer": "Spain",
-        "id": 1
-      },
-      {
-        "answer": "United States of America",
-        "id": 2
-      },
-      {
-        "answer": "Russia",
-        "id": 3
-      },
-      {
-        "answer": "Slovenia",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      1,
-      3,
-      2,
-      4
-    ],
-    "questionNumber": 13,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      0,
-      3,
-      3,
-      1
-    ],
     "questionText": "Which city's famous nickname is the 'Pearl of the Orient'?",
     "answers": [
       {
@@ -627,8 +611,51 @@ module.exports = [
       2,
       3
     ],
+    "questionNumber": 13,
+    "qtype": "neutral",
+    "words": [
+      {
+        "key": "nickname",
+        "explaination": "A familiar or humorous name given to a person or thing instead of or as well as the real name."
+      }
+    ]
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      0,
+      3,
+      3,
+      1
+    ],
+    "questionText": "What was Ricky Ponting’s highest individual test score?",
+    "answers": [
+      {
+        "answer": 259,
+        "id": 1
+      },
+      {
+        "answer": 258,
+        "id": 2
+      },
+      {
+        "answer": 255,
+        "id": 3
+      },
+      {
+        "answer": 257,
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      4,
+      3,
+      2,
+      1
+    ],
     "questionNumber": 14,
-    "qtype": "neutral"
+    "qtype": "masculine"
   },
   {
     "isMajority": false,
@@ -681,50 +708,7 @@ module.exports = [
       2,
       2
     ],
-    "questionText": "Which fashion house was founded first?",
-    "answers": [
-      {
-        "answer": "Dior",
-        "id": 1
-      },
-      {
-        "answer": "Givenchy",
-        "id": 2
-      },
-      {
-        "answer": "Yves Saint Laurent",
-        "id": 3
-      },
-      {
-        "answer": "Prada",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      1,
-      2,
-      3
-    ],
-    "questionNumber": 16,
-    "words": [
-      {
-        "key": "found",
-        "explaination": "Establish or originate (an institution or organization)."
-      }
-    ],
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      1,
-      2,
-      2,
-      2
-    ],
-    "questionText": "The flag of which country is the only non-rectangular national flag?",
+    "questionText": "The flag of which country is the only non-quadrilateral national flag?",
     "answers": [
       {
         "answer": "Vatican City",
@@ -750,8 +734,57 @@ module.exports = [
       3,
       1
     ],
+    "questionNumber": 16,
+    "qtype": "neutral",
+    "words": [
+      {
+        "key": "quadrilateral",
+        "explaination": "A quadrilateral is a polygon that has exactly four sides."
+      }
+    ]
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "questionText": "Which team did Adam Gilchrist score his first test century against?",
+    "answers": [
+      {
+        "answer": "Pakistan",
+        "id": 1
+      },
+      {
+        "answer": "England",
+        "id": 2
+      },
+      {
+        "answer": "Zimbabwe",
+        "id": 3
+      },
+      {
+        "answer": "India",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      2
+    ],
     "questionNumber": 17,
-    "qtype": "neutral"
+    "qtype": "masculine",
+    "words": [
+      {
+        "key": "century",
+        "explaination": "A score of a hundred in a sporting event, especially a batsman's score of a hundred runs in cricket."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -788,7 +821,13 @@ module.exports = [
       1
     ],
     "questionNumber": 18,
-    "qtype": "feminine"
+    "qtype": "feminine",
+    "words": [
+      {
+        "key": "brand",
+        "explaination": "A type of product manufactured by a particular company under a particular name."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -797,43 +836,6 @@ module.exports = [
       3,
       2,
       2
-    ],
-    "questionText": "Which brand is known for their Wayfarer and Aviator lines of sunglasses?",
-    "answers": [
-      {
-        "answer": "Yves Saint Laurent",
-        "id": 1
-      },
-      {
-        "answer": "Mykita",
-        "id": 2
-      },
-      {
-        "answer": "Nike Vision",
-        "id": 3
-      },
-      {
-        "answer": "Ray-Ban",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      3,
-      2,
-      1
-    ],
-    "questionNumber": 19,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      1,
-      2,
-      4,
-      0
     ],
     "questionText": "Of which planet is the Great Red Spot a striking feature ?",
     "answers": [
@@ -861,8 +863,45 @@ module.exports = [
       2,
       4
     ],
-    "questionNumber": 20,
+    "questionNumber": 19,
     "qtype": "neutral"
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      1,
+      2,
+      4,
+      0
+    ],
+    "questionText": "In which sport is the participant called 'Pugilist'?",
+    "answers": [
+      {
+        "answer": "Sprinter",
+        "id": 1
+      },
+      {
+        "answer": "Boxing",
+        "id": 2
+      },
+      {
+        "answer": "Wrestling",
+        "id": 3
+      },
+      {
+        "answer": "Javelin throw",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      2,
+      4,
+      1,
+      3
+    ],
+    "questionNumber": 20,
+    "qtype": "masculine"
   },
   {
     "isMajority": false,
@@ -899,7 +938,13 @@ module.exports = [
       3
     ],
     "questionNumber": 21,
-    "qtype": "feminine"
+    "qtype": "feminine",
+    "words": [
+      {
+        "key": "origin",
+        "explaination": "The point or place where something begins, arises, or is derived."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -908,49 +953,6 @@ module.exports = [
       1,
       5,
       0
-    ],
-    "questionText": "The origin of the word 'bikini' comes from...",
-    "answers": [
-      {
-        "answer": "The name of the original designer 'Louis Bikini'",
-        "id": 1
-      },
-      {
-        "answer": "The Hawaiian word 'bikini'",
-        "id": 2
-      },
-      {
-        "answer": "The city it was first presented in",
-        "id": 3
-      },
-      {
-        "answer": "The Bikini Atoll at the Pacific Ocean",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      1,
-      2,
-      3
-    ],
-    "questionNumber": 22,
-    "words": [
-      {
-        "key": "origin",
-        "explaination": "The point or place where something begins, arises, or is derived."
-      }
-    ],
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      1,
-      1,
-      0,
-      5
     ],
     "questionText": "Between which two planets are asteroids mainly found ?",
     "answers": [
@@ -978,14 +980,57 @@ module.exports = [
       4,
       2
     ],
-    "questionNumber": 23,
+    "questionNumber": 22,
     "words": [
       {
-        "key": "novel",
-        "explaination": "A fictitious prose narrative of book length, typically representing character and action with some degree of realism."
+        "key": "asteroids",
+        "explaination": "A small rocky body orbiting the sun."
       }
     ],
     "qtype": "neutral"
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      1,
+      1,
+      0,
+      5
+    ],
+    "questionText": "In which country are the headquarters of FIFA (International Federation of Association Football) located?",
+    "answers": [
+      {
+        "answer": "Switzerland",
+        "id": 1
+      },
+      {
+        "answer": "Brazil",
+        "id": 2
+      },
+      {
+        "answer": "France",
+        "id": 3
+      },
+      {
+        "answer": "The Netherlands",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      1,
+      2,
+      4,
+      3
+    ],
+    "questionNumber": 23,
+    "qtype": "masculine",
+    "words": [
+      {
+        "key": "headquarters",
+        "explaination": "The premises serving as the managerial and administrative centre of an organization."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -1038,49 +1083,6 @@ module.exports = [
       0,
       6
     ],
-    "questionText": "Who is the editor-in-chief of the Vogue (the famous fashion magazine) since 1988?",
-    "answers": [
-      {
-        "answer": "Anna Wintour",
-        "id": 1
-      },
-      {
-        "answer": "Grace Mirabella",
-        "id": 2
-      },
-      {
-        "answer": "Diana Vreeland",
-        "id": 3
-      },
-      {
-        "answer": "Edna Woolman Chase",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      1,
-      3,
-      4,
-      2
-    ],
-    "questionNumber": 25,
-    "words": [
-      {
-        "key": "editor-in-chief",
-        "explaination": "The principal editor of a publication, responsible for managing editorial policies and the production of content."
-      }
-    ],
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      0,
-      2,
-      5,
-      0
-    ],
     "questionText": "Which country has the longest coastline in the world?",
     "answers": [
       {
@@ -1107,7 +1109,7 @@ module.exports = [
       4,
       3
     ],
-    "questionNumber": 26,
+    "questionNumber": 25,
     "words": [
       {
         "key": "coastline",
@@ -1115,6 +1117,43 @@ module.exports = [
       }
     ],
     "qtype": "neutral"
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      0,
+      2,
+      5,
+      0
+    ],
+    "questionText": "Who was the captain of the 2014 FIFA World Cup winning team from Germany?",
+    "answers": [
+      {
+        "answer": "Philipp Lahm",
+        "id": 1
+      },
+      {
+        "answer": "Manuel Neuer",
+        "id": 2
+      },
+      {
+        "answer": "Miroslave Klose",
+        "id": 3
+      },
+      {
+        "answer": "Mats Hummels",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      1,
+      3,
+      2,
+      4
+    ],
+    "questionNumber": 26,
+    "qtype": "masculine"
   },
   {
     "isMajority": false,
@@ -1161,43 +1200,6 @@ module.exports = [
       4,
       0
     ],
-    "questionText": "What does the term 'Haute couture' mean?",
-    "answers": [
-      {
-        "answer": "Dress adoration",
-        "id": 1
-      },
-      {
-        "answer": "High sewing",
-        "id": 2
-      },
-      {
-        "answer": "Minister of fashion",
-        "id": 3
-      },
-      {
-        "answer": "Hand Sewing",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      2,
-      4,
-      1,
-      3
-    ],
-    "questionNumber": 28,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": [
-      3,
-      0,
-      4,
-      0
-    ],
     "questionText": "In which country is the world's highest waterfall?",
     "answers": [
       {
@@ -1224,14 +1226,51 @@ module.exports = [
       3,
       4
     ],
-    "questionNumber": 29,
+    "questionNumber": 28,
+    "qtype": "neutral",
     "words": [
       {
         "key": "waterfall",
         "explaination": "A cascade of water falling from a height, formed when a river or stream flows over a precipice or steep incline."
       }
+    ]
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      3,
+      0,
+      0,
+      4
     ],
-    "qtype": "neutral"
+    "questionText": "Which team scored the highest number of goals at the FIFA World Cup 2018?",
+    "answers": [
+      {
+        "answer": "Belgium",
+        "id": 1
+      },
+      {
+        "answer": "France",
+        "id": 2
+      },
+      {
+        "answer": "England",
+        "id": 3
+      },
+      {
+        "answer": "Croatia",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "questionNumber": 29,
+    "qtype": "masculine"
   },
   {
     "isMajority": true,

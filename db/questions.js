@@ -78,13 +78,13 @@ module.exports = [
       4
     ],
     "questionNumber": 0,
+    "qtype": "masculine",
     "words": [
       {
         "key": "nickname",
         "explaination": "A familiar or humorous name given to a person or thing instead of or as well as the real name."
       }
-    ],
-    "qtype": "masculine"
+    ]
   },
   {
     "isMajority": false,
@@ -158,12 +158,6 @@ module.exports = [
       1
     ],
     "questionNumber": 2,
-    "words": [
-      {
-        "key": "discovered",
-        "explaination": "Be the first to find or observe (a place, substance, or scientific phenomenon)."
-      }
-    ],
     "qtype": "neutral"
   },
   {
@@ -201,13 +195,13 @@ module.exports = [
       4
     ],
     "questionNumber": 3,
+    "qtype": "masculine",
     "words": [
       {
         "key": "defeat",
         "explaination": "Win a victory over (someone) in a battle or other contest."
       }
-    ],
-    "qtype": "masculine"
+    ]
   },
   {
     "isMajority": false,
@@ -324,6 +318,7 @@ module.exports = [
       4
     ],
     "questionNumber": 6,
+    "qtype": "masculine",
     "words": [
       {
         "key": "disqualified",
@@ -333,8 +328,7 @@ module.exports = [
         "key": "misconduct",
         "explaination": "Unacceptable or improper behaviour."
       }
-    ],
-    "qtype": "masculine"
+    ]
   },
   {
     "isMajority": false,
@@ -538,7 +532,13 @@ module.exports = [
       3
     ],
     "questionNumber": 11,
-    "qtype": "neutral"
+    "qtype": "neutral",
+    "words": [
+      {
+        "key": "synonym",
+        "explaination": "What is meant by a word, text, concept, or action."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -649,7 +649,13 @@ module.exports = [
       3
     ],
     "questionNumber": 14,
-    "qtype": "neutral"
+    "qtype": "neutral",
+    "words": [
+      {
+        "key": "nickname",
+        "explaination": "A familiar or humorous name given to a person or thing instead of or as well as the real name."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -685,13 +691,13 @@ module.exports = [
       3,
       2
     ],
-    "questionNumber": 15,
     "words": [
       {
         "key": "century",
         "explaination": "A score of a hundred in a sporting event, especially a batsman's score of a hundred runs in cricket."
       }
     ],
+    "questionNumber": 15,
     "qtype": "masculine"
   },
   {
@@ -745,7 +751,7 @@ module.exports = [
       2,
       2
     ],
-    "questionText": "The flag of which country is the only non-rectangular national flag?",
+    "questionText": "The flag of which country is the only non-quadrilateral national flag?",
     "answers": [
       {
         "answer": "Vatican City",
@@ -772,7 +778,13 @@ module.exports = [
       1
     ],
     "questionNumber": 17,
-    "qtype": "neutral"
+    "qtype": "neutral",
+    "words": [
+      {
+        "key": "quadrilateral",
+        "explaination": "A quadrilateral is a polygon that has exactly four sides."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -846,7 +858,13 @@ module.exports = [
       1
     ],
     "questionNumber": 19,
-    "qtype": "feminine"
+    "qtype": "feminine",
+    "words": [
+      {
+        "key": "brand",
+        "explaination": "A type of product manufactured by a particular company under a particular name."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -920,7 +938,13 @@ module.exports = [
       3
     ],
     "questionNumber": 21,
-    "qtype": "masculine"
+    "qtype": "masculine",
+    "words": [
+      {
+        "key": "headquarters",
+        "explaination": "The premises serving as the managerial and administrative centre of an organization."
+      }
+    ]
   },
   {
     "isMajority": false,
@@ -1002,8 +1026,8 @@ module.exports = [
     "questionNumber": 23,
     "words": [
       {
-        "key": "novel",
-        "explaination": "A fictitious prose narrative of book length, typically representing character and action with some degree of realism."
+        "key": "asteroids",
+        "explaination": "A small rocky body orbiting the sun."
       }
     ],
     "qtype": "neutral"
@@ -1210,8 +1234,8 @@ module.exports = [
     "sizeValues": [
       3,
       0,
-      4,
-      0
+      0,
+      4
     ],
     "questionText": "In which country is the world's highest waterfall?",
     "answers": [
