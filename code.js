@@ -274,8 +274,8 @@ exports.getArrayOfNames = function(fCount, mCount, seed, females_used, males_use
   if (seed == 0){
     seed = Math.floor(Math.random() * 2) + 1;
   }
-  var females = ['stephanie', 'sarah', 'jessica', 'laura', 'rebecca', 'emily', 'georgia'];
-  var males = ['matthew', 'james', 'daniel', 'joshua', 'micheal', 'thomas', 'jack'];
+  var females = ['emily.png', 'sarah.png', 'grace.png', 'laura.png', 'chloe.png', 'megan.png', 'kayla.png', 'paige.png', 'holly.png', 'molly.png', 'julia.png', 'amber.png', 'alice.png', 'eliza.png', 'casey.png'];
+  var males = ['david.png', 'james.png', 'aaron.png', 'dylan.png', 'jacob.png', 'jason.png', 'peter.png', 'scott.png', 'tyler.png', 'blake.png', 'ethan.png', 'trent.png', 'kevin.png', 'shane.png', 'lucas.png'];
 
   var females_unused = [];
   var males_unused = [];
