@@ -89,8 +89,8 @@ module.exports = [
   {
     "isMajority": false,
     "sizeValues": [
-      1,
       2,
+      1,
       1,
       3
     ],
@@ -131,31 +131,31 @@ module.exports = [
       4,
       1
     ],
-    "questionText": "Who discovered the X-ray?",
+    "questionText": "What is the largest country in the world (by area)?",
     "answers": [
       {
-        "answer": "Wilhelm Roentgen",
+        "answer": "Canada",
         "id": 1
       },
       {
-        "answer": "Ray Stevens",
+        "answer": "United States of America",
         "id": 2
       },
       {
-        "answer": "Stephen Hawking",
+        "answer": "Russia",
         "id": 3
       },
       {
-        "answer": "Alexander Fleming",
+        "answer": "China",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
-      1,
+      3,
       4,
       2,
-      3
+      1
     ],
     "questionNumber": 2,
     "words": [
@@ -622,29 +622,29 @@ module.exports = [
       3,
       1
     ],
-    "questionText": "Who invented logarithms?",
+    "questionText": "Which city's famous nickname is the 'Pearl of the Orient'?",
     "answers": [
       {
-        "answer": "Mandaleef",
+        "answer": "Hong Kong",
         "id": 1
       },
       {
-        "answer": "Amundson",
+        "answer": "Kyoto",
         "id": 2
       },
       {
-        "answer": "Shockley",
+        "answer": "Taipei",
         "id": 3
       },
       {
-        "answer": "John Napier",
+        "answer": "Singapore",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
-      4,
       1,
+      4,
       2,
       3
     ],
@@ -745,31 +745,31 @@ module.exports = [
       2,
       2
     ],
-    "questionText": "Who is the founder of quantum theory of radiation?",
+    "questionText": "The flag of which country is the only non-rectangular national flag?",
     "answers": [
       {
-        "answer": "S.N. Bose",
+        "answer": "Vatican City",
         "id": 1
       },
       {
-        "answer": "Plank",
+        "answer": "Nepal",
         "id": 2
       },
       {
-        "answer": "Bohr",
+        "answer": "Switzerland",
         "id": 3
       },
       {
-        "answer": "Einstein",
+        "answer": "Bhutan",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
       2,
-      1,
+      4,
       3,
-      4
+      1
     ],
     "questionNumber": 17,
     "qtype": "neutral"
@@ -856,30 +856,30 @@ module.exports = [
       4,
       0
     ],
-    "questionText": "How many novels did Emily Bronte write?",
+    "questionText": "Of which planet is the Great Red Spot a striking feature ?",
     "answers": [
       {
-        "answer": 7,
+        "answer": "Jupiter",
         "id": 1
       },
       {
-        "answer": 19,
+        "answer": "Venus",
         "id": 2
       },
       {
-        "answer": 1,
+        "answer": "Saturn",
         "id": 3
       },
       {
-        "answer": 3,
+        "answer": "Mars",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
+      1,
       3,
       2,
-      1,
       4
     ],
     "questionNumber": 20,
@@ -973,30 +973,30 @@ module.exports = [
       0,
       5
     ],
-    "questionText": "What was Charles Dickens's last novel?",
+    "questionText": "Between which two planets are asteroids mainly found ?",
     "answers": [
       {
-        "answer": "A Tale of Two Cities",
+        "answer": "Saturn and Uranus",
         "id": 1
       },
       {
-        "answer": "Little Dorrit",
+        "answer": "Jupiter and Saturn",
         "id": 2
       },
       {
-        "answer": "Oliver Twist",
+        "answer": "Mars and Jupiter",
         "id": 3
       },
       {
-        "answer": "The Mystery of Edwin Drood",
+        "answer": "Earth and Mars",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
-      4,
-      1,
       3,
+      1,
+      4,
       2
     ],
     "questionNumber": 23,
