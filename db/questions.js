@@ -478,7 +478,7 @@ module.exports = [
         "id": 2
       },
       {
-        "answer": "Sweden ",
+        "answer": "Sweden",
         "id": 3
       },
       {
@@ -1136,8 +1136,8 @@ module.exports = [
     "sizeValues": [
       2,
       0,
-      5,
-      0
+      0,
+      5
     ],
     "questionText": "Which team scored the highest number of goals at the FIFA World Cup 2018?",
     "answers": [
@@ -1176,7 +1176,7 @@ module.exports = [
       4,
       0
     ],
-    "questionText": "What does the term \"Haute couture\" mean?",
+    "questionText": "What does the term 'Haute couture' mean?",
     "answers": [
       {
         "answer": "Dress adoration",
