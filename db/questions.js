@@ -1187,7 +1187,7 @@ module.exports = [
         "id": 2
       },
       {
-        "answer": "Minister of fasion",
+        "answer": "Minister of fashion",
         "id": 3
       },
       {
