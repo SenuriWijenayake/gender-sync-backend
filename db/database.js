@@ -111,7 +111,8 @@ exports.updateAnswer = function(answer) {
   };
   var newData = {
     newAnswerId: answer.newAnswerId,
-    newConfidence: answer.newConfidence
+    newConfidence: answer.newConfidence,
+    editTime: Date.now()
   };
 
   return new Promise(function(resolve, reject) {

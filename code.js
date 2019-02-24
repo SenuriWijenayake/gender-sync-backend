@@ -2,6 +2,7 @@
 var utils = require('./utils');
 var bigVar = require('./db/bigFiveVariables');
 var db = require('./db/database');
+var shuffle = require('shuffle-array');
 
 //Function to get data for the charts
 exports.getDataForChart = function(userAnswer) {
@@ -189,6 +190,158 @@ exports.getAvatarFeedback = function(userAnswer) {
   console.log(res);
   return (res);
 
+};
+
+//Function to get data for names feedback
+exports.getNamesFeedback = function(userAnswer){
+  var question = utils.getQuestionByNumber(userAnswer.questionSet, userAnswer.questionId);
+  var answers = question.answers;
+  var sizeValues = question.sizeValues;
+  var seed = 0;
+
+  var final = [];
+
+  //Set my answer
+  var selected = utils.getAnswerById(answers, userAnswer.answerId);
+  var obj = this.getArrayOfNames(sizeValues[0], sizeValues[1], 0, [], []);
+  selected.value = obj.value;
+  seed = obj.seed;
+  females_used = obj.females_used;
+  males_used = obj.males_used;
+
+  //set the female and male count
+  if (seed == 1){
+    selected.count = [sizeValues[0], sizeValues[1]];
+  } else {
+    selected.count = [sizeValues[1], sizeValues[0]];
+  }
+  final.push(selected);
+
+  //For others
+  var others = utils.getUnselectedAnswersOrdered(answers, userAnswer.answerId, question.correctOrder);
+  for (var i = 0; i < others.length; i++) {
+    if (i == 0) {
+      var obj = this.getArrayOfNames(sizeValues[2], sizeValues[3], seed, females_used, males_used);
+      others[i].value = obj.value;
+      if (seed == 1){
+        others[i].count = [sizeValues[2], sizeValues[3]];
+      } else {
+        others[i].count = [sizeValues[3], sizeValues[2]];
+      }
+    } else {
+      others[i].value = [{
+        "id": 1,
+        "src": "dash.png"
+      }];
+      others[i].count = [0, 0];
+    }
+    final.push(others[i]);
+  }
+
+  //Order for display
+  final.sort(function(a, b) {
+    return a.id - b.id
+  });
+
+  var chartDescriptionData = {};
+  chartDescriptionData.isMajority = question.isMajority;
+  chartDescriptionData.selected = selected;
+  chartDescriptionData.others = others;
+  chartDescriptionData.mode = userAnswer.mode;
+  chartDescriptionData.seed = seed;
+
+  var res = {};
+  res.answers = final;
+  res.question = question.questionText;
+  res.description = utils.getChartDescription(chartDescriptionData);
+
+  console.log(res);
+  return (res);
+};
+
+exports.shuffleArray = function(array){
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+};
+
+exports.getArrayOfNames = function(fCount, mCount, seed, females_used, males_used) {
+  console.log(fCount, mCount, seed, females_used, males_used);
+
+  if (seed == 0){
+    seed = Math.floor(Math.random() * 2) + 1;
+  }
+  var females = ['stephanie', 'sarah', 'jessica', 'laura', 'rebecca', 'emily', 'georgia'];
+  var males = ['matthew', 'james', 'daniel', 'joshua', 'micheal', 'thomas', 'jack'];
+
+  var females_unused = [];
+  var males_unused = [];
+
+  //Get the list of unused males and females
+  for (var i = 0; i < 7; i++){
+    if (females_used.indexOf(females[i]) == -1){
+      females_unused.push(females[i]);
+    }
+    if (males_used.indexOf(males[i]) == -1){
+      males_unused.push(males[i]);
+    }
+  }
+
+  console.log(males_unused, females_unused);
+  f_unused = shuffle(females_unused);
+  m_unused = shuffle(males_unused);
+
+  console.log(f_unused, m_unused);
+
+  if (seed == 1) {
+    //females first
+    var value = [];
+    var id = 1;
+
+    for (var i = 0; i < fCount; i++) {
+      var temp = {};
+      temp.id = id;
+      temp.src = f_unused[i];
+      value.push(temp);
+      females_used.push(f_unused[i]);
+      id++;
+    }
+
+    for (var i = 0; i < mCount; i++) {
+      var temp = {};
+      temp.id = id;
+      temp.src = m_unused[i];
+      value.push(temp);
+      males_used.push(m_unused[i]);
+      id++;
+    }
+  } else {
+    var value = [];
+    var id = 1;
+
+    for (var i = 0; i < mCount; i++) {
+      var temp = {};
+      temp.id = id;
+      temp.src = m_unused[i];
+      value.push(temp);
+      males_used.push(m_unused[i]);
+      id++;
+    }
+
+    for (var i = 0; i < fCount; i++) {
+      var temp = {};
+      temp.id = id;
+      temp.src = f_unused[i];
+      value.push(temp);
+      females_used.push(f_unused[i]);
+      id++;
+    }
+  }
+  console.log(value, seed, females_used, males_used);
+  return ({"value" : value, "seed" : seed, "females_used" : females_used, "males_used" : males_used});
 };
 
 //Function to create the questions and answers

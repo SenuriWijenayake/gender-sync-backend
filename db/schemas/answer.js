@@ -9,7 +9,9 @@ var answerSchema = new Schema({
   oldConfidence : Number,
   newAnswerId : Number,
   newConfidence : Number,
-  questionSet : String
+  questionSet : String,
+  submitTime : { type : Date, required: false, default: Date.now },
+  editTime : { type : Date, required: false, default: Date.now }
 });
 
 var Answer = mongoose.model('Answer', answerSchema);

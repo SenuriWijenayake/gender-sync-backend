@@ -21,6 +21,8 @@ var appRouter = function(app) {
           data = logic.getDataForChart(userAnswer);
         } else if (userAnswer.mode == "avatar"){
           data = logic.getAvatarFeedback(userAnswer);
+        } else {
+          data = logic.getNamesFeedback(userAnswer);
         }
         result = JSON.stringify(data);
         resolve(res.status(200).send(result));
