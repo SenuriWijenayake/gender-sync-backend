@@ -3,6 +3,7 @@
 //Importing the questions
 exports.questions = require('./db/questions');
 exports.questionsTwo = require('./db/questionsTwo');
+exports.questionsThree = require('./db/questionsThree');
 
 //Function to randomize the distribution size values
 exports.randValues = function(isMajority, sizeValues) {

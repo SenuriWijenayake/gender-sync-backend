@@ -47,6 +47,7 @@ var appRouter = function(app) {
 
   //Endpoint to get a question by id
   app.post('/question', function(req, res) {
+    console.log(req.body.set, req.body.id);
     data = logic.getQuestionBySetAndId(req.body.set, req.body.id);
     result = JSON.stringify(data);
     res.status(200).send(result);
@@ -69,8 +70,8 @@ var appRouter = function(app) {
   app.post('/user', function(req, res) {
     console.log("Request received at user data");
     return new Promise(function(resolve, reject) {
-      logic.saveUserData(req.body).then(function(id) {
-        resolve(res.status(200).send(id));
+      logic.saveUserData(req.body).then(function(obj) {
+        resolve(res.status(200).send({"id" : obj.id, "order" : obj.qOrder}));
       });
     });
   });
