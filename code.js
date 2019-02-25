@@ -90,7 +90,7 @@ exports.populateValueArray = function(fCount, mCount, seed) {
     for (var i = 0; i < fCount; i++) {
       var temp = {};
       temp.id = id;
-      temp.src = 'female-emp-pink.svg';
+      temp.src = 'female-e.png';
       value.push(temp);
       id++;
     }
@@ -98,7 +98,7 @@ exports.populateValueArray = function(fCount, mCount, seed) {
     for (var i = 0; i < mCount; i++) {
       var temp = {};
       temp.id = id;
-      temp.src = 'male-emp-blue.svg';
+      temp.src = 'male-e.png';
       value.push(temp);
       id++;
     }
@@ -109,7 +109,7 @@ exports.populateValueArray = function(fCount, mCount, seed) {
     for (var i = 0; i < mCount; i++) {
       var temp = {};
       temp.id = id;
-      temp.src = 'male-emp-blue.svg';
+      temp.src = 'male-e.png';
       value.push(temp);
       id++;
     }
@@ -117,7 +117,7 @@ exports.populateValueArray = function(fCount, mCount, seed) {
     for (var i = 0; i < fCount; i++) {
       var temp = {};
       temp.id = id;
-      temp.src = 'female-emp-pink.svg';
+      temp.src = 'female-e.png';
       value.push(temp);
       id++;
     }
