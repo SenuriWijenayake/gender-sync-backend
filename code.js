@@ -42,7 +42,7 @@ exports.getDataForChart = function(userAnswer) {
       for (var j = 0; j < final[i].value; j++) {
         temp.push({
           "id": ++id,
-          "src": "gold-block.png"
+          "src": "grey-block.png"
         });
       }
     } else {
