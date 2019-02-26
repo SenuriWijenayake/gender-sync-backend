@@ -231,7 +231,7 @@ exports.getNamesFeedback = function(userAnswer){
     } else {
       others[i].value = [{
         "id": 1,
-        "src": "dash.png"
+        "src": "----"
       }];
       others[i].count = [0, 0];
     }
@@ -274,8 +274,8 @@ exports.getArrayOfNames = function(fCount, mCount, seed, females_used, males_use
   if (seed == 0){
     seed = Math.floor(Math.random() * 2) + 1;
   }
-  var females = ['emily.png', 'sarah.png', 'grace.png', 'laura.png', 'chloe.png', 'megan.png', 'kayla.png', 'paige.png', 'holly.png', 'molly.png', 'julia.png', 'amber.png', 'alice.png', 'eliza.png', 'casey.png'];
-  var males = ['david.png', 'james.png', 'aaron.png', 'dylan.png', 'jacob.png', 'jason.png', 'peter.png', 'scott.png', 'tyler.png', 'blake.png', 'ethan.png', 'trent.png', 'kevin.png', 'shane.png', 'lucas.png'];
+  var females = ['Emily', 'Sarah', 'Grace', 'Laura', 'Chloe', 'Megan', 'Kayla', 'Paige', 'Holly', 'Molly', 'Julia', 'Amber', 'Alice', 'Eliza', 'Casey'];
+  var males = ['David', 'James', 'Aaron', 'Dylan', 'Jacob', 'Jason', 'Peter', 'Scott', 'Tyler', 'Blake', 'Ethan', 'Trent', 'Kevin', 'Shane', 'Lucas'];
 
   var females_unused = [];
   var males_unused = [];
