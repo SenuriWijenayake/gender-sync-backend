@@ -62,18 +62,18 @@ module.exports = [
         "id": 2
       },
       {
-        "answer": "Russia",
+        "answer": "China",
         "id": 3
       },
       {
-        "answer": "China",
+        "answer": "Russia",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
-      3,
       4,
+      3,
       2,
       1
     ],
@@ -88,7 +88,7 @@ module.exports = [
       1,
       3
     ],
-    "questionText": "Which of these Australian tennis players had the nickname 'Rabbit'?",
+    "questionText": "Which of these Australian tennis players has the nickname 'Rabbit'?",
     "answers": [
       {
         "answer": "Samantha Stosur",
@@ -142,20 +142,20 @@ module.exports = [
         "id": 2
       },
       {
-        "answer": "Dolce & Gabbana",
+        "answer": "Levi Strauss",
         "id": 3
       },
       {
-        "answer": "Levi Strauss",
+        "answer": "Dolce & Gabbana",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
-      4,
+      3,
       2,
       1,
-      3
+      4
     ],
     "questionNumber": 2,
     "qtype": "feminine"
@@ -179,19 +179,19 @@ module.exports = [
         "id": 2
       },
       {
-        "answer": "Sofia",
+        "answer": "Riga",
         "id": 3
       },
       {
-        "answer": "Riga",
+        "answer": "Sofia",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
+      4,
       3,
       1,
-      4,
       2
     ],
     "questionNumber": 3,
@@ -672,11 +672,11 @@ module.exports = [
         "id": 1
       },
       {
-        "answer": "Nepal",
+        "answer": "Switzerland",
         "id": 2
       },
       {
-        "answer": "Switzerland",
+        "answer": "Nepal",
         "id": 3
       },
       {
@@ -686,9 +686,9 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      2,
-      4,
       3,
+      4,
+      2,
       1
     ],
     "words": [
@@ -794,7 +794,7 @@ module.exports = [
       2,
       2
     ],
-    "questionText": "Of which planet is the Great Red Spot a striking feature ?",
+    "questionText": "Of which planet is the 'Great Red Spot' a striking feature ?",
     "answers": [
       {
         "answer": "Jupiter",
@@ -831,7 +831,7 @@ module.exports = [
       2,
       2
     ],
-    "questionText": "In which sport is the participant called 'Pugilist'?",
+    "questionText": "In which sport is the participant called a 'Pugilist'?",
     "answers": [
       {
         "answer": "Sprinter",
@@ -911,7 +911,7 @@ module.exports = [
       0,
       4
     ],
-    "questionText": "Between which two planets are asteroids mainly found ?",
+    "questionText": "Between which two planets of the solar system are asteroids mainly found ?",
     "answers": [
       {
         "answer": "Saturn and Uranus",
@@ -954,7 +954,7 @@ module.exports = [
       5,
       0
     ],
-    "questionText": "In which country are the headquarters of FIFA (International Federation of Association Football) located?",
+    "questionText": "Where are the headquarters of FIFA (International Federation of Association Football) located?",
     "answers": [
       {
         "answer": "Switzerland",
@@ -1043,11 +1043,11 @@ module.exports = [
     "questionText": "Which country has the longest coastline in the world?",
     "answers": [
       {
-        "answer": "Australia",
+        "answer": "Canada",
         "id": 1
       },
       {
-        "answer": "Canada",
+        "answer": "Australia",
         "id": 2
       },
       {
@@ -1061,19 +1061,19 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      2,
       1,
+      2,
       4,
       3
     ],
+    "questionNumber": 24,
+    "qtype": "neutral",
     "words": [
       {
         "key": "coastline",
         "explaination": "The land along a coast."
       }
-    ],
-    "questionNumber": 24,
-    "qtype": "neutral"
+    ]
   },
   {
     "isMajority": false,
@@ -1283,7 +1283,7 @@ module.exports = [
     "questionText": "Which is NOT a real rugby position?",
     "answers": [
       {
-        "answer": "Nearside flanker",
+        "answer": "Wing Threequarter",
         "id": 1
       },
       {
@@ -1295,16 +1295,16 @@ module.exports = [
         "id": 3
       },
       {
-        "answer": "Wing Threequarter",
+        "answer": "Nearside flanker",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
+      4,
       1,
-      2,
       3,
-      4
+      2
     ],
     "questionNumber": 30,
     "qtype": "masculine"
@@ -1324,7 +1324,7 @@ module.exports = [
         "id": 1
       },
       {
-        "answer": "Abaniko",
+        "answer": "Ogi",
         "id": 2
       },
       {
@@ -1332,14 +1332,14 @@ module.exports = [
         "id": 3
       },
       {
-        "answer": "Ogi",
+        "answer": "Abaniko",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
-      4,
       2,
+      4,
       1,
       3
     ],
@@ -1398,24 +1398,24 @@ module.exports = [
         "id": 1
       },
       {
-        "answer": "Hooker",
+        "answer": "Fly-half",
         "id": 2
       },
       {
-        "answer": "Fly-half",
+        "answer": "Full-back",
         "id": 3
       },
       {
-        "answer": "Full-back",
+        "answer": "Hooker",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
-      2,
+      4,
       3,
       1,
-      4
+      2
     ],
     "questionNumber": 33,
     "words": [
@@ -1437,7 +1437,7 @@ module.exports = [
     "questionText": "What was Coco Chanel's (the fashion designer) real name?",
     "answers": [
       {
-        "answer": "Marie",
+        "answer": "Gabrielle",
         "id": 1
       },
       {
@@ -1449,16 +1449,16 @@ module.exports = [
         "id": 3
       },
       {
-        "answer": "Gabrielle",
+        "answer": "Marie",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
-      4,
-      2,
       1,
-      3
+      2,
+      3,
+      4
     ],
     "questionNumber": 34,
     "qtype": "feminine"
@@ -1471,7 +1471,7 @@ module.exports = [
       4,
       2
     ],
-    "questionText": "Which of these countries use Shilling as its currency?",
+    "questionText": "Which of these countries uses Shilling as its currency?",
     "answers": [
       {
         "answer": "Malta",
@@ -1521,11 +1521,11 @@ module.exports = [
         "id": 1
       },
       {
-        "answer": "Rabbitohs",
+        "answer": "Swans",
         "id": 2
       },
       {
-        "answer": "Swans",
+        "answer": "Rabbitohs",
         "id": 3
       },
       {
@@ -1535,9 +1535,9 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      2,
       3,
       1,
+      2,
       4
     ],
     "questionNumber": 36,
