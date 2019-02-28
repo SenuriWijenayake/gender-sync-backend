@@ -11,7 +11,8 @@ var answerSchema = new Schema({
   newConfidence : Number,
   questionSet : String,
   submitTime : { type : Date, required: false, default: Date.now },
-  editTime : { type : Date, required: false, default: Date.now }
+  editTime : { type : Date, required: false, default: Date.now },
+  femaleFirst : { type : Boolean, required: false}
 });
 
 var Answer = mongoose.model('Answer', answerSchema);

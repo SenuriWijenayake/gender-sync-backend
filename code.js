@@ -255,6 +255,8 @@ exports.getNamesFeedback = function(userAnswer){
   res.question = question.questionText;
   res.description = utils.getChartDescription(chartDescriptionData);
 
+  var seed_updated = db.updateAnswerWithSeed(userAnswer,seed);
+
   console.log(res);
   return (res);
 };
@@ -269,7 +271,6 @@ exports.shuffleArray = function(array){
 };
 
 exports.getArrayOfNames = function(fCount, mCount, seed, females_used, males_used) {
-  console.log(fCount, mCount, seed, females_used, males_used);
 
   if (seed == 0){
     seed = Math.floor(Math.random() * 2) + 1;
@@ -290,11 +291,8 @@ exports.getArrayOfNames = function(fCount, mCount, seed, females_used, males_use
     }
   }
 
-  console.log(males_unused, females_unused);
   f_unused = shuffle(females_unused);
   m_unused = shuffle(males_unused);
-
-  console.log(f_unused, m_unused);
 
   if (seed == 1) {
     //females first

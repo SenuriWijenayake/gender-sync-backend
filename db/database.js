@@ -63,6 +63,26 @@ exports.saveBigFiveResults = function(userId, results) {
   });
 };
 
+//Function to update an answer with seed
+exports.updateAnswerWithSeed = function(answer,seed) {
+  var bool = (seed == 1 ? true : false);
+  var query = {
+    userId: answer.userId,
+    questionId: answer.questionId
+  };
+  var newData = {
+    femaleFirst: bool
+  };
+
+  Answer.findOneAndUpdate(query, newData, {
+    upsert: true
+  }, function(err, doc) {
+    if (err) reject(err);
+    console.log("Seed saved");
+  });
+
+};
+
 //Function to save user details
 exports.saveUser = function(user) {
   return new Promise(function(resolve, reject) {
