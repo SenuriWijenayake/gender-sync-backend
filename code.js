@@ -188,6 +188,8 @@ exports.getAvatarFeedback = function(userAnswer) {
   res.question = question.questionText;
   res.description = utils.getChartDescription(chartDescriptionData);
 
+  var seed_updated = db.updateAnswerWithSeed(userAnswer,seed);
+
   console.log(res);
   return (res);
 

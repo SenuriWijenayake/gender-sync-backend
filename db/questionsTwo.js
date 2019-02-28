@@ -926,7 +926,7 @@ module.exports = [
         "id": 3
       },
       {
-        "answer": "The Bikini Atoll at the Pacific Ocean",
+        "answer": "The Bikini Atoll at Pacific Ocean",
         "id": 4
       }
     ],
