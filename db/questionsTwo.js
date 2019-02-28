@@ -1275,10 +1275,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
+      1,
+      3,
       2,
-      1,
-      1,
-      3
+      1
     ],
     "questionText": "What is the name of the folding Japanese fan?",
     "answers": [
@@ -1313,9 +1313,9 @@ module.exports = [
     "isMajority": true,
     "sizeValues": [
       1,
+      4,
       1,
-      1,
-      4
+      1
     ],
     "questionText": "Where was the hottest temperature ever recorded?",
     "answers": [
@@ -1349,10 +1349,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
-      3,
-      0,
       1,
-      3
+      3,
+      3,
+      0
     ],
     "questionText": "Which player would normally take a line-out in rugby?",
     "answers": [
@@ -1392,10 +1392,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
-      1,
-      2,
       3,
-      1
+      1,
+      1,
+      2
     ],
     "questionText": "What was Coco Chanel's (the fashion designer) real name?",
     "answers": [
@@ -1429,9 +1429,9 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
-      1,
-      1,
       4,
+      1,
+      1,
       1
     ],
     "questionText": "Which of these countries uses Shilling as its currency?",
@@ -1472,10 +1472,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
+      3,
+      1,
       0,
-      3,
-      3,
-      1
+      3
     ],
     "questionText": "What is the NRL (National Rugby League) team name for South Sydney?",
     "answers": [
@@ -1509,9 +1509,9 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
+      2,
+      2,
       1,
-      2,
-      2,
       2
     ],
     "questionText": "Who is considered to be the inventor of the miniskirt?",
@@ -1547,9 +1547,9 @@ module.exports = [
     "isMajority": true,
     "sizeValues": [
       2,
-      1,
       2,
-      2
+      2,
+      1
     ],
     "questionText": "Which country is represented by this flag?",
     "answers": [
@@ -1584,10 +1584,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
-      0,
-      3,
       4,
-      0
+      0,
+      0,
+      3
     ],
     "questionText": "Which is NOT a real rugby position?",
     "answers": [
@@ -1616,6 +1616,43 @@ module.exports = [
       2
     ],
     "questionNumber": 38,
+    "qtype": "masculine"
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      0,
+      4,
+      3,
+      0
+    ],
+    "questionText": "Which is NOT a real rugby position?",
+    "answers": [
+      {
+        "answer": "Wing Threequarter",
+        "id": 1
+      },
+      {
+        "answer": "Blindside flanker",
+        "id": 2
+      },
+      {
+        "answer": "Openside flanker",
+        "id": 3
+      },
+      {
+        "answer": "Nearside flanker",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      4,
+      1,
+      3,
+      2
+    ],
+    "questionNumber": 39,
     "qtype": "masculine"
   }
 ];

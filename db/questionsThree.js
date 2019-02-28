@@ -1275,10 +1275,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
+      1,
+      3,
       2,
-      1,
-      1,
-      3
+      1
     ],
     "questionText": "Where was the hottest temperature ever recorded?",
     "answers": [
@@ -1313,9 +1313,9 @@ module.exports = [
     "isMajority": true,
     "sizeValues": [
       1,
+      4,
       1,
-      1,
-      4
+      1
     ],
     "questionText": "Which player would normally take a line-out in rugby?",
     "answers": [
@@ -1355,10 +1355,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
-      3,
-      0,
       1,
-      3
+      3,
+      3,
+      0
     ],
     "questionText": "What was Coco Chanel's (the fashion designer) real name?",
     "answers": [
@@ -1392,10 +1392,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
-      1,
-      2,
       3,
-      1
+      1,
+      1,
+      2
     ],
     "questionText": "Which of these countries uses Shilling as its currency?",
     "answers": [
@@ -1424,20 +1424,20 @@ module.exports = [
       3
     ],
     "questionNumber": 33,
+    "qtype": "neutral",
     "words": [
       {
         "key": "currency",
         "explaination": "A system of money in general use in a particular country."
       }
-    ],
-    "qtype": "neutral"
+    ]
   },
   {
     "isMajority": true,
     "sizeValues": [
-      1,
-      1,
       4,
+      1,
+      1,
       1
     ],
     "questionText": "What is the NRL (National Rugby League) team name for South Sydney?",
@@ -1472,10 +1472,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
+      3,
+      1,
       0,
-      3,
-      3,
-      1
+      3
     ],
     "questionText": "Who is considered to be the inventor of the miniskirt?",
     "answers": [
@@ -1509,9 +1509,9 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
+      2,
+      2,
       1,
-      2,
-      2,
       2
     ],
     "questionText": "Which country is represented by this flag?",
@@ -1548,9 +1548,9 @@ module.exports = [
     "isMajority": true,
     "sizeValues": [
       2,
-      1,
       2,
-      2
+      2,
+      1
     ],
     "questionText": "Which is NOT a real rugby position?",
     "answers": [
@@ -1584,10 +1584,10 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
-      0,
-      3,
       4,
-      0
+      0,
+      0,
+      3
     ],
     "questionText": "What is the name of the folding Japanese fan?",
     "answers": [
@@ -1616,6 +1616,43 @@ module.exports = [
       3
     ],
     "questionNumber": 38,
+    "qtype": "feminine"
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      0,
+      4,
+      3,
+      0
+    ],
+    "questionText": "What is the name of the folding Japanese fan?",
+    "answers": [
+      {
+        "answer": "Zori",
+        "id": 1
+      },
+      {
+        "answer": "Ogi",
+        "id": 2
+      },
+      {
+        "answer": "Uchiwa",
+        "id": 3
+      },
+      {
+        "answer": "Abaniko",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      2,
+      4,
+      1,
+      3
+    ],
+    "questionNumber": 39,
     "qtype": "feminine"
   }
 ];
