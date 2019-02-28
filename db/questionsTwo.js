@@ -773,9 +773,9 @@ module.exports = [
     "isObjective": true,
     "correctOrder": [
       2,
+      4,
       1,
-      3,
-      2
+      3
     ],
     "questionNumber": 17,
     "qtype": "masculine",

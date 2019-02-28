@@ -65,7 +65,10 @@ exports.saveBigFiveResults = function(userId, results) {
 
 //Function to update an answer with seed
 exports.updateAnswerWithSeed = function(answer,seed) {
-  var bool = (seed == 1 ? true : false);
+  var bool = true;
+  if (seed == 2){
+    bool = false
+  }
   var query = {
     userId: answer.userId,
     questionId: answer.questionId
@@ -93,7 +96,8 @@ exports.saveUser = function(user) {
       education: user.education,
       field: user.field,
       questionSet: user.questionSet,
-      mode: user.mode
+      mode: user.mode,
+      qOrder : user.qOrder
     });
 
     newUser.save(function(err, newUser) {

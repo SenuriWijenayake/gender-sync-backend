@@ -129,6 +129,7 @@ exports.populateValueArray = function(fCount, mCount, seed) {
 //Function to get data for avatar feedback
 exports.getAvatarFeedback = function(userAnswer) {
   var question = utils.getQuestionByNumber(userAnswer.questionSet, userAnswer.questionId);
+  console.log(question.answers);
   var answers = question.answers;
   var sizeValues = question.sizeValues;
   var seed = 0;
@@ -431,7 +432,7 @@ exports.saveUserData = function(user) {
   for (var i = 0; i < newQ.length ; i++){
     qOrder.push(newQ[i]);
   }
-
+  user.qOrder = qOrder;
   return new Promise(function(resolve, reject) {
     db.saveUser(user).then(function(userId) {
       resolve({"id" : userId, "qOrder" : qOrder});
