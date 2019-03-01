@@ -146,9 +146,9 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
+      4,
       2,
       3,
-      4,
       1
     ],
     "questionNumber": 2,
@@ -270,8 +270,8 @@ module.exports = [
     "isObjective": true,
     "correctOrder": [
       4,
-      2,
       3,
+      2,
       1
     ],
     "questionNumber": 5,
@@ -773,8 +773,8 @@ module.exports = [
     "isObjective": true,
     "correctOrder": [
       4,
-      3,
       2,
+      3,
       1
     ],
     "questionNumber": 17,
@@ -1147,8 +1147,8 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      1,
       2,
+      1,
       3,
       4
     ],
@@ -1612,8 +1612,8 @@ module.exports = [
     "correctOrder": [
       3,
       4,
-      1,
-      2
+      2,
+      1
     ],
     "questionNumber": 38,
     "qtype": "masculine"
