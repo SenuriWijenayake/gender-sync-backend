@@ -1310,7 +1310,7 @@ module.exports = [
     "qtype": "masculine"
   },
   {
-    "isMajority": false,
+    "isMajority": true,
     "sizeValues": [
       1,
       4,
