@@ -365,17 +365,8 @@ exports.getAllQuestions = function() {
 };
 
 //Function to get question by Id
-exports.getQuestionBySetAndId = function(set, id) {
-  var questions = [];
-  if (set == "1") {
-    questions = utils.questions;
-  }
-  if (set == "2") {
-    questions = utils.questionsTwo;
-  }
-  if (set == "3") {
-    questions = utils.questionsThree;
-  }
+exports.getQuestionByQId = function(id) {
+  var questions = utils.questions;
   for (var i = 0; i < questions.length; i++) {
     if (questions[i].questionNumber == id) {
       return (questions[i]);
@@ -422,14 +413,7 @@ exports.getBigFiveQuestions = function() {
 //Function to save user data
 exports.saveUserData = function(user) {
   var qOrder = [-1];
-  var q_male = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38];
-  var q_female = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,39];
-  var q;
-  if (user.gender == "male"){
-    q = q_male;
-  } else {
-    q = q_female;
-  }
+  var q = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
   var newQ = shuffle(q);
   for (var i = 0; i < newQ.length ; i++){
     qOrder.push(newQ[i]);

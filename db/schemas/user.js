@@ -5,11 +5,11 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
   id: String,
   gender: String,
-  age: String,
+  age: Number,
   education: String,
   field : String,
-  questionSet : String,
-  mode: String,
+  discussion : Boolean,
+  cues: Boolean,
   genderSpecified : {type : String, required: false},
   qOrder : {type : Array}
 });

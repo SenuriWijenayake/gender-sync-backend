@@ -8,12 +8,13 @@ var appRouter = function(app) {
     var userAnswer = {};
 
     userAnswer.userId = req.body.userId;
-    userAnswer.mode = req.body.mode;
+    userAnswer.cues = req.body.cues;
     userAnswer.questionId = parseInt(req.body.questionId);
     userAnswer.answerId = parseInt(req.body.answerId);
     userAnswer.confidence = parseFloat(req.body.confidence);
-    userAnswer.questionSet = req.body.questionSet;
+    userAnswer.discussion = req.body.discussion;
 
+    console.log(userAnswer);
     return new Promise(function(resolve, reject) {
 
       logic.saveAnswer(userAnswer).then(function(id) {
@@ -47,8 +48,8 @@ var appRouter = function(app) {
 
   //Endpoint to get a question by id
   app.post('/question', function(req, res) {
-    console.log(req.body.set, req.body.id);
-    data = logic.getQuestionBySetAndId(req.body.set, req.body.id);
+    console.log("Request received at question");
+    data = logic.getQuestionByQId(req.body.id);
     result = JSON.stringify(data);
     res.status(200).send(result);
   });
