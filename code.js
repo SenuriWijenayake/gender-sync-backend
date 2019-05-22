@@ -7,7 +7,7 @@ var shuffle = require('shuffle-array');
 //Function to get data for the charts
 exports.getDataForChart = function(userAnswer) {
 
-  var question = utils.getQuestionByNumber(userAnswer.questionSet, userAnswer.questionId);
+  var question = utils.getQuestionByNumber(userAnswer.questionId);
   var answers = question.answers;
   var sizeValues = [];
 
@@ -64,7 +64,7 @@ exports.getDataForChart = function(userAnswer) {
   chartDescriptionData.isMajority = question.isMajority;
   chartDescriptionData.selected = selected;
   chartDescriptionData.others = others;
-  chartDescriptionData.mode = userAnswer.mode;
+  chartDescriptionData.cues = userAnswer.cues;
 
   var res = {};
   res.answers = final;
@@ -128,7 +128,7 @@ exports.populateValueArray = function(fCount, mCount, seed) {
 
 //Function to get data for avatar feedback
 exports.getAvatarFeedback = function(userAnswer) {
-  var question = utils.getQuestionByNumber(userAnswer.questionSet, userAnswer.questionId);
+  var question = utils.getQuestionByNumber(userAnswer.questionId);
   console.log(question.answers);
   var answers = question.answers;
   var sizeValues = question.sizeValues;
@@ -180,7 +180,7 @@ exports.getAvatarFeedback = function(userAnswer) {
   chartDescriptionData.isMajority = question.isMajority;
   chartDescriptionData.selected = selected;
   chartDescriptionData.others = others;
-  chartDescriptionData.mode = userAnswer.mode;
+  chartDescriptionData.cues = userAnswer.cues;
   chartDescriptionData.seed = seed;
 
   var res = {};
@@ -250,7 +250,7 @@ exports.getNamesFeedback = function(userAnswer){
   chartDescriptionData.isMajority = question.isMajority;
   chartDescriptionData.selected = selected;
   chartDescriptionData.others = others;
-  chartDescriptionData.mode = userAnswer.mode;
+  chartDescriptionData.cues = userAnswer.cues;
   chartDescriptionData.seed = seed;
 
   var res = {};

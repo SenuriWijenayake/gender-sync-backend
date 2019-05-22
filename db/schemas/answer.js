@@ -7,12 +7,12 @@ var answerSchema = new Schema({
   questionId: Number,
   oldAnswerId : Number,
   oldConfidence : Number,
+  oldExplanation : String,
   newAnswerId : Number,
   newConfidence : Number,
-  questionSet : String,
+  newExplanation : String,
   submitTime : { type : Date, required: false, default: Date.now },
-  editTime : { type : Date, required: false, default: Date.now },
-  femaleFirst : { type : Boolean, required: false}
+  editTime : { type : Date, required: false, default: Date.now }
 });
 
 var Answer = mongoose.model('Answer', answerSchema);

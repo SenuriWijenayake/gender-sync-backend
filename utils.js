@@ -82,16 +82,9 @@ exports.randValues = function(isMajority, sizeValues) {
 };
 
 //Function to get question by questionNumber
-exports.getQuestionByNumber = function(set, number) {
-  var questions;
-  if (set == "1"){
-    questions = this.questions;
-  } else if (set == "2"){
-    questions = this.questionsTwo;
-  } else {
-    questions = this.questionsThree;
-  }
-
+exports.getQuestionByNumber = function(number) {
+  var questions = this.questions
+  
   for (var i = 0; i < questions.length; i++) {
     if (questions[i].questionNumber == number) {
       return (questions[i]);

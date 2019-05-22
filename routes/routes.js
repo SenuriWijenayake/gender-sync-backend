@@ -9,21 +9,21 @@ var appRouter = function(app) {
 
     userAnswer.userId = req.body.userId;
     userAnswer.cues = req.body.cues;
+    userAnswer.discussion = req.body.discussion;
+
     userAnswer.questionId = parseInt(req.body.questionId);
     userAnswer.answerId = parseInt(req.body.answerId);
     userAnswer.confidence = parseFloat(req.body.confidence);
-    userAnswer.discussion = req.body.discussion;
+    userAnswer.explanation = req.body.explanation;
 
     console.log(userAnswer);
     return new Promise(function(resolve, reject) {
 
       logic.saveAnswer(userAnswer).then(function(id) {
-        if (userAnswer.mode == "control"){
+        if (userAnswer.cues != "Yes"){
           data = logic.getDataForChart(userAnswer);
-        } else if (userAnswer.mode == "avatar"){
-          data = logic.getAvatarFeedback(userAnswer);
         } else {
-          data = logic.getNamesFeedback(userAnswer);
+          data = logic.getAvatarFeedback(userAnswer);
         }
         result = JSON.stringify(data);
         resolve(res.status(200).send(result));
