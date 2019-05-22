@@ -115,9 +115,10 @@ exports.saveAnswer = function(answer) {
       questionId: answer.questionId,
       oldAnswerId: answer.oldAnswerId,
       oldConfidence: answer.oldConfidence,
+      oldExplanation: answer.oldExplanation,
       newAnswerId: answer.newAnswerId ? answer.newAnswerId : answer.oldAnswerId,
       newConfidence: answer.newConfidence ? answer.newConfidence : answer.oldConfidence,
-      questionSet: answer.questionSet
+      newExplanation: answer.newExplanation ? answer.newExplanation : answer.oldExplanation
     });
 
     newAnswer.save(function(err, newAnswer) {
