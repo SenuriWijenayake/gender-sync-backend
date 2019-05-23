@@ -10,20 +10,56 @@ var appRouter = function(app) {
     userAnswer.userId = req.body.userId;
     userAnswer.cues = req.body.cues;
     userAnswer.discussion = req.body.discussion;
-
     userAnswer.questionId = parseInt(req.body.questionId);
     userAnswer.answerId = parseInt(req.body.answerId);
     userAnswer.confidence = parseFloat(req.body.confidence);
     userAnswer.explanation = req.body.explanation;
 
-    console.log(userAnswer);
     return new Promise(function(resolve, reject) {
 
       logic.saveAnswer(userAnswer).then(function(id) {
         if (userAnswer.cues != "Yes"){
-          data = logic.getDataForChart(userAnswer);
+
+          data = [
+  {
+    "avatar": "a.png",
+    "username": "",
+    "answer": "Viviene Westwood",
+    "explanation": "Explanation One let's try a fairly long explanation.. This is unlikely but who knows..",
+    "order": 1
+  },
+  {
+    "avatar": "b.png",
+    "username": "",
+    "answer": "Viviene Westwood",
+    "explanation": "Explanation Two",
+    "order": 2
+  },
+  {
+    "avatar": "c.png",
+    "username": "",
+    "answer": "Lanvin",
+    "explanation": "My Explanation",
+    "order": 3
+  },
+  {
+    "avatar": "d.png",
+    "username": "",
+    "answer": "Viviene Westwood",
+    "explanation": "Explanation Four",
+    "order": 4
+  },
+  {
+    "avatar": "e.png",
+    "username": "",
+    "answer": "Viviene Westwood",
+    "explanation": "Explanation Five",
+    "order": 5
+  }
+];
+          //data = logic.getFeedbackWithoutCues(userAnswer);
         } else {
-          data = logic.getAvatarFeedback(userAnswer);
+          data = logic.getFeedbackWithCues(userAnswer);
         }
         result = JSON.stringify(data);
         resolve(res.status(200).send(result));
@@ -41,7 +77,7 @@ var appRouter = function(app) {
   //Endpoint to index
   app.get('/', function(req, res) {
     result = JSON.stringify({
-      message: "hellow world"
+      message: "hello world"
     });
     res.status(200).send(result);
   });

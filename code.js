@@ -4,8 +4,8 @@ var bigVar = require('./db/bigFiveVariables');
 var db = require('./db/database');
 var shuffle = require('shuffle-array');
 
-//Function to get data for the charts
-exports.getDataForChart = function(userAnswer) {
+//Function to get feedback without cues
+exports.getFeedbackWithoutCues = function(userAnswer) {
 
   var question = utils.getQuestionByNumber(userAnswer.questionId);
   var answers = question.answers;
@@ -17,7 +17,6 @@ exports.getDataForChart = function(userAnswer) {
   sizeValues.push(0);
   sizeValues.push(0);
 
-  console.log(sizeValues);
   final = [];
 
   //Set the first answer
@@ -69,7 +68,7 @@ exports.getDataForChart = function(userAnswer) {
   var res = {};
   res.answers = final;
   res.question = question.questionText;
-  res.description = utils.getChartDescription(chartDescriptionData);
+  //res.description = utils.getChartDescription(chartDescriptionData);
 
   console.log(res);
   return (res);
@@ -126,73 +125,77 @@ exports.populateValueArray = function(fCount, mCount, seed) {
   return ({"value" : value, "seed" : seed});
 };
 
-//Function to get data for avatar feedback
-exports.getAvatarFeedback = function(userAnswer) {
-  var question = utils.getQuestionByNumber(userAnswer.questionId);
-  console.log(question.answers);
-  var answers = question.answers;
-  var sizeValues = question.sizeValues;
-  var seed = 0;
+//Function to get feedback with cues
+exports.getFeedbackWithCues = function(userAnswer) {
 
   var final = [];
+  var question = utils.getQuestionByNumber(userAnswer.questionId);
 
-  //Set my answer
+  var answers = question.answers;
+  var sizeValues = question.sizeValues;
+
+  //Need to get this from the database
+  var username = "Amy";
+  var myGender = "female";
   var selected = utils.getAnswerById(answers, userAnswer.answerId);
-  var obj = this.populateValueArray(sizeValues[0], sizeValues[1], 0);
-  selected.value = obj.value;
-  seed = obj.seed;
 
-  //set the female and male count
-  if (seed == 1){
-    selected.count = [sizeValues[0], sizeValues[1]];
+  //Add my answer
+  var avatar = (myGender == "female") ? "female.png" : "male.png";
+  var obj = {
+    "avatar": avatar,
+    "username": username,
+    "answer": selected.answer,
+    "explanation": userAnswer.explanation,
+    "order": 1
+  };
+  final.push(obj);
+
+  //Who are the others supporting me?
+  var othersSupportMe;
+  var others;
+  if(question.isMajority){
+    othersSupportMe = sizeValues.maj;
+    others = sizeValues.min;
   } else {
-    selected.count = [sizeValues[1], sizeValues[0]];
+    othersSupportMe = sizeValues.min;
+    others = sizeValues.maj;
   }
-  final.push(selected);
 
-  //For others
-  var others = utils.getUnselectedAnswersOrdered(answers, userAnswer.answerId, question.correctOrder);
-  for (var i = 0; i < others.length; i++) {
-    if (i == 0) {
-      var obj = this.populateValueArray(sizeValues[2], sizeValues[3], seed);
-      others[i].value = obj.value;
-      if (seed == 1){
-        others[i].count = [sizeValues[2], sizeValues[3]];
-      } else {
-        others[i].count = [sizeValues[3], sizeValues[2]];
-      }
-    } else {
-      others[i].value = [{
-        "id": 1,
-        "src": "dash.png"
-      }];
-      others[i].count = [0, 0];
+  //Add their answers as well
+  var count = shuffle([2,3,4,5]);
+  if (othersSupportMe != []){
+    for(i=0; i < othersSupportMe.length; i++){
+      var obj = {
+          "avatar": othersSupportMe[i].avatar,
+          "username": othersSupportMe[i].username,
+          "answer": selected.answer,
+          "explanation": this.getExplanation(othersSupportMe[i].id, question.questionNumber, selected.id),
+          "order": count[i]
+        };
+      final.push(obj);
     }
-    final.push(others[i]);
   }
 
-  //Order for display
-  final.sort(function(a, b) {
-    return a.id - b.id
-  });
+  //Add the second best ansers
+  var nextAnswer = utils.getUnselectedAnswersOrdered(answers, userAnswer.answerId, question.correctOrder)[0];
+  if (others != []){
+    for(i=0; i < others.length; i++){
+      var obj = {
+          "avatar": others[i].avatar,
+          "username": others[i].username,
+          "answer": nextAnswer.answer,
+          "explanation": this.getExplanation(others[i].id, question.questionNumber, nextAnswer.id),
+          "order": count[count.length - (i+1)]
+        };
+      final.push(obj);
+    }
+  }
 
-  var chartDescriptionData = {};
-  chartDescriptionData.isMajority = question.isMajority;
-  chartDescriptionData.selected = selected;
-  chartDescriptionData.others = others;
-  chartDescriptionData.cues = userAnswer.cues;
-  chartDescriptionData.seed = seed;
+  return(final);
+};
 
-  var res = {};
-  res.answers = final;
-  res.question = question.questionText;
-  res.description = utils.getChartDescription(chartDescriptionData);
-
-  var seed_updated = db.updateAnswerWithSeed(userAnswer,seed);
-
-  console.log(res);
-  return (res);
-
+exports.getExplanation = function (userId, qId, answerId){
+  return ("This could be a potential explanation coming from a script");
 };
 
 //Function to get data for names feedback
@@ -437,8 +440,6 @@ exports.saveUserChat = function(userId, chats) {
 
 //Function to save an answer
 exports.saveAnswer = function(ans) {
-  console.log("here");
-  console.log(ans);
 
   var answer = {};
   answer.userId = ans.userId;
