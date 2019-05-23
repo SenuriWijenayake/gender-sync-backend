@@ -19,45 +19,7 @@ var appRouter = function(app) {
 
       logic.saveAnswer(userAnswer).then(function(id) {
         if (userAnswer.cues != "Yes"){
-
-          data = [
-  {
-    "avatar": "a.png",
-    "username": "",
-    "answer": "Viviene Westwood",
-    "explanation": "Explanation One let's try a fairly long explanation.. This is unlikely but who knows..",
-    "order": 1
-  },
-  {
-    "avatar": "b.png",
-    "username": "",
-    "answer": "Viviene Westwood",
-    "explanation": "Explanation Two",
-    "order": 2
-  },
-  {
-    "avatar": "c.png",
-    "username": "",
-    "answer": "Lanvin",
-    "explanation": "My Explanation",
-    "order": 3
-  },
-  {
-    "avatar": "d.png",
-    "username": "",
-    "answer": "Viviene Westwood",
-    "explanation": "Explanation Four",
-    "order": 4
-  },
-  {
-    "avatar": "e.png",
-    "username": "",
-    "answer": "Viviene Westwood",
-    "explanation": "Explanation Five",
-    "order": 5
-  }
-];
-          //data = logic.getFeedbackWithoutCues(userAnswer);
+          data = logic.getFeedbackWithoutCues(userAnswer);
         } else {
           data = logic.getFeedbackWithCues(userAnswer);
         }
