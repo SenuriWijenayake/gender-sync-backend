@@ -2,8 +2,6 @@
 
 //Importing the questions
 exports.questions = require('./db/questions');
-exports.questionsTwo = require('./db/questionsTwo');
-exports.questionsThree = require('./db/questionsThree');
 
 //Function to randomize the distribution size values
 exports.randValues = function(isMajority, sizeValues) {
@@ -84,7 +82,7 @@ exports.randValues = function(isMajority, sizeValues) {
 //Function to get question by questionNumber
 exports.getQuestionByNumber = function(number) {
   var questions = this.questions
-  
+
   for (var i = 0; i < questions.length; i++) {
     if (questions[i].questionNumber == number) {
       return (questions[i]);
