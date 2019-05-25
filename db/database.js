@@ -130,6 +130,7 @@ exports.saveAnswer = function(answer) {
 
 //Function to update an answer
 exports.updateAnswer = function(answer) {
+  console.log(answer);
   var query = {
     userId: answer.userId,
     questionId: answer.questionId
@@ -137,6 +138,7 @@ exports.updateAnswer = function(answer) {
   var newData = {
     newAnswerId: answer.newAnswerId,
     newConfidence: answer.newConfidence,
+    newExplanation: answer.newExplanation,
     editTime: Date.now()
   };
 

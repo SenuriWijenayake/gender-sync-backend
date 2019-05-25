@@ -98,6 +98,7 @@ var appRouter = function(app) {
     userAnswer.questionId = parseInt(req.body.questionId);
     userAnswer.newAnswerId = parseInt(req.body.answerId);
     userAnswer.newConfidence = parseFloat(req.body.confidence);
+    userAnswer.newExplanation = req.body.explanation;
 
     return new Promise(function(resolve, reject) {
       logic.updateAnswer(userAnswer).then(function(id) {
