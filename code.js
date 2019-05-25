@@ -41,7 +41,6 @@ exports.getFeedbackWithoutCues = function(userAnswer) {
       var obj = {
           "avatar": othersSupportMe[i].avatarNoCues,
           "answer": selected.answer,
-          "explanation": this.getExplanation(othersSupportMe[i].id, question.questionNumber, selected.id),
           "order": count[i]
         };
       final.push(obj);
@@ -55,7 +54,6 @@ exports.getFeedbackWithoutCues = function(userAnswer) {
       var obj = {
           "avatar": others[i].avatarNoCues,
           "answer": nextAnswer.answer,
-          "explanation": this.getExplanation(others[i].id, question.questionNumber, nextAnswer.id),
           "order": count[count.length - (i+1)]
         };
       final.push(obj);
@@ -110,7 +108,6 @@ exports.getFeedbackWithCues = function(userAnswer) {
           "avatar": othersSupportMe[i].avatar,
           "username": othersSupportMe[i].username,
           "answer": selected.answer,
-          "explanation": this.getExplanation(othersSupportMe[i].id, question.questionNumber, selected.id),
           "order": count[i]
         };
       final.push(obj);
@@ -125,7 +122,6 @@ exports.getFeedbackWithCues = function(userAnswer) {
           "avatar": others[i].avatar,
           "username": others[i].username,
           "answer": nextAnswer.answer,
-          "explanation": this.getExplanation(others[i].id, question.questionNumber, nextAnswer.id),
           "order": count[count.length - (i+1)]
         };
       final.push(obj);
