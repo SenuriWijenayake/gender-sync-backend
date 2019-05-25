@@ -29,7 +29,13 @@ module.exports = [
           "avatar": "male.png"
         }
       ],
-      "min": []
+      "min": [],
+      "summarised": [
+        0,
+        0,
+        2,
+        2
+      ]
     },
     "questionText": "In the movie Sex and The City, which designer does character Carrie Bradshaw (Sarah Jessica Parker) receive a wedding dress from?",
     "answers": [
@@ -90,6 +96,12 @@ module.exports = [
           "avatar": "female.png",
           "avatarNoCues": "b.png"
         }
+      ],
+      "summarised": [
+        1,
+        0,
+        1,
+        2
       ]
     },
     "questionText": "Which actress was quoted, 'What do I wear to bed? Chanel No. 5 of course.'?",
@@ -151,6 +163,12 @@ module.exports = [
           "avatar": "male.png",
           "avatarNoCues": "a.png"
         }
+      ],
+      "summarised": [
+        0,
+        1,
+        2,
+        1
       ]
     },
     "questionText": "Which fashion house was founded first?",
@@ -212,6 +230,12 @@ module.exports = [
           "avatar": "male.png",
           "avatarNoCues": "e.png"
         }
+      ],
+      "summarised": [
+        0,
+        2,
+        2,
+        0
       ]
     },
     "questionText": "What is the name of the folding Japanese fan?",
@@ -273,6 +297,12 @@ module.exports = [
           "avatar": "female.png",
           "avatarNoCues": "d.png"
         }
+      ],
+      "summarised": [
+        2,
+        0,
+        0,
+        2
       ]
     },
     "questionText": "The origin of the word 'bikini' comes from...",
@@ -334,6 +364,12 @@ module.exports = [
           "avatar": "female.png",
           "avatarNoCues": "d.png"
         }
+      ],
+      "summarised": [
+        1,
+        1,
+        1,
+        1
       ]
     },
     "questionText": "What was Coco Chanel's (the fashion designer) real name?",
@@ -394,7 +430,13 @@ module.exports = [
           "avatarNoCues": "e.png"
         }
       ],
-      "min": []
+      "min": [],
+      "summarised": [
+        0,
+        0,
+        2,
+        2
+      ]
     },
     "questionText": "Who did Roger Federer defeat to win the 2018 Australian Open men's singles title?",
     "answers": [
@@ -455,6 +497,12 @@ module.exports = [
           "avatar": "female.png",
           "avatarNoCues": "d.png"
         }
+      ],
+      "summarised": [
+        1,
+        0,
+        1,
+        2
       ]
     },
     "questionText": "Who was the captain of the 2014 FIFA World Cup winning team from Germany?",
@@ -516,6 +564,12 @@ module.exports = [
           "avatar": "male.png",
           "avatarNoCues": "e.png"
         }
+      ],
+      "summarised": [
+        0,
+        1,
+        2,
+        1
       ]
     },
     "questionText": "Which player would normally take a line-out in rugby?",
@@ -577,6 +631,12 @@ module.exports = [
           "avatar": "male.png",
           "avatarNoCues": "e.png"
         }
+      ],
+      "summarised": [
+        0,
+        2,
+        2,
+        0
       ]
     },
     "questionText": "Which team scored the highest number of goals at the FIFA World Cup 2018?",
@@ -638,6 +698,12 @@ module.exports = [
           "avatar": "female.png",
           "avatarNoCues": "d.png"
         }
+      ],
+      "summarised": [
+        2,
+        0,
+        0,
+        2
       ]
     },
     "questionText": "Which team did Adam Gilchrist score his first test century against?",
@@ -699,6 +765,12 @@ module.exports = [
           "avatar": "male.png",
           "avatarNoCues": "e.png"
         }
+      ],
+      "summarised": [
+        1,
+        1,
+        1,
+        1
       ]
     },
     "questionText": "What is the length of a professional cricket pitch?",
@@ -759,7 +831,13 @@ module.exports = [
           "avatarNoCues": "e.png"
         }
       ],
-      "min": []
+      "min": [],
+      "summarised": [
+        0,
+        0,
+        2,
+        2
+      ]
     },
     "questionText": "What is the capital of Bulgaria?",
     "answers": [
@@ -820,6 +898,12 @@ module.exports = [
           "avatar": "female.png",
           "avatarNoCues": "b.png"
         }
+      ],
+      "summarised": [
+        1,
+        0,
+        1,
+        2
       ]
     },
     "questionText": "The flag of which country is the only non-quadrilateral national flag?",
@@ -881,6 +965,12 @@ module.exports = [
           "avatar": "male.png",
           "avatarNoCues": "a.png"
         }
+      ],
+      "summarised": [
+        0,
+        1,
+        2,
+        1
       ]
     },
     "questionText": "Which country has the longest coastline in the world?",
@@ -942,6 +1032,12 @@ module.exports = [
           "avatar": "male.png",
           "avatarNoCues": "e.png"
         }
+      ],
+      "summarised": [
+        0,
+        2,
+        2,
+        0
       ]
     },
     "questionText": "Where was the hottest temperature ever recorded?",
@@ -1003,6 +1099,12 @@ module.exports = [
           "avatar": "female.png",
           "avatarNoCues": "d.png"
         }
+      ],
+      "summarised": [
+        2,
+        0,
+        0,
+        2
       ]
     },
     "questionText": "Which of these countries uses Shilling as its currency?",
@@ -1064,6 +1166,12 @@ module.exports = [
           "avatar": "male.png",
           "avatarNoCues": "e.png"
         }
+      ],
+      "summarised": [
+        1,
+        1,
+        1,
+        1
       ]
     },
     "questionText": "In which country is the world's highest waterfall?",
