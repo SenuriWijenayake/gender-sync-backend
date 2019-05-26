@@ -305,31 +305,31 @@ module.exports = [
         2
       ]
     },
-    "questionText": "The origin of the word 'bikini' comes from...",
+    "questionText": "Who is considered to be the inventor of the miniskirt?",
     "answers": [
       {
-        "answer": "The name of the original designer 'Louis Bikini'",
+        "answer": "Twiggy",
         "id": 1
       },
       {
-        "answer": "The Hawaiian word 'bikini'",
+        "answer": "Mary Quant",
         "id": 2
       },
       {
-        "answer": "The city it was first presented in",
+        "answer": "Brigitte Baroot",
         "id": 3
       },
       {
-        "answer": "The Bikini Atoll at Pacific Ocean",
+        "answer": "Audrey Hepburn",
         "id": 4
       }
     ],
     "isObjective": true,
     "correctOrder": [
       2,
+      3,
       4,
-      1,
-      3
+      1
     ],
     "questionNumber": 4,
     "qtype": "feminine"
