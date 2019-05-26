@@ -29,6 +29,24 @@ io.on('connection', (socket) => {
     console.log("Connected user : " + socket.id, data.username);
     users.push({"id" : socket.id, "username" : data.username});
     console.log(users);
+
+    io.sockets.emit('connected', {
+      'message': data.username + " joined the chat. Waiting for " + (5 - users.length) + " others.",
+      'username': "QuizBot"
+    });
+  });
+
+  socket.on('welcome', (data) => {
+    io.sockets.connected[socket.id].emit('new_message', {
+      'message': "Hello " + data.username + "! Welcome to the quiz. You will be asked to answer 18 multilple-choice questions in this quiz, with four other participants.",
+      'username': "QuizBot"
+    });
+
+    io.sockets.connected[socket.id].emit('new_message', {
+      'message': "You will first answer each question individually. Next, you will see group answers. Then you may discuss the group's answers through this chat. Finally, you can make changes to your answer, confidence level or explanation." +
+      " If the instructions are clear, type GO to start the quiz!",
+      'username': "QuizBot"
+    });
   });
 
   socket.on('new_message', (data) => {
