@@ -27,24 +27,14 @@ io.on('connection', (socket) => {
 
   socket.on('new_connection', (data) => {
     console.log("Connected user : " + socket.id, data.username);
-    users.push({"id" : socket.id, "username" : data.username});
+    users.push({
+      "id": socket.id,
+      "username": data.username
+    });
     console.log(users);
 
     io.sockets.emit('connected', {
-      'message': data.username + " joined the chat. Waiting for " + (5 - users.length) + " others.",
-      'username': "QuizBot"
-    });
-  });
-
-  socket.on('welcome', (data) => {
-    io.sockets.connected[socket.id].emit('new_message', {
-      'message': "Hello " + data.username + "! Welcome to the quiz. You will be asked to answer 18 multilple-choice questions in this quiz, with four other participants.",
-      'username': "QuizBot"
-    });
-
-    io.sockets.connected[socket.id].emit('new_message', {
-      'message': "You will first answer each question individually. Next, you will see group answers. Then you may discuss the group's answers through this chat. Finally, you can make changes to your answer, confidence level or explanation." +
-      " If the instructions are clear, type GO to start the quiz!",
+      'message': data.username + " joined the chat. Waiting for " + (5 - io.engine.clientsCount) + " others.",
       'username': "QuizBot"
     });
   });
@@ -55,4 +45,15 @@ io.on('connection', (socket) => {
       'username': data.username
     });
   });
+
+  // socket.on('disconnect_me', (data) => {
+  //   socket.close();
+  //   for(var i = 0; i < users.length; i++){
+  //      if(users[i].id == data.id) {
+  //        users.splice(i, 1);
+  //      }
+  //   }
+  //   console.log(users);
+  // });
+
 });
