@@ -1,5 +1,4 @@
 var express = require("express");
-var port = process.env.PORT || 8080;
 var bodyParser = require("body-parser");
 var routes = require("./routes/routes.js");
 
@@ -17,3 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 routes(app);
 
 server.listen(process.env.PORT || 5000);
+
+const io = require("socket.io")(server);
+io.on('connection', (socket) => {
+  console.log('New user connected');
+});
