@@ -60,7 +60,11 @@ exports.getFeedbackWithoutCues = function(userAnswer) {
     }
   }
 
-  return(final);
+  var respose = {
+    'question' : question,
+    'feedback' : final
+  };
+  return(respose);
 
 };
 
@@ -128,7 +132,11 @@ exports.getFeedbackWithCues = function(userAnswer) {
     }
   }
 
-  return(final);
+  var respose = {
+    'question' : question,
+    'feedback' : final
+  };
+  return(respose);
 };
 
 // Function to get the relevenat explanation for a user, ofr a given question and answer
