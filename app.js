@@ -50,9 +50,11 @@ io.on('connection', (socket) => {
 
   socket.on('started', (data) => {
     io.sockets.emit('user_started', {
-      'message': data.username + " started the quiz. You will be shown the question and the answers to prepare for discussion.",
+      'message': data.username + " started the quiz. You will be shown the question and the answers to prepare for discussion. " +
+      "Results will be shown as soon as the participant answers the question.",
       'question' : data.question,
-      'username': "QuizBot"
+      'username': "QuizBot",
+      'currentUser' : data.username
     });
   });
 
