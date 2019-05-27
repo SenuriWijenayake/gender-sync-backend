@@ -48,6 +48,14 @@ io.on('connection', (socket) => {
     });
   });
 
+  socket.on('started', (data) => {
+    io.sockets.emit('user_started', {
+      'message': data.username + " started the quiz. You will be shown the question and the answers to prepare for discussion.",
+      'question' : data.question,
+      'username': "QuizBot"
+    });
+  });
+
 });
 
 //routes
