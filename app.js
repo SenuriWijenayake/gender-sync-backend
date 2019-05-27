@@ -58,6 +58,20 @@ io.on('connection', (socket) => {
     }
     console.log(users);
     console.log(distinctUsers);
+    console.log(io.engine.clientsCount);
+
+    var count_left = 5 - distinctUsers.length;
+    if (count_left > 0){
+      io.sockets.emit('new_message', {
+        'message': (5 - distinctUsers.length) + " users are yet to join the chat. Please read the instructions till then. The quiz will start once everyone is connected." ,
+        'username': "QuizBot"
+      });
+    } else {
+      io.sockets.emit('ready', {
+        'message': "All users are connected. The quiz starts now!",
+        'username': "QuizBot"
+      });
+    }
 
   });
 
@@ -106,6 +120,10 @@ app.post('/feedback', function(req, res) {
       io.sockets.emit('feedback', {
         'info': result
       });
+      io.sockets.emit('new_message', {
+        'message': "You may discuss the answers with your group members now. The objective of this exercise is to clarify doubts and arrive at the best possible answer.",
+        'username': "QuizBot"
+      });
       resolve(res.status(200).send(result));
     });
   });
@@ -131,6 +149,16 @@ app.post('/question', function(req, res) {
   console.log("Request received at question");
   data = logic.getQuestionByQId(req.body.id);
   result = JSON.stringify(data);
+
+  //Sending the question data to the confederates
+  if (req.body.id != -1){
+    io.sockets.emit('new_question', {
+      'message': "Participant moved to the next question.",
+      'question' : data,
+      'username': "QuizBot"
+    });
+  }
+
   res.status(200).send(result);
 });
 
