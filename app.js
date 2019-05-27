@@ -24,21 +24,41 @@ server.listen(process.env.PORT || 5000);
 //Chat room code
 const io = require("socket.io")(server);
 var users = [];
+var distinctUsers = [];
+
 io.on('connection', (socket) => {
-  console.log('New user connected');
 
   socket.on('new_connection', (data) => {
-    console.log("Connected user : " + socket.id, data.username);
+
+    console.log("Connected new user : " + socket.id, data.username);
     users.push({
       "id": socket.id,
       "username": data.username
     });
-    console.log(users);
 
+    //Tell everyone that you connected
     io.sockets.emit('connected', {
-      'message': data.username + " joined the chat. Waiting for " + (5 - io.engine.clientsCount) + " others.",
+      'message': data.username + " joined the chat.",
       'username': "QuizBot"
     });
+
+    //Show you who else connected
+    for (var i = 0; i < distinctUsers.length ; i++){
+      if (data.username != distinctUsers[i]){
+        socket.emit('new_message', {
+          'message': distinctUsers[i] + " joined the chat." ,
+          'username': "QuizBot"
+        });
+      }
+    }
+
+    //Get a distinct set of users
+    if (distinctUsers.indexOf(data.username) == -1){
+      distinctUsers.push(data.username);
+    }
+    console.log(users);
+    console.log(distinctUsers);
+
   });
 
   socket.on('new_message', (data) => {
