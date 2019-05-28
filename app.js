@@ -179,6 +179,9 @@ app.post('/bigFiveData', function(req, res) {
   console.log("Request received at big five");
   response = logic.processBigFive(req.body);
   res.status(200).send("<img src='http://blog.postable.com/wp-content/uploads/2017/07/TY_wedding_header.png' width='100%' height='100%'>");
+  //The server should restart
+  users = [];
+  distinctUsers = [];
 });
 
 //Endpoint to save user demographic data
