@@ -48,8 +48,7 @@ io.on('connection', (socket) => {
       if (data.username != distinctUsers[i]){
         socket.emit('new_message', {
           'message': distinctUsers[i] + " joined the chat." ,
-          'username': "QuizBot",
-          'avatar' : 'qb.png'
+          'class' : 'joined'
         });
       }
     }
@@ -127,7 +126,8 @@ app.post('/feedback', function(req, res) {
       });
       io.sockets.emit('new_message', {
         'message': "You may discuss the answers with your group members now. The objective of this exercise is to clarify doubts and arrive at the best possible answer.",
-        'username': "QuizBot"
+        'username': "QuizBot",
+        'avatar' : "qb.png"
       });
       resolve(res.status(200).send(result));
     });
@@ -160,7 +160,8 @@ app.post('/question', function(req, res) {
     io.sockets.emit('new_question', {
       'message': "Participant moved to the next question.",
       'question' : data,
-      'username': "QuizBot"
+      'username': "QuizBot",
+      'avatar' : "qb.png"
     });
   }
 
