@@ -39,7 +39,8 @@ io.on('connection', (socket) => {
     //Tell everyone that you connected
     io.sockets.emit('connected', {
       'message': data.username + " joined the chat.",
-      'username': "QuizBot"
+      'username': "QuizBot",
+      'class' : 'joined'
     });
 
     //Show you who else connected
@@ -47,7 +48,8 @@ io.on('connection', (socket) => {
       if (data.username != distinctUsers[i]){
         socket.emit('new_message', {
           'message': distinctUsers[i] + " joined the chat." ,
-          'username': "QuizBot"
+          'username': "QuizBot",
+          'avatar' : 'qb.png'
         });
       }
     }
@@ -64,12 +66,13 @@ io.on('connection', (socket) => {
     if (count_left > 0){
       io.sockets.emit('new_message', {
         'message': (5 - distinctUsers.length) + " users are yet to join the chat. Please read the instructions till then. The quiz will start once everyone is connected." ,
-        'username': "QuizBot"
+        'class': 'status'
       });
     } else {
       io.sockets.emit('ready', {
         'message': "All users are connected. The quiz starts now!",
-        'username': "QuizBot"
+        'username': "QuizBot",
+        'avatar' : "qb.png"
       });
     }
 
@@ -78,7 +81,8 @@ io.on('connection', (socket) => {
   socket.on('new_message', (data) => {
     io.sockets.emit('new_message', {
       'message': data.message,
-      'username': data.username
+      'username': data.username,
+      'avatar' : data.avatar
     });
   });
 
@@ -88,7 +92,8 @@ io.on('connection', (socket) => {
       "Results will be shown as soon as the participant answers the question.",
       'question' : data.question,
       'username': "QuizBot",
-      'currentUser' : data.username
+      'currentUser' : data.username,
+      'avatar' : "qb.png"
     });
   });
 
