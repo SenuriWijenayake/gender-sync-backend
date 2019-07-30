@@ -9,7 +9,8 @@ var userSchema = new Schema({
   education: String,
   field : String,
   discussion : Boolean,
-  cues: Boolean,
+  cues: String,
+  visibility: Boolean,
   genderSpecified : {type : String, required: false},
   qOrder : {type : Array}
 });

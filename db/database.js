@@ -96,7 +96,8 @@ exports.saveUser = function(user) {
       education: user.education,
       field: user.field,
       discussion: user.discussion == 'Yes' ? true : false,
-      cues: user.cues == 'Yes' ? true : false,
+      cues: user.cues,
+      visibility: user.visibility == 'Yes' ? true : false,
       qOrder : user.qOrder
     });
 
