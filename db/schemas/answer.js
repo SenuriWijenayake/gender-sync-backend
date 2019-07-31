@@ -7,10 +7,8 @@ var answerSchema = new Schema({
   questionId: Number,
   oldAnswerId : Number,
   oldConfidence : Number,
-  oldExplanation : String,
   newAnswerId : Number,
   newConfidence : Number,
-  newExplanation : String,
   submitTime : { type : Date, required: false, default: Date.now },
   editTime : { type : Date, required: false, default: Date.now }
 });

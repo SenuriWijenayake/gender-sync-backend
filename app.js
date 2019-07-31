@@ -110,15 +110,14 @@ app.post('/feedback', function(req, res) {
   userAnswer.questionId = parseInt(req.body.questionId);
   userAnswer.answerId = parseInt(req.body.answerId);
   userAnswer.confidence = parseFloat(req.body.confidence);
-  userAnswer.explanation = req.body.explanation;
 
   return new Promise(function(resolve, reject) {
 
     logic.saveAnswer(userAnswer).then(function(id) {
-      if (userAnswer.cues != "Yes") {
-        data = logic.getFeedbackWithoutCues(userAnswer);
+      if (userAnswer.cues == "letter") {
+        data = logic.getFeedbackWithLetters(userAnswer);
       } else {
-        data = logic.getFeedbackWithCues(userAnswer);
+        data = logic.getFeedbackWithAvatars(userAnswer);
       }
       result = JSON.stringify(data);
       io.sockets.emit('feedback', {

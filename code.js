@@ -4,8 +4,8 @@ var bigVar = require('./db/bigFiveVariables');
 var db = require('./db/database');
 var shuffle = require('shuffle-array');
 
-//Function to get feedback without cues
-exports.getFeedbackWithoutCues = function(userAnswer) {
+//Function to get feedback wth letters
+exports.getFeedbackWithLetters = function(userAnswer) {
 
   var final = [];
   var question = utils.getQuestionByNumber(userAnswer.questionId);
@@ -68,8 +68,8 @@ exports.getFeedbackWithoutCues = function(userAnswer) {
 
 };
 
-//Function to get feedback with cues
-exports.getFeedbackWithCues = function(userAnswer) {
+//Function to get feedback with avatars
+exports.getFeedbackWithAvatars = function(userAnswer) {
 
   var final = [];
   var question = utils.getQuestionByNumber(userAnswer.questionId);
@@ -252,10 +252,8 @@ exports.saveAnswer = function(ans) {
   answer.questionId = ans.questionId;
   answer.oldAnswerId = ans.answerId;
   answer.oldConfidence = ans.confidence;
-  answer.oldExplanation = ans.explanation;
   answer.newAnswerId = ans.answerId;
   answer.newConfidence = ans.confidence;
-  answer.newExplanation = ans.explanation;
 
   return new Promise(function(resolve, reject) {
     db.saveAnswer(answer).then(function(answerId) {
