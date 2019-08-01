@@ -107,6 +107,9 @@ app.post('/feedback', function(req, res) {
   userAnswer.userId = req.body.userId;
   userAnswer.cues = req.body.cues;
   userAnswer.discussion = req.body.discussion;
+  userAnswer.visibility = req.body.visibility;
+  userAnswer.myAvatar = req.body.myAvatar;
+  userAnswer.username = req.body.username;
   userAnswer.questionId = parseInt(req.body.questionId);
   userAnswer.answerId = parseInt(req.body.answerId);
   userAnswer.confidence = parseFloat(req.body.confidence);
@@ -114,11 +117,8 @@ app.post('/feedback', function(req, res) {
   return new Promise(function(resolve, reject) {
 
     logic.saveAnswer(userAnswer).then(function(id) {
-      if (userAnswer.cues == "letter") {
-        data = logic.getFeedbackWithLetters(userAnswer);
-      } else {
-        data = logic.getFeedbackWithAvatars(userAnswer);
-      }
+      data = logic.getFeedback(userAnswer);
+      console.log(data);
       result = JSON.stringify(data);
       io.sockets.emit('feedback', {
         'info': result

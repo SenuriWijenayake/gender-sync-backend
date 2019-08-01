@@ -5,7 +5,7 @@ var db = require('./db/database');
 var shuffle = require('shuffle-array');
 
 //Function to get feedback wth letters
-exports.getFeedbackWithLetters = function(userAnswer) {
+exports.getFeedback = function(userAnswer) {
 
   var final = [];
   var question = utils.getQuestionByNumber(userAnswer.questionId);
@@ -16,9 +16,9 @@ exports.getFeedbackWithLetters = function(userAnswer) {
 
   //Add my answer
   var obj = {
-    "avatar": "c.png",
+    "avatar": userAnswer.myAvatar,
     "answer": selected.answer,
-    "explanation": userAnswer.explanation,
+    "username" : userAnswer.username,
     "order": 1
   };
   final.push(obj);
@@ -26,20 +26,32 @@ exports.getFeedbackWithLetters = function(userAnswer) {
   //Who are the others supporting me?
   var othersSupportMe;
   var others;
+
   if(question.isMajority){
-    othersSupportMe = sizeValues.maj;
-    others = sizeValues.min;
+    othersSupportMe = sizeValues[0];
+    others = sizeValues[1];
   } else {
-    othersSupportMe = sizeValues.min;
-    others = sizeValues.maj;
+    othersSupportMe = sizeValues[1];
+    others = sizeValues[0];
   }
 
   //Add their answers as well
   var count = shuffle([2,3,4,5]);
-  if (othersSupportMe != []){
-    for(i=0; i < othersSupportMe.length; i++){
+  var letterAvatars = ["a.png", "b.png", "d.png", "e.png"];
+  var neutralAvatars = ["neutral.png", "neutral.png", "neutral.png", "neutral.png"];
+  var avatars;
+
+  //Decide avatar array
+  if (userAnswer.cues == 'letter'){
+    avatars = letterAvatars;
+  } else {
+    avatars = neutralAvatars;
+  }
+
+  if (othersSupportMe != 0){
+    for(i=0; i < othersSupportMe; i++){
       var obj = {
-          "avatar": othersSupportMe[i].avatarNoCues,
+          "avatar": avatars[count[i] - 2],
           "answer": selected.answer,
           "order": count[i]
         };
@@ -49,10 +61,12 @@ exports.getFeedbackWithLetters = function(userAnswer) {
 
   //Add the second best ansers
   var nextAnswer = utils.getUnselectedAnswersOrdered(answers, userAnswer.answerId, question.correctOrder)[0];
-  if (others != []){
-    for(i=0; i < others.length; i++){
+  if (others != 0){
+    for(i=0; i < others; i++){
+      var c = count[count.length - (i+1)] - 2;
+      console.log("here" + c);
       var obj = {
-          "avatar": others[i].avatarNoCues,
+          "avatar": avatars[c],
           "answer": nextAnswer.answer,
           "order": count[count.length - (i+1)]
         };
@@ -60,84 +74,14 @@ exports.getFeedbackWithLetters = function(userAnswer) {
     }
   }
 
-  var respose = {
+  var response = {
     'question' : question,
     'feedback' : final
   };
-  return(respose);
-
+  return(response);
+  console.log(response);
 };
 
-//Function to get feedback with avatars
-exports.getFeedbackWithAvatars = function(userAnswer) {
-
-  var final = [];
-  var question = utils.getQuestionByNumber(userAnswer.questionId);
-
-  var answers = question.answers;
-  var sizeValues = question.sizeValues;
-
-  //Need to get this from the database
-  var username = "Amy";
-  var myGender = "female";
-  var selected = utils.getAnswerById(answers, userAnswer.answerId);
-
-  //Add my answer
-  var avatar = (myGender == "female") ? "female.png" : "male.png";
-  var obj = {
-    "avatar": avatar,
-    "username": username,
-    "answer": selected.answer,
-    "explanation": userAnswer.explanation,
-    "order": 1
-  };
-  final.push(obj);
-
-  //Who are the others supporting me?
-  var othersSupportMe;
-  var others;
-  if(question.isMajority){
-    othersSupportMe = sizeValues.maj;
-    others = sizeValues.min;
-  } else {
-    othersSupportMe = sizeValues.min;
-    others = sizeValues.maj;
-  }
-
-  //Add their answers as well
-  var count = shuffle([2,3,4,5]);
-  if (othersSupportMe != []){
-    for(i=0; i < othersSupportMe.length; i++){
-      var obj = {
-          "avatar": othersSupportMe[i].avatar,
-          "username": othersSupportMe[i].username,
-          "answer": selected.answer,
-          "order": count[i]
-        };
-      final.push(obj);
-    }
-  }
-
-  //Add the second best ansers
-  var nextAnswer = utils.getUnselectedAnswersOrdered(answers, userAnswer.answerId, question.correctOrder)[0];
-  if (others != []){
-    for(i=0; i < others.length; i++){
-      var obj = {
-          "avatar": others[i].avatar,
-          "username": others[i].username,
-          "answer": nextAnswer.answer,
-          "order": count[count.length - (i+1)]
-        };
-      final.push(obj);
-    }
-  }
-
-  var respose = {
-    'question' : question,
-    'feedback' : final
-  };
-  return(respose);
-};
 
 // Function to get the relevenat explanation for a user, ofr a given question and answer
 // To be implemented
@@ -222,7 +166,7 @@ exports.getBigFiveQuestions = function() {
 //Function to save user data
 exports.saveUserData = function(user) {
   var qOrder = [-1];
-  var q = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
+  var q = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
   var newQ = shuffle(q);
   for (var i = 0; i < newQ.length ; i++){
     qOrder.push(newQ[i]);

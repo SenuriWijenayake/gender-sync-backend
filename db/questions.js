@@ -1,58 +1,27 @@
-//Sizevalues shows the female,male,female,male counts for my group and the other group (either majority or minority) respectively.
+//Sizevalues shows maj size and min size without the user
 module.exports = [
   {
     "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatarNoCues": "a.png",
-          "avatar": "male.png"
-        },
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatarNoCues": "b.png",
-          "avatar": "female.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatarNoCues": "d.png",
-          "avatar": "female.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatarNoCues": "e.png",
-          "avatar": "male.png"
-        }
-      ],
-      "min": [],
-      "summarised": [
-        0,
-        0,
-        2,
-        2
-      ]
-    },
-    "questionText": "In the movie Sex and The City, which designer does character Carrie Bradshaw (Sarah Jessica Parker) receive a wedding dress from?",
+    "sizeValues": [
+      4,
+      0
+    ],
+    "questionText": "What is the largest country in the world (by area)?",
     "answers": [
       {
-        "answer": "Vera Wang",
+        "answer": "Canada",
         "id": 1
       },
       {
-        "answer": "Carolina Herrera",
+        "answer": "United States of America",
         "id": 2
       },
       {
-        "answer": "Vivienne Westwood",
+        "answer": "China",
         "id": 3
       },
       {
-        "answer": "Lanvin",
+        "answer": "Russia",
         "id": 4
       }
     ],
@@ -63,782 +32,14 @@ module.exports = [
       3,
       4
     ],
-    "questionNumber": -1,
-    "qtype": "feminine"
+    "questionNumber": -1
   },
   {
     "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        }
-      ],
-      "summarised": [
-        1,
-        0,
-        1,
-        2
-      ]
-    },
-    "questionText": "Which actress was quoted, 'What do I wear to bed? Chanel No. 5 of course.'?",
-    "answers": [
-      {
-        "answer": "Audrey Hepburn",
-        "id": 1
-      },
-      {
-        "answer": "Katharine Hepburn",
-        "id": 2
-      },
-      {
-        "answer": "Raquel Welch",
-        "id": 3
-      },
-      {
-        "answer": "Marilyn Monroe",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      2,
-      1,
-      3
-    ],
-    "questionNumber": 0,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        }
-      ],
-      "summarised": [
-        0,
-        1,
-        2,
-        1
-      ]
-    },
-    "questionText": "Which fashion house was founded first?",
-    "answers": [
-      {
-        "answer": "Dior",
-        "id": 1
-      },
-      {
-        "answer": "Givenchy",
-        "id": 2
-      },
-      {
-        "answer": "Yves Saint Laurent",
-        "id": 3
-      },
-      {
-        "answer": "Prada",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      1,
-      3,
-      4,
-      2
-    ],
-    "questionNumber": 1,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "summarised": [
-        0,
-        2,
-        2,
-        0
-      ]
-    },
-    "questionText": "What is the name of the folding Japanese fan?",
-    "answers": [
-      {
-        "answer": "Zori",
-        "id": 1
-      },
-      {
-        "answer": "Ogi",
-        "id": 2
-      },
-      {
-        "answer": "Uchiwa",
-        "id": 3
-      },
-      {
-        "answer": "Abaniko",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      3,
-      2,
-      1,
-      4
-    ],
-    "questionNumber": 3,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "summarised": [
-        2,
-        0,
-        0,
-        2
-      ]
-    },
-    "questionText": "Who is considered to be the inventor of the miniskirt?",
-    "answers": [
-      {
-        "answer": "Twiggy",
-        "id": 1
-      },
-      {
-        "answer": "Mary Quant",
-        "id": 2
-      },
-      {
-        "answer": "Brigitte Baroot",
-        "id": 3
-      },
-      {
-        "answer": "Audrey Hepburn",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      2,
-      3,
-      4,
-      1
-    ],
-    "questionNumber": 4,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": true,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "summarised": [
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "questionText": "What was Coco Chanel's (the fashion designer) real name?",
-    "answers": [
-      {
-        "answer": "Gabrielle",
-        "id": 1
-      },
-      {
-        "answer": "Colette",
-        "id": 2
-      },
-      {
-        "answer": "Sabine",
-        "id": 3
-      },
-      {
-        "answer": "Marie",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      2,
-      1,
-      3
-    ],
-    "questionNumber": 5,
-    "qtype": "feminine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [],
-      "summarised": [
-        0,
-        0,
-        2,
-        2
-      ]
-    },
-    "questionText": "Who did Roger Federer defeat to win the 2018 Australian Open men's singles title?",
-    "answers": [
-      {
-        "answer": "Gael Monfils",
-        "id": 1
-      },
-      {
-        "answer": "Marin Cilic",
-        "id": 2
-      },
-      {
-        "answer": "Andy Murray",
-        "id": 3
-      },
-      {
-        "answer": "Rafael Nadal",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      3,
-      2,
-      1
-    ],
-    "questionNumber": 6,
-    "qtype": "masculine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "summarised": [
-        1,
-        0,
-        1,
-        2
-      ]
-    },
-    "questionText": "Who was the captain of the 2014 FIFA World Cup winning team from Germany?",
-    "answers": [
-      {
-        "answer": "Philipp Lahm",
-        "id": 1
-      },
-      {
-        "answer": "Manuel Neuer",
-        "id": 2
-      },
-      {
-        "answer": "Miroslave Klose",
-        "id": 3
-      },
-      {
-        "answer": "Mats Hummels",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      2,
-      1,
-      3,
-      4
-    ],
-    "questionNumber": 7,
-    "qtype": "masculine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "summarised": [
-        0,
-        1,
-        2,
-        1
-      ]
-    },
-    "questionText": "Which player would normally take a line-out in rugby?",
-    "answers": [
-      {
-        "answer": "Scrum-half",
-        "id": 1
-      },
-      {
-        "answer": "Fly-half",
-        "id": 2
-      },
-      {
-        "answer": "Full-back",
-        "id": 3
-      },
-      {
-        "answer": "Hooker",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      3,
-      1,
-      4,
-      2
-    ],
-    "questionNumber": 8,
-    "qtype": "masculine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "summarised": [
-        0,
-        2,
-        2,
-        0
-      ]
-    },
-    "questionText": "Which team scored the highest number of goals at the FIFA World Cup 2018?",
-    "answers": [
-      {
-        "answer": "Belgium",
-        "id": 1
-      },
-      {
-        "answer": "France",
-        "id": 2
-      },
-      {
-        "answer": "England",
-        "id": 3
-      },
-      {
-        "answer": "Croatia",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      2,
-      1,
-      4,
-      3
-    ],
-    "questionNumber": 9,
-    "qtype": "masculine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "summarised": [
-        2,
-        0,
-        0,
-        2
-      ]
-    },
-    "questionText": "Which team did Adam Gilchrist score his first test century against?",
-    "answers": [
-      {
-        "answer": "Pakistan",
-        "id": 1
-      },
-      {
-        "answer": "England",
-        "id": 2
-      },
-      {
-        "answer": "Zimbabwe",
-        "id": 3
-      },
-      {
-        "answer": "India",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      2,
+    "sizeValues": [
       3,
       1
     ],
-    "questionNumber": 10,
-    "qtype": "masculine"
-  },
-  {
-    "isMajority": true,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "summarised": [
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "questionText": "What is the length of a professional cricket pitch?",
-    "answers": [
-      {
-        "answer": "29 Yards",
-        "id": 1
-      },
-      {
-        "answer": "28 Yards",
-        "id": 2
-      },
-      {
-        "answer": "22 Yards",
-        "id": 3
-      },
-      {
-        "answer": "27 Yards",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      3,
-      2,
-      4,
-      1
-    ],
-    "questionNumber": 11,
-    "qtype": "masculine"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [],
-      "summarised": [
-        0,
-        0,
-        2,
-        2
-      ]
-    },
     "questionText": "What is the capital of Bulgaria?",
     "answers": [
       {
@@ -860,52 +61,87 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      4,
+      2,
       1,
       3,
+      4
+    ],
+    "questionNumber": 0
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      2,
       2
     ],
-    "questionNumber": 12,
-    "qtype": "neutral"
+    "questionText": "Who was the prime minister of the United Kingdom at the time of Queen Elizabeth II’s coronation?",
+    "answers": [
+      {
+        "answer": "Neville Chamberlain",
+        "id": 1
+      },
+      {
+        "answer": "Winston Churchill",
+        "id": 2
+      },
+      {
+        "answer": "Harold McMillan",
+        "id": 3
+      },
+      {
+        "answer": "Margaret Thatcher",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 1
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      4,
+      0
+    ],
+    "questionText": "Which city's famous nickname is the 'Pearl of the Orient'?",
+    "answers": [
+      {
+        "answer": "Hong Kong",
+        "id": 1
+      },
+      {
+        "answer": "Kyoto",
+        "id": 2
+      },
+      {
+        "answer": "Taipei",
+        "id": 3
+      },
+      {
+        "answer": "Singapore",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 2
   },
   {
     "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        }
-      ],
-      "summarised": [
-        1,
-        0,
-        1,
-        2
-      ]
-    },
+    "sizeValues": [
+      4,
+      0
+    ],
     "questionText": "The flag of which country is the only non-quadrilateral national flag?",
     "answers": [
       {
@@ -927,52 +163,19 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      3,
-      1,
       2,
+      1,
+      3,
       4
     ],
-    "questionNumber": 13,
-    "qtype": "neutral"
+    "questionNumber": 3
   },
   {
     "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        }
-      ],
-      "summarised": [
-        0,
-        1,
-        2,
-        1
-      ]
-    },
+    "sizeValues": [
+      3,
+      1
+    ],
     "questionText": "Which country has the longest coastline in the world?",
     "answers": [
       {
@@ -995,185 +198,18 @@ module.exports = [
     "isObjective": true,
     "correctOrder": [
       2,
-      3,
       1,
+      3,
       4
     ],
-    "questionNumber": 14,
-    "qtype": "neutral"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "summarised": [
-        0,
-        2,
-        2,
-        0
-      ]
-    },
-    "questionText": "Where was the hottest temperature ever recorded?",
-    "answers": [
-      {
-        "answer": "Libya",
-        "id": 1
-      },
-      {
-        "answer": "India",
-        "id": 2
-      },
-      {
-        "answer": "Peru",
-        "id": 3
-      },
-      {
-        "answer": "Mexico",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      1,
-      2,
-      3
-    ],
-    "questionNumber": 15,
-    "qtype": "neutral"
-  },
-  {
-    "isMajority": false,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "summarised": [
-        2,
-        0,
-        0,
-        2
-      ]
-    },
-    "questionText": "Which of these countries uses Shilling as its currency?",
-    "answers": [
-      {
-        "answer": "Malta",
-        "id": 1
-      },
-      {
-        "answer": "Kenya",
-        "id": 2
-      },
-      {
-        "answer": "Zimbabwe",
-        "id": 3
-      },
-      {
-        "answer": "Seychelles",
-        "id": 4
-      }
-    ],
-    "isObjective": true,
-    "correctOrder": [
-      4,
-      3,
-      1,
-      2
-    ],
-    "questionNumber": 16,
-    "qtype": "neutral"
+    "questionNumber": 4
   },
   {
     "isMajority": true,
-    "sizeValues": {
-      "maj": [
-        {
-          "id": "A",
-          "username": "Pete",
-          "avatar": "male.png",
-          "avatarNoCues": "a.png"
-        },
-        {
-          "id": "D",
-          "username": "Mary",
-          "avatar": "female.png",
-          "avatarNoCues": "d.png"
-        }
-      ],
-      "min": [
-        {
-          "id": "B",
-          "username": "Anna",
-          "avatar": "female.png",
-          "avatarNoCues": "b.png"
-        },
-        {
-          "id": "E",
-          "username": "Jack",
-          "avatar": "male.png",
-          "avatarNoCues": "e.png"
-        }
-      ],
-      "summarised": [
-        1,
-        1,
-        1,
-        1
-      ]
-    },
+    "sizeValues": [
+      2,
+      2
+    ],
     "questionText": "In which country is the world's highest waterfall?",
     "answers": [
       {
@@ -1195,12 +231,317 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      4,
       2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 5
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
       3,
       1
     ],
-    "questionNumber": 2,
-    "qtype": "neutral"
+    "questionText": "Where was the hottest temperature ever recorded?",
+    "answers": [
+      {
+        "answer": "Libya",
+        "id": 1
+      },
+      {
+        "answer": "India",
+        "id": 2
+      },
+      {
+        "answer": "Peru",
+        "id": 3
+      },
+      {
+        "answer": "Mexico",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 6
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      4,
+      0
+    ],
+    "questionText": "People should be fined for not recycling. Do you agree or disagree with this statement?",
+    "answers": [
+      {
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 7
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      3,
+      1
+    ],
+    "questionText": "The right to bear arms is a necessary constitutional amendment. Do you agree or disagree with this statement?",
+    "answers": [
+      {
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 8
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      2,
+      2
+    ],
+    "questionText": "Democracy is the best form of government. Do you agree or disagree with this statement?",
+    "answers": [
+      {
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 9
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      4,
+      0
+    ],
+    "questionText": "Cameras in public places an invasion of privacy. Do you agree or disagree with this statement?",
+    "answers": [
+      {
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 10
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      4,
+      0
+    ],
+    "questionText": "Nuclear energy should be used for commercial use. Do you agree or disagree with this statement?",
+    "answers": [
+      {
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 11
+  },
+  {
+    "isMajority": false,
+    "sizeValues": [
+      3,
+      1
+    ],
+    "questionText": "That no-one should be able to post online comments anonymously. Do you agree or disagree with this statement?",
+    "answers": [
+      {
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 12
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      2,
+      2
+    ],
+    "questionText": "Social media sites help students do better at school. Do you agree or disagree with this statement?",
+    "answers": [
+      {
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 13
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      3,
+      1
+    ],
+    "questionText": "The voting age should be lowered. Do you agree or disagree with this statement?",
+    "answers": [
+      {
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "questionNumber": 14
   }
 ];
