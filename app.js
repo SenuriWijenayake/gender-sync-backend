@@ -252,6 +252,24 @@ app.post('/updateAnswerAndShowFeedback', function(req, res) {
 });
 
 
+//Endpoint to only show feedback for public condition
+app.post('/showFeedbackOnly', function(req, res) {
+  console.log("Request received at showFeedbackOnly endpoint");
+  var userAnswer = {};
+
+  var answer = req.body.answer;
+  var feedback = req.body.feedback;
+
+  userAnswer.userId = answer.userId;
+  userAnswer.questionId = parseInt(answer.questionId);
+  userAnswer.newAnswerId = parseInt(answer.answerId);
+  userAnswer.newConfidence = parseFloat(answer.confidence);
+
+  var newFeedback = logic.getUpdatedFeedback(userAnswer, feedback);
+  res.status(200).send(newFeedback);
+});
+
+
 app.post('/chat', function(req, res) {
   console.log(req.body);
   res.status(200).send("Response from Quiz Bot");
