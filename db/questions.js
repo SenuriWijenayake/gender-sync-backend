@@ -448,7 +448,7 @@ module.exports = [
       3,
       1
     ],
-    "questionText": "That no-one should be able to post online comments anonymously. Do you agree or disagree with this statement?",
+    "questionText": "No one should be able to post online comments anonymously. Do you agree or disagree with this statement?",
     "answers": [
       {
         "answer": "Strongly Disagree",
