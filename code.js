@@ -83,6 +83,48 @@ exports.getFeedback = function(userAnswer) {
 };
 
 
+//Function to get updated feedback
+exports.getUpdatedFeedback = function (userAnswer, feedback){
+  var data = [
+  {
+    "avatar": "https://ui-avatars.com/api/?name=ry+h&rounded=true&background=EBEDEF&color=000000&bold=true",
+    "answer": "United States of America",
+    "username": "RH",
+    "order": 1,
+    "hasChanged": true,
+    "newAnswer" : "United States of America"
+  },
+  {
+    "avatar": "b.png",
+    "answer": "Canada",
+    "order": 3,
+    "hasChanged": true,
+    "newAnswer": "United States of America"
+  },
+  {
+    "avatar": "d.png",
+    "answer": "Canada",
+    "order": 4,
+    "hasChanged": false,
+    "newAnswer": "Canada"
+  },
+  {
+    "avatar": "e.png",
+    "answer": "Canada",
+    "order": 5,
+    "hasChanged": false,
+    "newAnswer": "Canada"
+  },
+  {
+    "avatar": "a.png",
+    "answer": "Canada",
+    "hasChanged": false,
+    "order": 2,
+    "newAnswer": "Canada"
+  }
+];
+  return (data);
+};
 // Function to get the relevenat explanation for a user, ofr a given question and answer
 // To be implemented
 exports.getExplanation = function (userId, qId, answerId){

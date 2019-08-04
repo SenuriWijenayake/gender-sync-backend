@@ -228,6 +228,30 @@ app.post('/updateAnswer', function(req, res) {
   });
 });
 
+
+//Endpoint to update answer and show feedback for public condition
+app.post('/updateAnswerAndShowFeedback', function(req, res) {
+  console.log("Request received at updateAnswerAndShowFeedback endpoint");
+  var userAnswer = {};
+
+  var answer = req.body.answer;
+  var feedback = req.body.feedback;
+
+  userAnswer.userId = answer.userId;
+  userAnswer.questionId = parseInt(answer.questionId);
+  userAnswer.newAnswerId = parseInt(answer.answerId);
+  userAnswer.newConfidence = parseFloat(answer.confidence);
+
+  return new Promise(function(resolve, reject) {
+    logic.updateAnswer(userAnswer).then(function(id) {
+      //Get the updated feedback
+      var newFeedback = logic.getUpdatedFeedback(userAnswer, feedback);
+      resolve(res.status(200).send(newFeedback));
+    });
+  });
+});
+
+
 app.post('/chat', function(req, res) {
   console.log(req.body);
   res.status(200).send("Response from Quiz Bot");
