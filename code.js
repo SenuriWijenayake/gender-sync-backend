@@ -300,8 +300,8 @@ exports.getBigFiveQuestions = function() {
 
 //Function to save user data
 exports.saveUserData = function(user) {
-  var qOrder = [-1];
-  var q = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+  var qOrder = [];
+  var q = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
   var newQ = shuffle(q);
   for (var i = 0; i < newQ.length; i++) {
     qOrder.push(newQ[i]);
