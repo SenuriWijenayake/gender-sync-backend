@@ -95,6 +95,7 @@ exports.getQuestionByNumber = function(set, number) {
 
   var questions;
   if (set == "1"){
+    console.log("Inside set one");
     questions = this.questions;
   } else {
     questions = this.questionsOne;

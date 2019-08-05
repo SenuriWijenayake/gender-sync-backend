@@ -243,10 +243,16 @@ app.post('/updateAnswerAndShowFeedback', function(req, res) {
   userAnswer.questionId = parseInt(answer.questionId);
   userAnswer.newAnswerId = parseInt(answer.answerId);
   userAnswer.newConfidence = parseFloat(answer.confidence);
-
+  
   return new Promise(function(resolve, reject) {
     logic.updateAnswer(userAnswer).then(function(id) {
-      var newFeedback = logic.getUpdatedFeedback(userAnswer, feedback);
+      var shouldChange = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId).minorityConforms;
+      var newFeedback;
+      if (shouldChange){
+        newFeedback = logic.getUpdatedFeedback(userAnswer, feedback);
+      } else {
+        newFeedback = logic.getNoChangeFeedback(userAnswer, feedback);
+      }
       resolve(res.status(200).send(newFeedback));
     });
   });
@@ -265,8 +271,15 @@ app.post('/showFeedbackOnly', function(req, res) {
   userAnswer.questionId = parseInt(answer.questionId);
   userAnswer.newAnswerId = parseInt(answer.answerId);
   userAnswer.newConfidence = parseFloat(answer.confidence);
+  userAnswer.set = answer.set;
 
-  var newFeedback = logic.getUpdatedFeedback(userAnswer, feedback);
+  var shouldChange = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId).minorityConforms;
+  var newFeedback;
+  if (shouldChange){
+    newFeedback = logic.getUpdatedFeedback(userAnswer, feedback);
+  } else {
+    newFeedback = logic.getNoChangeFeedback(userAnswer, feedback);
+  }
   res.status(200).send(newFeedback);
 });
 

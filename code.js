@@ -85,11 +85,54 @@ exports.getFeedback = function(userAnswer) {
   console.log(response);
 };
 
+
+//Function to get feedback with no changes
+exports.getNoChangeFeedback = function(userAnswer, feedback){
+  var data = [];
+  var question = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId);
+  var allAnswers = question.answers;
+
+  //Set my answer
+  var me = utils.getAnswerByOrderId(feedback, 1);
+  var myNewAnswer = utils.getAnswerById(allAnswers, userAnswer.newAnswerId);
+  var hasChanged = (myNewAnswer.answer == me.answer) ? false : true;
+
+  var obj = {
+    "avatar": me.avatar,
+    "answer": me.answer,
+    "newAnswer": myNewAnswer.answer,
+    "username": me.username,
+    "order": 1,
+    "hasChanged": hasChanged
+  };
+
+  data.push(obj);
+
+  //No changes to others answers
+  for (var i = 0; i < feedback.length; i++) {
+    if (feedback[i].order != 1) {
+      var obj = {
+        "avatar": feedback[i].avatar,
+        "answer": feedback[i].answer,
+        "newAnswer": feedback[i].answer,
+        "order": feedback[i].order,
+        "hasChanged": false
+      };
+      data.push(obj);
+    }
+  }
+
+  return(data);
+
+};
+
+
 //Function to get updated feedback
 exports.getUpdatedFeedback = function(userAnswer, feedback) {
 
   var data = [];
-  var allAnswers = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId).answers;
+  var question = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId);
+  var allAnswers = question.answers;
 
   //Set my answer
   var me = utils.getAnswerByOrderId(feedback, 1);
