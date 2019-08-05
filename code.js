@@ -95,7 +95,8 @@ exports.getUpdatedFeedback = function(userAnswer, feedback) {
   //Set my answer
   var me = utils.getAnswerByOrderId(feedback, 1);
   var myNewAnswer = utils.getAnswerById(allAnswers, userAnswer.newAnswerId);
-  var hasChanged = (myNewAnswer == me.answer) ? false : true;
+  var hasChanged = (myNewAnswer.answer == me.answer) ? false : true;
+  console.log(hasChanged);
 
   var obj = {
     "avatar": me.avatar,
@@ -167,13 +168,8 @@ exports.getUpdatedFeedback = function(userAnswer, feedback) {
   return (data);
 };
 
-
-
 // Function to get the relevenat explanation for a user, ofr a given question and answer
 // To be implemented
-
-
-
 exports.getExplanation = function(userId, qId, answerId) {
   return ("This could be a potential explanation coming from a script");
 };
