@@ -97,6 +97,7 @@ exports.saveUser = function(user) {
       field: user.field,
       discussion: user.discussion == 'Yes' ? true : false,
       cues: user.cues,
+      set: user.set,
       visibility: user.visibility == 'Yes' ? true : false,
       qOrder : user.qOrder
     });

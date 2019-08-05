@@ -11,6 +11,7 @@ var userSchema = new Schema({
   discussion : Boolean,
   cues: String,
   visibility: Boolean,
+  set: String,
   genderSpecified : {type : String, required: false},
   qOrder : {type : Array}
 });
