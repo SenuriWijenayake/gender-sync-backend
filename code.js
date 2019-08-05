@@ -67,7 +67,6 @@ exports.getFeedback = function(userAnswer) {
   if (others != 0) {
     for (i = 0; i < others; i++) {
       var c = count[count.length - (i + 1)] - 2;
-      console.log("here" + c);
       var obj = {
         "avatar": avatars[c],
         "answer": nextAnswer.answer,
@@ -88,7 +87,7 @@ exports.getFeedback = function(userAnswer) {
 
 //Function to get updated feedback
 exports.getUpdatedFeedback = function(userAnswer, feedback) {
-  console.log(feedback);
+
   var data = [];
   var allAnswers = utils.getQuestionByNumber(userAnswer.questionId).answers;
 
@@ -96,7 +95,6 @@ exports.getUpdatedFeedback = function(userAnswer, feedback) {
   var me = utils.getAnswerByOrderId(feedback, 1);
   var myNewAnswer = utils.getAnswerById(allAnswers, userAnswer.newAnswerId);
   var hasChanged = (myNewAnswer.answer == me.answer) ? false : true;
-  console.log(hasChanged);
 
   var obj = {
     "avatar": me.avatar,
@@ -163,8 +161,6 @@ exports.getUpdatedFeedback = function(userAnswer, feedback) {
       }
     }
   }
-
-  console.log(data);
   return (data);
 };
 
