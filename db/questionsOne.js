@@ -68,7 +68,7 @@ module.exports = [
       4
     ],
     "questionNumber": 0,
-    "minorityConforms": true
+    "minorityConforms": false
   },
   {
     "isMajority": true,
@@ -103,7 +103,7 @@ module.exports = [
       4
     ],
     "questionNumber": 1,
-    "minorityConforms": false
+    "minorityConforms": true
   },
   {
     "isMajority": true,
@@ -138,7 +138,7 @@ module.exports = [
       4
     ],
     "questionNumber": 2,
-    "minorityConforms": true
+    "minorityConforms": false
   },
   {
     "isMajority": false,
@@ -208,7 +208,7 @@ module.exports = [
       4
     ],
     "questionNumber": 4,
-    "minorityConforms": false
+    "minorityConforms": true
   },
   {
     "isMajority": true,
@@ -243,7 +243,7 @@ module.exports = [
       4
     ],
     "questionNumber": 5,
-    "minorityConforms": true
+    "minorityConforms": false
   },
   {
     "isMajority": true,
@@ -348,7 +348,7 @@ module.exports = [
       4
     ],
     "questionNumber": 8,
-    "minorityConforms": false
+    "minorityConforms": true
   },
   {
     "isMajority": true,
@@ -383,7 +383,7 @@ module.exports = [
       4
     ],
     "questionNumber": 9,
-    "minorityConforms": true
+    "minorityConforms": false
   },
   {
     "isMajority": true,
@@ -418,7 +418,7 @@ module.exports = [
       4
     ],
     "questionNumber": 10,
-    "minorityConforms": false
+    "minorityConforms": true
   },
   {
     "isMajority": false,
@@ -488,7 +488,7 @@ module.exports = [
       4
     ],
     "questionNumber": 12,
-    "minorityConforms": true
+    "minorityConforms": false
   },
   {
     "isMajority": true,
@@ -523,7 +523,7 @@ module.exports = [
       4
     ],
     "questionNumber": 13,
-    "minorityConforms": false
+    "minorityConforms": true
   },
   {
     "isMajority": true,

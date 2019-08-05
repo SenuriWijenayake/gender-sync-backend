@@ -113,6 +113,7 @@ app.post('/feedback', function(req, res) {
   userAnswer.questionId = parseInt(req.body.questionId);
   userAnswer.answerId = parseInt(req.body.answerId);
   userAnswer.confidence = parseFloat(req.body.confidence);
+  userAnswer.set = req.body.set;
 
   return new Promise(function(resolve, reject) {
 
@@ -135,7 +136,7 @@ app.post('/feedback', function(req, res) {
 
 //Endpoint to get all the questions and answers
 app.get('/questions', function(req, res) {
-  data = logic.getAllQuestions();
+  data = logic.getAllQuestions(req.body.set);
   result = JSON.stringify(data);
   res.status(200).send(result);
 });
@@ -151,7 +152,7 @@ app.get('/', function(req, res) {
 //Endpoint to get a question by id
 app.post('/question', function(req, res) {
   console.log("Request received at question");
-  data = logic.getQuestionByQId(req.body.id);
+  data = logic.getQuestionByQId(req.body.id, req.body.set);
   result = JSON.stringify(data);
 
   //Sending the question data to the confederates
@@ -238,6 +239,7 @@ app.post('/updateAnswerAndShowFeedback', function(req, res) {
   var feedback = req.body.feedback;
 
   userAnswer.userId = answer.userId;
+  userAnswer.set = answer.set;
   userAnswer.questionId = parseInt(answer.questionId);
   userAnswer.newAnswerId = parseInt(answer.answerId);
   userAnswer.newConfidence = parseFloat(answer.confidence);

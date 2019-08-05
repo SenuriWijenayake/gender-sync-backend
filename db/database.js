@@ -114,6 +114,7 @@ exports.saveAnswer = function(answer) {
   return new Promise(function(resolve, reject) {
     var newAnswer = new Answer({
       userId: answer.userId,
+      set: answer.set,
       questionId: answer.questionId,
       oldAnswerId: answer.oldAnswerId,
       oldConfidence: answer.oldConfidence,

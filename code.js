@@ -8,7 +8,7 @@ var shuffle = require('shuffle-array');
 exports.getFeedback = function(userAnswer) {
 
   var final = [];
-  var question = utils.getQuestionByNumber(userAnswer.questionId);
+  var question = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId);
 
   var answers = question.answers;
   var sizeValues = question.sizeValues;
@@ -89,7 +89,7 @@ exports.getFeedback = function(userAnswer) {
 exports.getUpdatedFeedback = function(userAnswer, feedback) {
 
   var data = [];
-  var allAnswers = utils.getQuestionByNumber(userAnswer.questionId).answers;
+  var allAnswers = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId).answers;
 
   //Set my answer
   var me = utils.getAnswerByOrderId(feedback, 1);
@@ -180,8 +180,14 @@ exports.shuffleArray = function(array) {
 };
 
 //Function to create the questions and answers
-exports.getAllQuestions = function() {
-  var questions = utils.questions;
+exports.getAllQuestions = function(set) {
+
+  var questions;
+  if (set == "1"){
+    questions = utils.questions;
+  } else {
+    questions = utils.questionsOne;
+  }
   var response = [];
 
   for (var i = 0; i < questions.length; i++) {
@@ -199,8 +205,13 @@ exports.getAllQuestions = function() {
 };
 
 //Function to get question by Id
-exports.getQuestionByQId = function(id) {
-  var questions = utils.questions;
+exports.getQuestionByQId = function(id, set) {
+  var questions;
+  if (set == "1"){
+    questions = utils.questions;
+  } else {
+    questions = utils.questionsOne;
+  }
   for (var i = 0; i < questions.length; i++) {
     if (questions[i].questionNumber == id) {
       return (questions[i]);
@@ -277,6 +288,7 @@ exports.saveAnswer = function(ans) {
 
   var answer = {};
   answer.userId = ans.userId;
+  answer.set = ans.set;
   answer.questionId = ans.questionId;
   answer.oldAnswerId = ans.answerId;
   answer.oldConfidence = ans.confidence;

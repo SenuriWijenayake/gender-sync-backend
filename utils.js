@@ -2,6 +2,7 @@
 
 //Importing the questions
 exports.questions = require('./db/questions');
+exports.questionsOne = require('./db/questionsOne');
 
 //Get my answer from array
 exports.getAnswerByOrderId = function(answers, order){
@@ -90,8 +91,14 @@ exports.randValues = function(isMajority, sizeValues) {
 };
 
 //Function to get question by questionNumber
-exports.getQuestionByNumber = function(number) {
-  var questions = this.questions
+exports.getQuestionByNumber = function(set, number) {
+
+  var questions;
+  if (set == "1"){
+    questions = this.questions;
+  } else {
+    questions = this.questionsOne;
+  }
 
   for (var i = 0; i < questions.length; i++) {
     if (questions[i].questionNumber == number) {
