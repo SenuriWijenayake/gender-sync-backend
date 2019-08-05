@@ -244,7 +244,6 @@ app.post('/updateAnswerAndShowFeedback', function(req, res) {
 
   return new Promise(function(resolve, reject) {
     logic.updateAnswer(userAnswer).then(function(id) {
-      //Get the updated feedback
       var newFeedback = logic.getUpdatedFeedback(userAnswer, feedback);
       resolve(res.status(200).send(newFeedback));
     });

@@ -3,6 +3,16 @@
 //Importing the questions
 exports.questions = require('./db/questions');
 
+//Get my answer from array
+exports.getAnswerByOrderId = function(answers, order){
+  for (var i = 0; i < answers.length; i++){
+    if (answers[i].order == order){
+      return (answers[i]);
+    }
+  }
+};
+
+
 //Function to randomize the distribution size values
 exports.randValues = function(isMajority, sizeValues) {
 

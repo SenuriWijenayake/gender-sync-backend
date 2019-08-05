@@ -18,8 +18,9 @@ exports.getFeedback = function(userAnswer) {
   var obj = {
     "avatar": userAnswer.myAvatar,
     "answer": selected.answer,
-    "username" : userAnswer.username,
-    "order": 1
+    "username": userAnswer.username,
+    "order": 1,
+    "isInMajority": question.isMajority
   };
   final.push(obj);
 
@@ -27,7 +28,7 @@ exports.getFeedback = function(userAnswer) {
   var othersSupportMe;
   var others;
 
-  if(question.isMajority){
+  if (question.isMajority) {
     othersSupportMe = sizeValues[0];
     others = sizeValues[1];
   } else {
@@ -36,107 +37,153 @@ exports.getFeedback = function(userAnswer) {
   }
 
   //Add their answers as well
-  var count = shuffle([2,3,4,5]);
+  var count = shuffle([2, 3, 4, 5]);
   var letterAvatars = ["a.png", "b.png", "d.png", "e.png"];
   var neutralAvatars = ["neutral.png", "neutral.png", "neutral.png", "neutral.png"];
   var avatars;
 
   //Decide avatar array
-  if (userAnswer.cues == 'letter'){
+  if (userAnswer.cues == 'letter') {
     avatars = letterAvatars;
   } else {
     avatars = neutralAvatars;
   }
 
-  if (othersSupportMe != 0){
-    for(i=0; i < othersSupportMe; i++){
+  //Others are in the same answer as me
+  if (othersSupportMe != 0) {
+    for (i = 0; i < othersSupportMe; i++) {
       var obj = {
-          "avatar": avatars[count[i] - 2],
-          "answer": selected.answer,
-          "order": count[i]
-        };
+        "avatar": avatars[count[i] - 2],
+        "answer": selected.answer,
+        "order": count[i],
+        "isInMajority": question.isMajority
+      };
       final.push(obj);
     }
   }
 
   //Add the second best ansers
   var nextAnswer = utils.getUnselectedAnswersOrdered(answers, userAnswer.answerId, question.correctOrder)[0];
-  if (others != 0){
-    for(i=0; i < others; i++){
-      var c = count[count.length - (i+1)] - 2;
+  if (others != 0) {
+    for (i = 0; i < others; i++) {
+      var c = count[count.length - (i + 1)] - 2;
       console.log("here" + c);
       var obj = {
-          "avatar": avatars[c],
-          "answer": nextAnswer.answer,
-          "order": count[count.length - (i+1)]
-        };
+        "avatar": avatars[c],
+        "answer": nextAnswer.answer,
+        "order": count[count.length - (i + 1)],
+        "isInMajority": !question.isMajority
+      };
       final.push(obj);
     }
   }
 
   var response = {
-    'question' : question,
-    'feedback' : final
+    'question': question,
+    'feedback': final
   };
-  return(response);
+  return (response);
   console.log(response);
 };
 
-
 //Function to get updated feedback
-exports.getUpdatedFeedback = function (userAnswer, feedback){
-  var data = [
-  {
-    "avatar": "https://ui-avatars.com/api/?name=ry+h&rounded=true&background=EBEDEF&color=000000&bold=true",
-    "answer": "United States of America",
-    "username": "RH",
+exports.getUpdatedFeedback = function(userAnswer, feedback) {
+  console.log(feedback);
+  var data = [];
+  var allAnswers = utils.getQuestionByNumber(userAnswer.questionId).answers;
+
+  //Set my answer
+  var me = utils.getAnswerByOrderId(feedback, 1);
+  var myNewAnswer = utils.getAnswerById(allAnswers, userAnswer.newAnswerId);
+  var hasChanged = (myNewAnswer == me.answer) ? false : true;
+
+  var obj = {
+    "avatar": me.avatar,
+    "answer": me.answer,
+    "newAnswer": myNewAnswer.answer,
+    "username": me.username,
     "order": 1,
-    "hasChanged": true,
-    "newAnswer" : "United States of America"
-  },
-  {
-    "avatar": "b.png",
-    "answer": "Canada",
-    "order": 3,
-    "hasChanged": true,
-    "newAnswer": "United States of America"
-  },
-  {
-    "avatar": "d.png",
-    "answer": "Canada",
-    "order": 4,
-    "hasChanged": false,
-    "newAnswer": "Canada"
-  },
-  {
-    "avatar": "e.png",
-    "answer": "Canada",
-    "order": 5,
-    "hasChanged": false,
-    "newAnswer": "Canada"
-  },
-  {
-    "avatar": "a.png",
-    "answer": "Canada",
-    "hasChanged": false,
-    "order": 2,
-    "newAnswer": "Canada"
+    "hasChanged": hasChanged
+  };
+
+  data.push(obj);
+
+  //Separate the others responses as majority and minority
+  var othersInMaj = [];
+  var othersInMin = [];
+  var othersInMinIds = [];
+  var majorityAnswer;
+
+  for (var i = 0; i < feedback.length; i++) {
+    if (feedback[i].order != 1) {
+      if (feedback[i].isInMajority) {
+        othersInMaj.push(feedback[i]);
+        majorityAnswer = feedback[i].answer;
+        //No changes for these answers
+        var obj = {
+          "avatar": feedback[i].avatar,
+          "answer": feedback[i].answer,
+          "newAnswer": feedback[i].answer,
+          "order": feedback[i].order,
+          "hasChanged": false
+        };
+        data.push(obj);
+      } else {
+        //For those who are in the minority there will be changes
+        othersInMin.push(feedback[i]);
+        othersInMinIds.push(feedback[i].order);
+      }
+    }
   }
-];
+
+  if (othersInMin.length != 0) {
+    var oneToBeChanged = shuffle(othersInMinIds)[0];
+    for (var i = 0; i < othersInMin.length; i++) {
+      if (othersInMin[i].order != oneToBeChanged) {
+        //No changes for these answers
+        var obj = {
+          "avatar": othersInMin[i].avatar,
+          "answer": othersInMin[i].answer,
+          "newAnswer": othersInMin[i].answer,
+          "order": othersInMin[i].order,
+          "hasChanged": false
+        };
+        data.push(obj);
+      } else {
+        //For the one that needs to be changed
+        var obj = {
+          "avatar": othersInMin[i].avatar,
+          "answer": othersInMin[i].answer,
+          "newAnswer": majorityAnswer,
+          "order": othersInMin[i].order,
+          "hasChanged": true
+        };
+        data.push(obj);
+      }
+    }
+  }
+
+  console.log(data);
   return (data);
 };
+
+
+
 // Function to get the relevenat explanation for a user, ofr a given question and answer
 // To be implemented
-exports.getExplanation = function (userId, qId, answerId){
+
+
+
+exports.getExplanation = function(userId, qId, answerId) {
   return ("This could be a potential explanation coming from a script");
 };
 
-exports.shuffleArray = function(array){
+exports.shuffleArray = function(array) {
   for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
   }
 };
 
@@ -208,15 +255,18 @@ exports.getBigFiveQuestions = function() {
 //Function to save user data
 exports.saveUserData = function(user) {
   var qOrder = [-1];
-  var q = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+  var q = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
   var newQ = shuffle(q);
-  for (var i = 0; i < newQ.length ; i++){
+  for (var i = 0; i < newQ.length; i++) {
     qOrder.push(newQ[i]);
   }
   user.qOrder = qOrder;
   return new Promise(function(resolve, reject) {
     db.saveUser(user).then(function(userId) {
-      resolve({"id" : userId, "qOrder" : qOrder});
+      resolve({
+        "id": userId,
+        "qOrder": qOrder
+      });
     });
   });
 };
