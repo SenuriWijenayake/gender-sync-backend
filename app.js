@@ -154,7 +154,7 @@ app.post('/question', function(req, res) {
   //Sending the question data to the confederates
   if (req.body.id != -1){
     io.sockets.emit('new_question', {
-      'message': "Participant moved to the next question.",
+      'message': "Moving to the next question.",
       'question' : data,
       'username': "QuizBot",
       'avatar' : "qb.png"
