@@ -81,7 +81,8 @@ io.on('connection', (socket) => {
     io.sockets.emit('new_message', {
       'message': data.message,
       'username': data.username,
-      'avatar' : data.avatar
+      'avatar' : data.avatar,
+      'realUser' : data.realUser ? true : false
     });
   });
 
