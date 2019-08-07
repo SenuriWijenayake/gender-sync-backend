@@ -150,17 +150,6 @@ app.post('/question', function(req, res) {
   console.log("Request received at question");
   data = logic.getQuestionByQId(req.body.id, req.body.set);
   result = JSON.stringify(data);
-
-  //Sending the question data to the confederates
-  if (req.body.id != -1){
-    io.sockets.emit('new_question', {
-      'message': "Moving to the next question.",
-      'question' : data,
-      'username': "QuizBot",
-      'avatar' : "qb.png"
-    });
-  }
-
   res.status(200).send(result);
 });
 
