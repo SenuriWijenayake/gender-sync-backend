@@ -87,7 +87,7 @@ io.on('connection', (socket) => {
 
   socket.on('started', (data) => {
     io.sockets.emit('user_started', {
-      'message': data.username + " started the quiz. You will be shown the question and the answers to prepare for discussion. " +
+      'message': "The quiz has begun! You will be shown the question and the answers to prepare for discussion. " +
       "Results will be shown as soon as the participant answers the question.",
       'question' : data.question,
       'username': "QuizBot",
@@ -243,7 +243,7 @@ app.post('/updateAnswerAndShowFeedback', function(req, res) {
   userAnswer.questionId = parseInt(answer.questionId);
   userAnswer.newAnswerId = parseInt(answer.answerId);
   userAnswer.newConfidence = parseFloat(answer.confidence);
-  
+
   return new Promise(function(resolve, reject) {
     logic.updateAnswer(userAnswer).then(function(id) {
       var shouldChange = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId).minorityConforms;
