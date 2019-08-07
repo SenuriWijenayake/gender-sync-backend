@@ -82,7 +82,7 @@ io.on('connection', (socket) => {
       'message': data.message,
       'username': data.username,
       'avatar' : data.avatar,
-      'realUser' : data.realUser ? true : false
+      'realUser' : (data.realUser == true) ? true : false
     });
   });
 
@@ -124,11 +124,6 @@ app.post('/feedback', function(req, res) {
       result = JSON.stringify(data);
       io.sockets.emit('feedback', {
         'info': result
-      });
-      io.sockets.emit('new_message', {
-        'message': "You may discuss the answers with your group members now. The objective of this exercise is to clarify doubts and arrive at the best possible answer.",
-        'username': "QuizBot",
-        'avatar' : "qb.png"
       });
       resolve(res.status(200).send(result));
     });
