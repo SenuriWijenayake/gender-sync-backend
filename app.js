@@ -86,6 +86,15 @@ io.on('connection', (socket) => {
     });
   });
 
+  socket.on('new_question', (data) => {
+    io.sockets.emit('new_question', {
+      'message': data.message,
+      'username': data.username,
+      'avatar' : data.avatar,
+      'info' : data.info
+    });
+  });
+
   socket.on('started', (data) => {
     io.sockets.emit('user_started', {
       'message': "The quiz has begun! You will be shown the question and the answers to prepare for discussion. " +
