@@ -38,23 +38,42 @@ exports.getFeedback = function(userAnswer) {
 
   //Add their answers as well
   var count = shuffle([2, 3, 4, 5]);
-  var letterAvatars = ["a.png", "b.png", "d.png", "e.png"];
-  var neutralAvatars = ["neutral.png", "neutral.png", "neutral.png", "neutral.png"];
-  var avatars;
-
-  //Decide avatar array
-  if (userAnswer.cues == 'letter') {
-    avatars = letterAvatars;
-  } else {
-    avatars = neutralAvatars;
+  var userProfiles = [
+  {
+    "lAvatar": "a.png",
+    "aAvatar": "neutral.png",
+    "lUsername": "JG",
+    "aUsername": "User 1"
+  },
+  {
+    "lAvatar": "b.png",
+    "aAvatar": "neutral.png",
+    "lUsername": "NB",
+    "aUsername": "User 2"
+  },
+  {
+    "lAvatar": "d.png",
+    "aAvatar": "neutral.png",
+    "lUsername": "DH",
+    "aUsername": "User 4"
+  },
+  {
+    "lAvatar": "e.png",
+    "aAvatar": "neutral.png",
+    "lUsername": "BS",
+    "aUsername": "User 5"
   }
+];
+  console.log(count);
 
   //Others are in the same answer as me
   if (othersSupportMe != 0) {
     for (i = 0; i < othersSupportMe; i++) {
+      var profileSelected = userProfiles[i];
       var obj = {
-        "avatar": avatars[count[i] - 2],
+        "avatar": (userAnswer.cues == 'letter') ? profileSelected.lAvatar : profileSelected.aAvatar,
         "answer": selected.answer,
+        "username" : (userAnswer.cues == 'letter') ? profileSelected.lUsername : profileSelected.aUsername,
         "order": count[i],
         "isInMajority": question.isMajority
       };
@@ -66,11 +85,12 @@ exports.getFeedback = function(userAnswer) {
   var nextAnswer = utils.getUnselectedAnswersOrdered(answers, userAnswer.answerId, question.correctOrder)[0];
   if (others != 0) {
     for (i = 0; i < others; i++) {
-      var c = count[count.length - (i + 1)] - 2;
+      var profileSelected = userProfiles[(othersSupportMe + i)];
       var obj = {
-        "avatar": avatars[c],
+        "avatar": (userAnswer.cues == 'letter') ? profileSelected.lAvatar : profileSelected.aAvatar,
         "answer": nextAnswer.answer,
-        "order": count[count.length - (i + 1)],
+        "username" : (userAnswer.cues == 'letter') ? profileSelected.lUsername : profileSelected.aUsername,
+        "order": count[4 - (i + 1)],
         "isInMajority": !question.isMajority
       };
       final.push(obj);
@@ -114,6 +134,7 @@ exports.getNoChangeFeedback = function(userAnswer, feedback){
       var obj = {
         "avatar": feedback[i].avatar,
         "answer": feedback[i].answer,
+        "username" : feedback[i].username,
         "newAnswer": feedback[i].answer,
         "order": feedback[i].order,
         "hasChanged": false
@@ -166,6 +187,7 @@ exports.getUpdatedFeedback = function(userAnswer, feedback) {
           "avatar": feedback[i].avatar,
           "answer": feedback[i].answer,
           "newAnswer": feedback[i].answer,
+          "username" : feedback[i].username,
           "order": feedback[i].order,
           "hasChanged": false
         };
@@ -187,6 +209,7 @@ exports.getUpdatedFeedback = function(userAnswer, feedback) {
           "avatar": othersInMin[i].avatar,
           "answer": othersInMin[i].answer,
           "newAnswer": othersInMin[i].answer,
+          "username" : othersInMin[i].username,
           "order": othersInMin[i].order,
           "hasChanged": false
         };
@@ -196,6 +219,7 @@ exports.getUpdatedFeedback = function(userAnswer, feedback) {
         var obj = {
           "avatar": othersInMin[i].avatar,
           "answer": othersInMin[i].answer,
+          "username" : othersInMin[i].username,
           "newAnswer": majorityAnswer,
           "order": othersInMin[i].order,
           "hasChanged": true
