@@ -103,7 +103,7 @@ module.exports = [
       4
     ],
     "questionNumber": 1,
-    "minorityConforms": false
+    "minorityConforms": true
   },
   {
     "isMajority": true,
@@ -243,13 +243,13 @@ module.exports = [
       4
     ],
     "questionNumber": 5,
-    "minorityConforms": true
+    "minorityConforms": false
   },
   {
     "isMajority": true,
     "sizeValues": [
-      4,
-      0
+      3,
+      1
     ],
     "questionText": "Where was the hottest temperature ever recorded?",
     "answers": [
@@ -278,6 +278,41 @@ module.exports = [
       4
     ],
     "questionNumber": 6,
+    "minorityConforms": false
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      4,
+      0
+    ],
+    "questionText": "What is the main currency of Indonesia?",
+    "answers": [
+      {
+        "answer": "Rupee",
+        "id": 1
+      },
+      {
+        "answer": "Dollar",
+        "id": 2
+      },
+      {
+        "answer": "Rupiah",
+        "id": 3
+      },
+      {
+        "answer": "Krone",
+        "id": 4
+      }
+    ],
+    "isObjective": true,
+    "correctOrder": [
+      3,
+      1,
+      2,
+      4
+    ],
+    "questionNumber": 15,
     "minorityConforms": false
   },
   {
@@ -348,7 +383,7 @@ module.exports = [
       4
     ],
     "questionNumber": 8,
-    "minorityConforms": false
+    "minorityConforms": true
   },
   {
     "isMajority": true,
@@ -418,7 +453,7 @@ module.exports = [
       4
     ],
     "questionNumber": 10,
-    "minorityConforms": false
+    "minorityConforms": true
   },
   {
     "isMajority": false,
@@ -488,7 +523,7 @@ module.exports = [
       4
     ],
     "questionNumber": 12,
-    "minorityConforms": true
+    "minorityConforms": false
   },
   {
     "isMajority": true,
@@ -528,8 +563,8 @@ module.exports = [
   {
     "isMajority": true,
     "sizeValues": [
-      4,
-      0
+      3,
+      1
     ],
     "questionText": "The voting age should be lowered. Do you agree or disagree with this statement?",
     "answers": [
@@ -558,6 +593,41 @@ module.exports = [
       4
     ],
     "questionNumber": 14,
+    "minorityConforms": false
+  },
+  {
+    "isMajority": true,
+    "sizeValues": [
+      4,
+      0
+    ],
+    "questionText": "Politicians are profiteers. Do you agree or disagree with this statement?",
+    "answers": [
+      {
+        "answer": "Strongly Disagree",
+        "id": 1
+      },
+      {
+        "answer": "Disagree",
+        "id": 2
+      },
+      {
+        "answer": "Agree",
+        "id": 3
+      },
+      {
+        "answer": "Strongly Agree",
+        "id": 4
+      }
+    ],
+    "isObjective": false,
+    "correctOrder": [
+      3,
+      4,
+      2,
+      1
+    ],
+    "questionNumber": 16,
     "minorityConforms": false
   }
 ];
