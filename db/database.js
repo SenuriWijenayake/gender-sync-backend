@@ -153,6 +153,40 @@ exports.updateAnswer = function(answer) {
   });
 };
 
+
+//Function to update an answer events
+exports.updateAnswerEvents = function(answer) {
+
+  var query = {
+    userId: answer.userId,
+    questionId: answer.questionId
+  };
+  var newData = {
+    sawQuestion : answer.sawQuestion,
+    selectedOption : answer.selectedOption,
+    selectedConf : answer.selectedConf,
+    clickedSubmit : answer.clickedSubmit,
+    sawFeedback : answer.sawFeedback,
+    selectedYes : answer.selectedYes ? answer.selectedYes : null,
+    selectedNext : answer.selectedNext ? answer.selectedNext : null,
+    selectedNo : answer.selectedNo ? answer.selectedNo : null,
+    selectedUpdatedOption : answer.selectedUpdatedOption ? answer.selectedUpdatedOption : null,
+    selectedUpdatedConf : answer.selectedUpdatedConf ? answer.selectedUpdatedConf : null,
+    submittedUpdatedAnswer : answer.submittedUpdatedAnswer ? answer.submittedUpdatedAnswer : null,
+    sawUpdatedFeedback : answer.sawUpdatedFeedback ? answer.sawUpdatedFeedback : null
+  };
+
+  return new Promise(function(resolve, reject) {
+    Answer.findOneAndUpdate(query, newData, {
+      upsert: true
+    }, function(err, newAnswer) {
+      if (err) reject(err);
+      resolve(newAnswer._id.toString());
+    });
+  });
+};
+
+
 //Function to get the big five questions
 exports.getBigFiveQuestions = function() {
   return (bigFiveQuestions);

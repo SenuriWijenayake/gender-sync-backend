@@ -377,3 +377,12 @@ exports.updateAnswer = function(answer) {
     });
   });
 };
+
+//Function to update an answer events
+exports.updateAnswerEvents = function(answer) {
+  return new Promise(function(resolve, reject) {
+    db.updateAnswerEvents(answer).then(function(answerId) {
+      resolve(answerId);
+    });
+  });
+};

@@ -232,6 +232,34 @@ app.post('/updateAnswer', function(req, res) {
   });
 });
 
+//Endpoint to update answer with the event times
+app.post('/updateAnswerWithEvents', function(req, res) {
+  console.log("Request received at updateAnswerWithEvents");
+  var userAnswer = {};
+
+  userAnswer.userId = req.body.userId;
+  userAnswer.questionId = parseInt(req.body.questionId);
+  userAnswer.sawQuestion = req.body.sawQuestion;
+  userAnswer.selectedOption = req.body.selectedOption;
+  userAnswer.selectedConf = req.body.selectedConf;
+  userAnswer.clickedSubmit = req.body.clickedSubmit;
+  userAnswer.sawFeedback = req.body.sawFeedback;
+  userAnswer.selectedYes = req.body.selectedYes ? req.body.selectedYes : null;
+  userAnswer.selectedNo = req.body.selectedNo ? req.body.selectedNo : null;
+  userAnswer.selectedNext = req.body.selectedNext ? req.body.selectedNext : null;
+
+  userAnswer.selectedUpdatedOption = req.body.selectedUpdatedOption ? req.body.selectedUpdatedOption : null;
+  userAnswer.selectedUpdatedConf = req.body.selectedUpdatedConf ? req.body.selectedUpdatedConf : null;
+  userAnswer.submittedUpdatedAnswer = req.body.submittedUpdatedAnswer ? req.body.submittedUpdatedAnswer : null;
+  userAnswer.sawUpdatedFeedback = req.body.sawUpdatedFeedback ? req.body.sawUpdatedFeedback : null;
+
+  return new Promise(function(resolve, reject) {
+    logic.updateAnswerEvents(userAnswer).then(function(id) {
+      resolve(res.status(200).send(id));
+    });
+  });
+});
+
 
 //Endpoint to update answer and show feedback for public condition
 app.post('/updateAnswerAndShowFeedback', function(req, res) {
