@@ -86,6 +86,15 @@ io.on('connection', (socket) => {
     });
   });
 
+  socket.on('making_changes', (data) => {
+    io.sockets.emit('making_changes', {
+      'message': data.message,
+      'username': data.username,
+      'avatar' : data.avatar,
+      'realUser' : (data.realUser == true) ? true : false
+    });
+  });
+
   socket.on('time_up', (data) => {
     io.sockets.emit('time_up', {
       'message': data.message,
