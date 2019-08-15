@@ -27,10 +27,10 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      2,
+      4,
       1,
-      3,
-      4
+      2,
+      3
     ],
     "questionNumber": -1,
     "minorityConforms": false
@@ -62,10 +62,10 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      2,
-      1,
       3,
-      4
+      4,
+      1,
+      2
     ],
     "questionNumber": 0,
     "minorityConforms": true
@@ -99,8 +99,8 @@ module.exports = [
     "correctOrder": [
       2,
       1,
-      3,
-      4
+      4,
+      3
     ],
     "questionNumber": 1,
     "minorityConforms": true
@@ -132,10 +132,10 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      2,
       1,
-      3,
-      4
+      4,
+      2,
+      3
     ],
     "questionNumber": 2,
     "minorityConforms": true
@@ -167,10 +167,10 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
-      2,
-      1,
       3,
-      4
+      4,
+      1,
+      2
     ],
     "questionNumber": 3,
     "minorityConforms": false
@@ -203,9 +203,9 @@ module.exports = [
     "isObjective": true,
     "correctOrder": [
       2,
+      4,
       1,
-      3,
-      4
+      3
     ],
     "questionNumber": 4,
     "minorityConforms": false
@@ -237,10 +237,10 @@ module.exports = [
     ],
     "isObjective": true,
     "correctOrder": [
+      4,
       2,
       1,
-      3,
-      4
+      3
     ],
     "questionNumber": 5,
     "minorityConforms": false
@@ -274,8 +274,8 @@ module.exports = [
     "correctOrder": [
       2,
       1,
-      3,
-      4
+      4,
+      3
     ],
     "questionNumber": 6,
     "minorityConforms": false
@@ -343,8 +343,8 @@ module.exports = [
     "isObjective": false,
     "correctOrder": [
       2,
-      1,
       3,
+      1,
       4
     ],
     "questionNumber": 7,
@@ -377,8 +377,8 @@ module.exports = [
     ],
     "isObjective": false,
     "correctOrder": [
-      2,
       1,
+      2,
       3,
       4
     ],
@@ -412,10 +412,10 @@ module.exports = [
     ],
     "isObjective": false,
     "correctOrder": [
-      2,
-      1,
       3,
-      4
+      2,
+      4,
+      1
     ],
     "questionNumber": 9,
     "minorityConforms": true
@@ -448,8 +448,8 @@ module.exports = [
     "isObjective": false,
     "correctOrder": [
       2,
-      1,
       3,
+      1,
       4
     ],
     "questionNumber": 10,
@@ -482,9 +482,9 @@ module.exports = [
     ],
     "isObjective": false,
     "correctOrder": [
-      2,
-      1,
       3,
+      1,
+      2,
       4
     ],
     "questionNumber": 11,
@@ -518,8 +518,8 @@ module.exports = [
     "isObjective": false,
     "correctOrder": [
       2,
-      1,
       3,
+      1,
       4
     ],
     "questionNumber": 12,
