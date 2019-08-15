@@ -95,6 +95,15 @@ io.on('connection', (socket) => {
     });
   });
 
+  socket.on('quiz_completed', (data) => {
+    io.sockets.emit('quiz_completed', {
+      'message': data.message,
+      'username': data.username,
+      'avatar' : data.avatar,
+      'realUser' : (data.realUser == true) ? true : false
+    });
+  });
+
   socket.on('done', (data) => {
     io.sockets.emit('done', {
       'message': data.message,
