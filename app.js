@@ -159,7 +159,6 @@ app.post('/feedback', function(req, res) {
   userAnswer.questionId = parseInt(req.body.questionId);
   userAnswer.answerId = parseInt(req.body.answerId);
   userAnswer.confidence = parseFloat(req.body.confidence);
-  userAnswer.set = req.body.set;
 
   return new Promise(function(resolve, reject) {
 
@@ -176,11 +175,11 @@ app.post('/feedback', function(req, res) {
 });
 
 //Endpoint to get all the questions and answers
-app.get('/questions', function(req, res) {
-  data = logic.getAllQuestions(req.body.set);
-  result = JSON.stringify(data);
-  res.status(200).send(result);
-});
+// app.get('/questions', function(req, res) {
+//   data = logic.getAllQuestions(req.body.set);
+//   result = JSON.stringify(data);
+//   res.status(200).send(result);
+// });
 
 //Endpoint to index
 app.get('/', function(req, res) {
@@ -297,14 +296,13 @@ app.post('/updateAnswerAndShowFeedback', function(req, res) {
   var feedback = req.body.feedback;
 
   userAnswer.userId = answer.userId;
-  userAnswer.set = answer.set;
   userAnswer.questionId = parseInt(answer.questionId);
   userAnswer.newAnswerId = parseInt(answer.answerId);
   userAnswer.newConfidence = parseFloat(answer.confidence);
 
   return new Promise(function(resolve, reject) {
     logic.updateAnswer(userAnswer).then(function(id) {
-      var shouldChange = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId).minorityConforms;
+      var shouldChange = utils.getQuestionByNumber(userAnswer.questionId).minorityConforms;
       var newFeedback;
       if (shouldChange){
         newFeedback = logic.getUpdatedFeedback(userAnswer, feedback);
@@ -329,9 +327,8 @@ app.post('/showFeedbackOnly', function(req, res) {
   userAnswer.questionId = parseInt(answer.questionId);
   userAnswer.newAnswerId = parseInt(answer.answerId);
   userAnswer.newConfidence = parseFloat(answer.confidence);
-  userAnswer.set = answer.set;
 
-  var shouldChange = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId).minorityConforms;
+  var shouldChange = utils.getQuestionByNumber(userAnswer.questionId).minorityConforms;
   var newFeedback;
   if (shouldChange){
     newFeedback = logic.getUpdatedFeedback(userAnswer, feedback);
