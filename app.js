@@ -165,7 +165,11 @@ app.post('/feedback', function(req, res) {
     logic.saveAnswer(userAnswer).then(function(id) {
       data = logic.getFeedback(userAnswer);
       console.log(data);
-      logic.updateAnswerWithFeedback(data.feedback, false).then(function(id){
+
+      var isUpdate = false;
+      userAnswer.feedback = data.feedback;
+
+      logic.updateAnswerWithFeedback(userAnswer, false).then(function(id){
         result = JSON.stringify(data);
         io.sockets.emit('feedback', {
           'info': result
@@ -175,13 +179,6 @@ app.post('/feedback', function(req, res) {
     });
   });
 });
-
-//Endpoint to get all the questions and answers
-// app.get('/questions', function(req, res) {
-//   data = logic.getAllQuestions(req.body.set);
-//   result = JSON.stringify(data);
-//   res.status(200).send(result);
-// });
 
 //Endpoint to index
 app.get('/', function(req, res) {
@@ -312,7 +309,12 @@ app.post('/updateAnswerAndShowFeedback', function(req, res) {
       } else {
         newFeedback = logic.getNoChangeFeedback(userAnswer, feedback);
       }
-      resolve(res.status(200).send(newFeedback));
+      userAnswer.feedback = newFeedback;
+
+      logic.updateAnswerWithFeedback(userAnswer, true).then(function(id){
+        resolve(res.status(200).send(newFeedback));
+      });
+
     });
   });
 });
@@ -338,7 +340,14 @@ app.post('/showFeedbackOnly', function(req, res) {
   } else {
     newFeedback = logic.getNoChangeFeedback(userAnswer, feedback);
   }
-  res.status(200).send(newFeedback);
+
+  userAnswer.feedback = newFeedback;
+
+  return new Promise(function(resolve, reject) {
+    logic.updateAnswerWithFeedback(userAnswer, true).then(function(id){
+      resolve(res.status(200).send(newFeedback));
+    });
+  });
 });
 
 
