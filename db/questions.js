@@ -426,7 +426,7 @@ module.exports = [
       3,
       1
     ],
-    "questionText": "Cameras in public places an invasion of privacy. Do you agree or disagree with this statement?",
+    "questionText": "Cameras in public places are an invasion of privacy. Do you agree or disagree with this statement?",
     "answers": [
       {
         "answer": "Strongly Disagree",
