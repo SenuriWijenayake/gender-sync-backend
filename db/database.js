@@ -97,7 +97,6 @@ exports.saveUser = function(user) {
       field: user.field,
       discussion: user.discussion == 'Yes' ? true : false,
       cues: user.cues,
-      set: user.set,
       visibility: user.visibility == 'Yes' ? true : false,
       qOrder : user.qOrder
     });
@@ -114,7 +113,6 @@ exports.saveAnswer = function(answer) {
   return new Promise(function(resolve, reject) {
     var newAnswer = new Answer({
       userId: answer.userId,
-      set: answer.set,
       questionId: answer.questionId,
       oldAnswerId: answer.oldAnswerId,
       oldConfidence: answer.oldConfidence,

@@ -8,7 +8,7 @@ var shuffle = require('shuffle-array');
 exports.getFeedback = function(userAnswer) {
 
   var final = [];
-  var question = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId);
+  var question = utils.getQuestionByNumber(userAnswer.questionId);
 
   var answers = question.answers;
   var sizeValues = question.sizeValues;
@@ -109,7 +109,7 @@ exports.getFeedback = function(userAnswer) {
 //Function to get feedback with no changes
 exports.getNoChangeFeedback = function(userAnswer, feedback){
   var data = [];
-  var question = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId);
+  var question = utils.getQuestionByNumber(userAnswer.questionId);
   var allAnswers = question.answers;
 
   //Set my answer
@@ -152,7 +152,7 @@ exports.getNoChangeFeedback = function(userAnswer, feedback){
 exports.getUpdatedFeedback = function(userAnswer, feedback) {
 
   var data = [];
-  var question = utils.getQuestionByNumber(userAnswer.set, userAnswer.questionId);
+  var question = utils.getQuestionByNumber(userAnswer.questionId);
   var allAnswers = question.answers;
 
   //Set my answer
@@ -249,12 +249,7 @@ exports.shuffleArray = function(array) {
 //Function to create the questions and answers
 exports.getAllQuestions = function(set) {
 
-  var questions;
-  if (set == "1"){
-    questions = utils.questions;
-  } else {
-    questions = utils.questionsOne;
-  }
+  var questions = utils.questions;
   var response = [];
 
   for (var i = 0; i < questions.length; i++) {
@@ -272,13 +267,9 @@ exports.getAllQuestions = function(set) {
 };
 
 //Function to get question by Id
-exports.getQuestionByQId = function(id, set) {
-  var questions;
-  if (set == "1"){
-    questions = utils.questions;
-  } else {
-    questions = utils.questionsOne;
-  }
+exports.getQuestionByQId = function(id) {
+  var questions = utils.questions;
+
   for (var i = 0; i < questions.length; i++) {
     if (questions[i].questionNumber == id) {
       return (questions[i]);
@@ -355,7 +346,6 @@ exports.saveAnswer = function(ans) {
 
   var answer = {};
   answer.userId = ans.userId;
-  answer.set = ans.set;
   answer.questionId = ans.questionId;
   answer.oldAnswerId = ans.answerId;
   answer.oldConfidence = ans.confidence;

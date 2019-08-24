@@ -2,7 +2,6 @@
 
 //Importing the questions
 exports.questions = require('./db/questions');
-exports.questionsOne = require('./db/questionsOne');
 
 //Get my answer from array
 exports.getAnswerByOrderId = function(answers, order){
@@ -91,15 +90,9 @@ exports.randValues = function(isMajority, sizeValues) {
 };
 
 //Function to get question by questionNumber
-exports.getQuestionByNumber = function(set, number) {
+exports.getQuestionByNumber = function(number) {
 
-  var questions;
-  if (set == "1"){
-    console.log("Inside set one");
-    questions = this.questions;
-  } else {
-    questions = this.questionsOne;
-  }
+  var questions = this.questions;
 
   for (var i = 0; i < questions.length; i++) {
     if (questions[i].questionNumber == number) {
@@ -111,7 +104,7 @@ exports.getQuestionByNumber = function(set, number) {
 //Returns the unselected answers in the ranked order
 exports.getUnselectedAnswersOrdered = function(allAnswers, selectedId, order) {
   var others = [];
-  console.log(allAnswers, selectedId, order);
+
   for (var i = 0; i < allAnswers.length; i++) {
     if (allAnswers[i].id != selectedId) {
       others.push(allAnswers[i]);

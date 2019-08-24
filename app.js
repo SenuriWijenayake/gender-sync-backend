@@ -193,7 +193,7 @@ app.get('/', function(req, res) {
 //Endpoint to get a question by id
 app.post('/question', function(req, res) {
   console.log("Request received at question");
-  data = logic.getQuestionByQId(req.body.id, req.body.set);
+  data = logic.getQuestionByQId(req.body.id);
   result = JSON.stringify(data);
   res.status(200).send(result);
 });
