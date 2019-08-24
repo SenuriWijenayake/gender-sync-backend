@@ -153,6 +153,35 @@ exports.updateAnswer = function(answer) {
 };
 
 
+//Function to update an answer with any feedback
+exports.updateAnswerWithFeedback = function(answer, isUpdate) {
+
+  var query = {
+    userId: answer.userId,
+    questionId: answer.questionId
+  };
+  var newData;
+
+  if (!isUpdate){
+    newData = {
+      feedback: answer.feedback
+    };
+  } else {
+    newData = {
+      updatedFeedback: answer.feedback
+    };
+  }
+
+  return new Promise(function(resolve, reject) {
+    Answer.findOneAndUpdate(query, newData, {
+      upsert: true
+    }, function(err, newAnswer) {
+      if (err) reject(err);
+      resolve(newAnswer._id.toString());
+    });
+  });
+};
+
 //Function to update an answer events
 exports.updateAnswerEvents = function(answer) {
 

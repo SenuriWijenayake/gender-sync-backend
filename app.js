@@ -258,6 +258,24 @@ app.post('/updateAnswer', function(req, res) {
   });
 });
 
+
+//Endpoint to update answer with feedback
+app.post('/updateAnswerWithFeedback', function(req, res) {
+  console.log("Request received at updateAnswerWithFeedback");
+  var userAnswer = {};
+  var isUpdate = req.body.isUpdate;
+
+  userAnswer.userId = req.body.userId;
+  userAnswer.questionId = parseInt(req.body.questionId);
+  userAnswer.feedback = req.body.feedback;
+
+  return new Promise(function(resolve, reject) {
+    logic.updateAnswerWithFeedback(userAnswer, isUpdate).then(function(id) {
+      resolve(res.status(200).send(id));
+    });
+  });
+});
+
 //Endpoint to update answer with the event times
 app.post('/updateAnswerWithEvents', function(req, res) {
   console.log("Request received at updateAnswerWithEvents");

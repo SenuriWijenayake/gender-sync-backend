@@ -368,6 +368,15 @@ exports.updateAnswer = function(answer) {
   });
 };
 
+//Function to update an answer with any feedback
+exports.updateAnswerWithFeedback = function(answer, isUpdate) {
+  return new Promise(function(resolve, reject) {
+    db.updateAnswerWithFeedback(answer, isUpdate).then(function(answerId) {
+      resolve(answerId);
+    });
+  });
+};
+
 //Function to update an answer events
 exports.updateAnswerEvents = function(answer) {
   return new Promise(function(resolve, reject) {

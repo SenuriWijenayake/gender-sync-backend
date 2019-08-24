@@ -23,7 +23,10 @@ var answerSchema = new Schema({
   selectedUpdatedOption : { type : Date, required: false, default: null},
   selectedUpdatedConf : { type : Date, required: false, default: null},
   submittedUpdatedAnswer : { type : Date, required: false, default: null},
-  sawUpdatedFeedback : { type : Date, required: false, default: null}
+  sawUpdatedFeedback : { type : Date, required: false, default: null},
+
+  feedback : { type : Array , required: false, default: null },
+  updatedFeedback : { type : Array , required: false, default: null }
 });
 
 var Answer = mongoose.model('Answer', answerSchema);
