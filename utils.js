@@ -3,6 +3,19 @@
 //Importing the questions
 exports.questions = require('./db/questions');
 
+//Get quote for a given answer id, in a given position when given the question
+exports.getQuote = function(question, answerId, positionId){
+  for (var i = 0; i < question.scripts.length; i++){
+    if (question.scripts[i].answerId == answerId){
+      for (var j = 0; j < 4; j++){
+        if (question.scripts[i].quotes[j].id == positionId){
+          return (question.scripts[i].quotes[j].text);
+        }
+      }
+    }
+  }
+};
+
 //Get my answer from array
 exports.getAnswerByOrderId = function(answers, order){
   for (var i = 0; i < answers.length; i++){

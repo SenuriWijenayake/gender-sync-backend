@@ -38,6 +38,7 @@ exports.getFeedback = function(userAnswer) {
 
   //Add their answers as well
   var count = shuffle([2, 3, 4, 5]);
+  var quotesPosition = shuffle([1, 2, 3, 4]);
   var userProfiles = [
   {
     "lAvatar": "a.png",
@@ -64,7 +65,7 @@ exports.getFeedback = function(userAnswer) {
     "aUsername": "User 5"
   }
 ];
-  console.log(count);
+  console.log(count, quotesPosition);
 
   //Others are in the same answer as me
   if (othersSupportMe != 0) {
@@ -75,8 +76,10 @@ exports.getFeedback = function(userAnswer) {
         "answer": selected.answer,
         "username" : (userAnswer.cues == 'letter') ? profileSelected.lUsername : profileSelected.aUsername,
         "order": count[i],
-        "isInMajority": question.isMajority
+        "isInMajority": question.isMajority,
+        "quote" : utils.getQuote (question, selected.id, quotesPosition[i])
       };
+
       final.push(obj);
     }
   }
@@ -91,7 +94,8 @@ exports.getFeedback = function(userAnswer) {
         "answer": nextAnswer.answer,
         "username" : (userAnswer.cues == 'letter') ? profileSelected.lUsername : profileSelected.aUsername,
         "order": count[4 - (i + 1)],
-        "isInMajority": !question.isMajority
+        "isInMajority": !question.isMajority,
+        "quote" : utils.getQuote (question, nextAnswer.id, quotesPosition[4 - (i + 1)])
       };
       final.push(obj);
     }
@@ -229,12 +233,6 @@ exports.getUpdatedFeedback = function(userAnswer, feedback) {
     }
   }
   return (data);
-};
-
-// Function to get the relevenat explanation for a user, ofr a given question and answer
-// To be implemented
-exports.getExplanation = function(userId, qId, answerId) {
-  return ("This could be a potential explanation coming from a script");
 };
 
 exports.shuffleArray = function(array) {

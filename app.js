@@ -86,6 +86,11 @@ io.on('connection', (socket) => {
     });
   });
 
+  socket.on('start_timer', (data) => {
+    io.sockets.emit('start_timer', {
+    });
+  });
+
   socket.on('making_changes', (data) => {
     io.sockets.emit('making_changes', {
       'message': data.message,
