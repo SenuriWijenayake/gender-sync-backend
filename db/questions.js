@@ -1070,7 +1070,7 @@ module.exports = [
         "answerId": 4,
         "quotes": [
           {
-            "text": "Krone - Definitely not the dollar or the Rupiah. I am deciding between Krone and Rupiah. I think Rupiah is used in India, so I am going ahead with that.",
+            "text": "Krone - Definitely not the dollar or the Rupiah. I am deciding between Krone and Rupee. I think Rupee is used in India, so I am going ahead with Krone for Indonesia.",
             "id": 1
           },
           {
