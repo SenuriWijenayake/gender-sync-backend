@@ -215,6 +215,7 @@ app.post('/bigFiveData', function(req, res) {
   //The server should restart
   users = [];
   distinctUsers = [];
+  console.log(distinctUsers);
 });
 
 //Endpoint to save user demographic data
